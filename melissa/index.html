@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO Founder Melissa Perlman — Amansala</title>
+<meta name="description" content="Melissa Perlman traded in her Jimmy Choo's for flip flops and built Amansala, one of Tulum's most iconic beachfront wellness resorts. Her story, press, and journey.">
+<meta property="og:title" content="Melissa Perlman — CEO & Founder, Amansala">
+<meta property="og:description" content="What started as a simple idea just after 9/11 while sitting in a studio apartment in NYC has grown into a brand known globally.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ecd4bcc5-0002-4db8-a679-7c5c4b9f6470/2F0A3090.jpg?format=1500w">
+<meta property="og:type" content="profile">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Melissa Perlman ═══ */
+
+/* Hero — portrait with overlay text */
+.melissa-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.melissa-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.melissa-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.melissa-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.05) 0%,
+    hsla(30, 13%, 19%, 0.65) 100%
+  );
+}
+
+.melissa-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: 0 var(--gutter) var(--sp-7);
+  max-width: 800px;
+}
+
+.melissa-hero-content h1 {
+  margin-bottom: var(--sp-2);
+}
+
+.melissa-hero-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: hsla(42, 36%, 95%, 0.85);
+  margin-bottom: var(--sp-2);
+}
+
+.melissa-hero-sub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: hsla(42, 36%, 95%, 0.5);
+}
+
+/* Intro block */
+.melissa-intro {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.melissa-intro p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.melissa-intro p + p {
+  margin-top: var(--sp-3);
+}
+
+/* Gitano section */
+.melissa-gitano {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.melissa-gitano p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* Press cards */
+.press-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform var(--ease);
+  text-align: center;
+  padding: var(--sp-5) var(--sp-4);
+  border: 1px solid var(--border);
+}
+
+.press-card:hover {
+  transform: translateY(-4px);
+}
+
+.press-card h3 {
+  margin-bottom: var(--sp-1);
+}
+
+.press-card p {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.press-card .btn {
+  font-size: 0.78rem;
+  padding: 12px 28px;
+}
+
+/* Timeline alternating blocks */
+.timeline-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+.timeline-block + .timeline-block {
+  margin-top: var(--sp-8);
+}
+
+.timeline-block--reverse {
+  direction: rtl;
+}
+
+.timeline-block--reverse > * {
+  direction: ltr;
+}
+
+.timeline-text h3 {
+  margin-bottom: var(--sp-2);
+  color: var(--espresso);
+}
+
+.timeline-text p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+
+.timeline-img img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Biography */
+.melissa-bio {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.melissa-bio h2 {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+}
+
+.melissa-bio p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.melissa-bio p + p {
+  margin-top: var(--sp-3);
+}
+
+.melissa-bio strong {
+  color: var(--text);
+}
+
+/* Full-width beach image */
+.melissa-beach-full {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Podcast CTA */
+.podcast-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.podcast-cta h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.podcast-cta p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+/* Conde Nast image section */
+.melissa-portrait {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.melissa-portrait img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .timeline-block {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .timeline-block--reverse {
+    direction: ltr;
+  }
+
+  .timeline-img img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .melissa-hero {
+    min-height: 70vh;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="melissa-hero">
+  <div class="melissa-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ecd4bcc5-0002-4db8-a679-7c5c4b9f6470/2F0A3090.jpg?format=1500w" alt="Melissa Perlman, CEO and Founder of Amansala" loading="eager">
+  </div>
+  <div class="melissa-hero-overlay"></div>
+  <div class="melissa-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.5);">CEO &amp; Founder</span>
+    <h1>Melissa Perlman</h1>
+    <div class="melissa-hero-tagline">&ldquo;Traded in my Jimmy Choo&rsquo;s for Flip Flops&rdquo;</div>
+    <div class="melissa-hero-sub">Melissa Perlman CEO Amansala</div>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section class="section">
+  <div class="container melissa-intro">
+    <p>What started as a simple idea just after 9/11 while sitting in a studio apartment in NYC has grown into a brand known globally amongst jet setters, the well-traveled, and those who pride themselves for being in the know of the latest hot spots.</p>
+    <p>In a predominately male-dominated industry, Melissa created a niche that incorporates style and comfort with purpose and community.</p>
+  </div>
+</section>
+
+<!-- ═══ CONDE NAST PORTRAIT ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="melissa-portrait">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/28e4e1b8-8f47-4783-ab0a-3abb1bdb224a/melissa+condenast.jpg?format=1000w" alt="Melissa Perlman featured in Conde Nast" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GITANO PARTNERSHIP ═══ -->
+<section class="section">
+  <div class="container melissa-gitano">
+    <span class="eyebrow">Grupo Gitano</span>
+    <h2>Partner &amp; Investor</h2>
+    <div class="quote-block" style="text-align: left; margin-top: var(--sp-4);">
+      <p>In 2017 Melissa became a partner in Gitano Tulum and Grupo Gitano. Today She is an investor and active partner in Grupo Gitano, her strong business savvy supports James&rsquo; vision for the growth and business of the brand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRESS / MEDIA ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">In the Media</span>
+      <h2>Press &amp; Features</h2>
+    </div>
+    <div class="card-grid">
+      <div class="press-card">
+        <h3>Press</h3>
+        <p>Over 20 years of the press.</p>
+        <a href="https://www.amansala.com/press-media" class="btn btn-outline" target="_blank">View Press</a>
+      </div>
+      <div class="press-card">
+        <h3>Our YouTube Channel</h3>
+        <p>Some of our videos over the years. Testimonials and more..</p>
+        <a href="https://www.youtube.com/channel/UCQTC2JMNMUSZI-DY6dsIKEQ" class="btn btn-outline" target="_blank">Watch Videos</a>
+      </div>
+      <div class="press-card">
+        <h3>Our Instagram Page</h3>
+        <p>Our Organic Followers through the years.</p>
+        <a href="https://www.instagram.com/amansalatulum/" class="btn btn-outline" target="_blank">Follow Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-7);">
+      <span class="eyebrow">The Journey</span>
+      <h2>From NYC to Tulum</h2>
+    </div>
+
+    <!-- Humble Beginnings -->
+    <div class="timeline-block">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1c5f5f9f-73b8-41c9-bd14-46b82b173ea3/Melissa-Building+%281%29.jpg?format=1000w" alt="Melissa building Amansala's first cabana" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">Humble Beginnings</span>
+        <h3>Amansala&rsquo;s Humble Beginnings..</h3>
+        <p>Melissa&rsquo;s dream started with one cabana in the sand. She was the architect, project supervisor and much more. Amansala is so beautiful because Melissa has been hands on since day one.</p>
+      </div>
+    </div>
+
+    <!-- Family Grew -->
+    <div class="timeline-block timeline-block--reverse">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5cb49fe3-e22f-42e4-8a3c-dc99998cdb8b/Melissa-Building-Dylan.jpg?format=1000w" alt="Melissa with her son Dylan at Amansala" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">Family Grew</span>
+        <h3>Her Business grew as her family did</h3>
+        <p>Melissa&rsquo;s children were raised on the beach living in huts, surrounded by nature. Talk about a working mom.</p>
+      </div>
+    </div>
+
+    <!-- Monks -->
+    <div class="timeline-block">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/13563f46-95f6-4edc-b67b-00cf34c486d9/Melissa-Blessing-Amansala-Monks.jpg?format=1000w" alt="Tibetan Monks blessing Amansala" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">Monks</span>
+        <h3>Melissa&rsquo;s mom sent her a team of Monks&hellip;</h3>
+        <p>A team of Tibetian Monks came to bless Melissa&rsquo;s place to heal and align the Mind Body and Spirit..</p>
+      </div>
+    </div>
+
+    <!-- Eco and Chic -->
+    <div class="timeline-block timeline-block--reverse">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3ef0d7d6-720f-4068-8a91-a7f22c62aa44/Melissa-Day-on-the-job.png?format=1000w" alt="Melissa on the job at Amansala" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">Eco and Chic</span>
+        <h3>In between the eco and chic&hellip;.</h3>
+        <p>Melissa dressed to impress but getting her hands dirty with the local fishermen choosing the fresh whole fish for the clients.</p>
+      </div>
+    </div>
+
+    <!-- A-Lister -->
+    <div class="timeline-block">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/dc1c568b-8e91-482f-be40-b0b4859fb2b7/Screen+Shot+2023-09-27+at+20.22.53.png?format=1000w" alt="A-list celebrity at Amansala" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">A-Lister</span>
+        <h3>The place for A-listers to escape&hellip;</h3>
+        <p>Drew came so frequently she knew the staff by name.</p>
+      </div>
+    </div>
+
+    <!-- Jet Setting -->
+    <div class="timeline-block timeline-block--reverse">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/459568c7-8dfd-41bc-9b9e-4dc0bbf5c827/Melissa-Family-Day.jpg?format=1000w" alt="Melissa jet setting with her children" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">Jet Setting</span>
+        <h3>Still Jet setting, this time with her little ones..</h3>
+        <p>Melissa, Dylan and Leah&hellip;</p>
+      </div>
+    </div>
+
+    <!-- 20 Years Later -->
+    <div class="timeline-block">
+      <div class="timeline-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d8d4ca6c-5a26-4265-b24b-0b7b2ed0c23b/Screen+Shot+2023-05-04+at+20.21.48.png?format=1000w" alt="Melissa Perlman 20 years later" loading="lazy">
+      </div>
+      <div class="timeline-text">
+        <span class="eyebrow">20 Years Later</span>
+        <h3>Melissa 20 years later</h3>
+        <p>Living her Best Life&hellip;</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FULL-WIDTH BEACH IMAGE ═══ -->
+<img class="melissa-beach-full" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/69b2670f-ffe1-49dc-94c1-4e5c840b49f9/Beach-Front-Deck+%281%29.jpg?format=1500w" alt="Amansala beachfront deck" loading="lazy">
+
+<!-- ═══ BIOGRAPHY ═══ -->
+<section class="section section--alt">
+  <div class="container melissa-bio">
+    <span class="eyebrow" style="text-align: center; display: block;">Biography</span>
+    <h2>Melissa Perlman</h2>
+    <p><strong>Melissa Perlman</strong> is a dynamic entrepreneur, visionary hotelier, and wellness pioneer whose trailblazing spirit has helped shape Tulum into the wellness destination it is today. After relocating to Tulum following 9/11, Melissa began building <strong>Amansala</strong>, a beachfront health and wellness retreat, literally room by room.</p>
+    <p>Her passion, grit, and creativity transformed that vision into one of the largest and most iconic properties in Tulum, now boasting over 100 rooms, multiple yoga shalas, beachfront restaurants, and a thriving wellness community.</p>
+    <p>Melissa is also the founder of <strong>Bikini Bootcamp</strong>, an innovative and wildly popular fitness retreat that combines movement, mindfulness, and adventure. Launched long before wellness travel became mainstream, Bikini Bootcamp helped redefine what it means to reset&mdash;blending results-driven workouts with the soul of a beachside escape.</p>
+    <p>In 2017, Melissa expanded her entrepreneurial journey by becoming a partner in <strong>Gitano Tulum</strong> and <strong>Grupo Gitano</strong>. As an active investor and strategic partner, she plays a key role in guiding the business alongside founder James Gardner, bringing her strong business acumen and deep understanding of brand building, hospitality, and experiential travel.</p>
+    <p>Widely recognized as a thought leader in the <strong>global wellness and boutique hotel industry</strong>, Melissa is known for her unique ability to create spaces that feel both inspiring and deeply rooted in nature. Her influence spans curated wellness experiences and luxury lifestyle concepts that blend authenticity with elegance.</p>
+  </div>
+</section>
+
+<!-- ═══ RECENT PHOTO ═══ -->
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/eaab1302-5122-4593-9910-c573ff7be935/WhatsApp+Image+2024-01-25+at+19.08.54+%281%29.jpeg?format=1000w" alt="Melissa Perlman at Amansala" loading="lazy" style="max-width: 600px; width: 100%; margin: 0 auto;">
+  </div>
+</section>
+
+<!-- ═══ PODCAST CTA ═══ -->
+<section class="section section--dark">
+  <div class="container podcast-cta">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Podcast</span>
+    <h2 style="color: var(--cream);">Have Melissa on <em>Your Show</em></h2>
+    <p style="color: var(--text-light);">Melissa is available for podcast interviews on wellness entrepreneurship, building a brand in Tulum, and the future of boutique hospitality.</p>
+    <a href="/podcast/" class="btn btn-primary">Podcast Guest Page</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

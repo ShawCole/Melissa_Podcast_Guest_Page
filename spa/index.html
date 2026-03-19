@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spa and Massage in Tulum, Mexico &mdash; Amansala</title>
+<meta name="description" content="Book your spa and massage in Tulum at Amansala now as spots fill up fast for this ultimate beachfront relaxation experience.">
+<meta property="og:title" content="Spa and Massage in Tulum, Mexico &mdash; Amansala">
+<meta property="og:description" content="Book your spa and massage in Tulum at Amansala now as spots fill up fast for this ultimate beachfront relaxation experience.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a182d68f-d23b-4e58-8cc9-3335859c594f/spa-massage+%282%29.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Spa ═══ */
+
+/* Intro text block */
+.spa-intro {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.spa-intro h1 {
+  margin-bottom: var(--sp-2);
+}
+
+.spa-intro h2 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--accent);
+  margin-bottom: var(--sp-4);
+}
+
+.spa-intro p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.spa-intro .promo {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--espresso);
+  background: var(--bg-alt);
+  padding: var(--sp-2) var(--sp-3);
+  display: inline-block;
+  margin-top: var(--sp-2);
+}
+
+/* Section headings */
+.spa-section-heading {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.spa-section-heading h2 {
+  margin-bottom: var(--sp-1);
+}
+
+.spa-section-heading p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* Service cards — 2-col for services, 2-col for rituals */
+.spa-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+.spa-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+
+.spa-card:hover {
+  transform: translateY(-4px);
+}
+
+.spa-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.spa-card-body {
+  padding: var(--sp-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.spa-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: var(--sp-1);
+}
+
+.spa-card-text {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* Therapist profiles */
+.therapist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.therapist-card {
+  text-align: center;
+  transition: transform var(--ease);
+}
+
+.therapist-card:hover {
+  transform: translateY(-4px);
+}
+
+.therapist-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: var(--sp-3);
+}
+
+.therapist-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-1);
+}
+
+.therapist-bio {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+/* CTA banner */
+.spa-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.spa-cta h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.spa-cta p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: var(--sp-4);
+  line-height: 1.85;
+}
+
+@media (max-width: 1024px) {
+  .therapist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .spa-card-grid,
+  .therapist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="padding-top: 60px;">
+  <div class="hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a182d68f-d23b-4e58-8cc9-3335859c594f/spa-massage+%282%29.jpg?format=1500w" alt="Spa and massage at Amansala, Tulum" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Amansala Spa</span>
+    <h1>Spa &amp; Massage in Tulum</h1>
+    <p style="font-family: var(--font-sans); font-size: 1rem; color: var(--text-light); margin-top: var(--sp-3);">Book your spa and massage in Tulum at Amansala now as spots fill up fast for this ultimate beachfront relaxation experience.</p>
+    <a href="https://whistle-market.com/amansala/products/882391" class="btn btn-primary" style="margin-top: var(--sp-4);">Book Your Massage</a>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section class="section">
+  <div class="container spa-intro">
+    <span class="eyebrow">Wellness &amp; Healing</span>
+    <h1>Relax, Restore &amp; Rejuvenate at Amansala</h1>
+    <h2>Our Spa Services in Tulum</h2>
+    <p>A deeply relaxing experience for wellness-focused travelers. At <strong>Amansala Spa</strong>, we bring together the ancient wisdom of <strong>Mayan healing traditions</strong> with modern spa therapies to create one of the most unique <strong>wellness and spa experiences in Tulum</strong>. Located directly on the beach, our open-air spa allows guests to relax to the sound of the ocean while receiving deeply restorative treatments. Whether you&rsquo;re visiting Tulum for a <strong>solo self-care escape</strong>, a <strong>romantic couples&rsquo; spa experience</strong>, or a <strong>bachelorette spa getaway</strong>, our curated treatments are designed to restore balance, release tension, and leave you feeling refreshed, radiant, and renewed. From therapeutic massage and holistic Mayan rituals to facials and mineral-rich clay treatments, every experience at Amansala Spa is rooted in intention, nature, and healing.</p>
+    <div class="promo">Book your massage today and enjoy Beach Club access for only $20 USD (regular price $45 USD).</div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="spa-section-heading">
+      <span class="eyebrow">Treatments</span>
+      <h2>Our Services</h2>
+    </div>
+    <div class="spa-card-grid">
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ed13cab4-dc1d-49ed-9b7d-07dae7bf5c03/spa-cornerrroom.jpeg?format=750w" alt="Mayan Healing Massage at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Mayan Healing Massage (Sobada)</h3>
+          <p class="spa-card-text">A traditional Mayan healing massage using sobada techniques to release tension, support digestion, and restore balance. One of the most authentic Mayan wellness experiences in Tulum.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/936aa0a4-e9d0-4c0e-9fcd-61b0068fdf7f/Screenshot+2026-01-22+at+2.41.38%E2%80%AFp.m..png?format=750w" alt="Deep Tissue Sports Massage at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Deep Tissue Sports Massage</h3>
+          <p class="spa-card-text">A therapeutic deep tissue massage in Tulum designed to relieve muscle tension, support recovery, and improve mobility. Perfect for active travelers staying at Amansala.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/53348873-c69d-41b9-9baa-20899e245fd0/Screenshot+2026-01-22+at+4.09.13%E2%80%AFp.m..png?format=750w" alt="Reflexology at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Reflexology</h3>
+          <p class="spa-card-text">A traditional reflexology treatment in Tulum using focused pressure on the feet to support balance, circulation, and relaxation. A calming wellness experience at Amansala Spa.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/54f0f0d3-d420-47d6-b447-111d2f800c62/Screenshot+2026-01-22+at+4.29.00%E2%80%AFp.m..png?format=750w" alt="Hand, Foot and Scalp Therapy at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Hand, Foot &amp; Scalp Therapy</h3>
+          <p class="spa-card-text">A relaxing spa treatment in Tulum combining hand, foot, and scalp massage to calm the nervous system, improve circulation, and relieve stress. Available at Amansala Spa.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/c113e79c-101c-423b-a69b-1141ffe48306/Screenshot+2026-01-22+at+2.42.50%E2%80%AFp.m..png?format=750w" alt="Mayan Egg Ritual at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Mayan Egg Ritual</h3>
+          <p class="spa-card-text">A traditional Mayan energy-clearing ritual in Tulum using eggs, prayer, and intuitive reading to identify and release energetic blockages. Offered by a local healer at Amansala Spa.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/499ddd37-57bb-4104-a500-891b16dd1da0/Screenshot+2026-01-22+at+4.19.42%E2%80%AFp.m..png?format=750w" alt="Natural Facial with Mayan Clay at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Natural Facial with Mayan Clay</h3>
+          <p class="spa-card-text">A gentle facial in Tulum using Mayan clay and local botanical products. No extractions&mdash;just deep nourishment, hydration, and glow at Amansala Spa.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/54aff8de-e00e-4021-a46d-b8be94f8ead6/Screenshot+2026-01-22+at+5.39.40%E2%80%AFp.m..png?format=750w" alt="Crystal Massage at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Crystal Massage</h3>
+          <p class="spa-card-text">A holistic crystal massage in Tulum combining therapeutic touch with crystal energy to restore balance, release tension, and promote deep relaxation at Amansala Spa.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/dda79a29-97da-48e4-be13-164c089a67bd/IMG_2717.JPG?format=750w" alt="Tarot Card Reading at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Tarot Card Reading</h3>
+          <p class="spa-card-text">An intuitive tarot reading in Tulum offering insight, clarity, and guidance. Available at Amansala Spa.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RITUALS & CEREMONIES ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="spa-section-heading">
+      <span class="eyebrow">Sacred Experiences</span>
+      <h2>Our Rituals and Ceremonies</h2>
+      <p>Amansala offers traditional and modern wellness rituals in Tulum, including breathwork and ice baths, Mayan clay rituals, temazcal ceremonies, cacao ceremonies, and sound healing. Experiences designed to restore balance, clarity, and connection.</p>
+    </div>
+    <div class="spa-card-grid">
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/8a9772f7-bd4e-4ad9-802d-1830ed7b1a5b/Screenshot+2026-01-23+at+2.12.45%E2%80%AFp.m..png?format=750w" alt="Mayan Temazcal ceremony at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Mayan Temazcal</h3>
+          <p class="spa-card-text">A traditional Mayan sweat lodge ceremony in Tulum for physical and spiritual cleansing.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bb39b8aa-962e-40dc-b53a-64f356c56d41/Cacao+and+Sound+Healing+Ceremony.png?format=750w" alt="Cacao Ceremony and Sound Healing at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Cacao Ceremony and Sound Healing</h3>
+          <p class="spa-card-text">A heart-opening cacao ceremony in Tulum focused on intention, presence, and connection. A sound healing session in Tulum using vibration and frequency to restore balance and relaxation.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/17cdd527-31bf-4631-be50-216c820807ab/Icebath-breathwork.jpeg?format=750w" alt="Breathwork and Ice Bath at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Breathwork and Ice Bath (Cold Plunge in Tulum)</h3>
+          <p class="spa-card-text">A guided breathwork and ice bath experience in Tulum designed to reset the nervous system and build resilience.</p>
+        </div>
+      </div>
+
+      <div class="spa-card">
+        <img class="spa-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/24b4d5e0-5e70-4ff4-bbe5-28ee2275161d/image-asset.jpeg?format=750w" alt="Mayan Clay Ceremony at Amansala" loading="lazy">
+        <div class="spa-card-body">
+          <h3 class="spa-card-title">Mayan Clay Ceremony</h3>
+          <p class="spa-card-text">A traditional clay ritual in Tulum using mineral-rich Mayan clay for grounding and detoxification.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THERAPISTS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="spa-section-heading">
+      <span class="eyebrow">Our Healers</span>
+      <h2>Meet Our Spa Therapists in Tulum, Mexico</h2>
+    </div>
+    <div class="therapist-grid">
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fee01ddb-4b9a-46b7-ac91-774b081d5a88/IMG_2735+2.JPG?format=750w" alt="Maria Luisa — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Maria Luisa</h3>
+        <p class="therapist-bio">Maria is a specialist in Arvigo Techniques of Maya Abdominal Therapy to create movement in the abdominal area known to stimulate digestion and aid with IBS and other abdominal issues. Includes a full body massage. Come with a light stomach.</p>
+        <a href="/therapists/maria-luisa" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/dd1e3137-0dda-493e-b92b-4d73cb6fe62c/IMG_3862.JPG?format=750w" alt="Laura — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Laura</h3>
+        <p class="therapist-bio">Amazing deep tissue massage therapist, Laura is also trained in Thai massage and prenatal massage. She is an expert at scanning your body and giving it what it needs, combining all her skills into an unforgettable healing and relaxation experience.</p>
+        <a href="/therapists/laura" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e9108e44-c38e-4d0f-8bf7-5ab59a0604bd/IMG_3998.JPG?format=750w" alt="Gabby — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Gabby</h3>
+        <p class="therapist-bio">A deep tissue holistic massage activates and balances internal organs, and allows energy to flow easily through the body, releasing blockage that may be consciously or subconsciously in one&rsquo;s body.</p>
+        <a href="/therapists/gabby" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f20a7aa1-cd8b-49eb-b901-e5ddc5aa1778/Copy+of+Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%2814%29.png?format=750w" alt="Julian — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Julian</h3>
+        <p class="therapist-bio">A truly gifted therapist who gives a deep tissue unforgettable massage and combines the use of sound to completely relax your mind, body and spirit on a deeper level.</p>
+        <a href="/therapists/julian" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f20a7aa1-cd8b-49eb-b901-e5ddc5aa1778/Copy+of+Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%2814%29.png?format=750w" alt="Graciela — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Graciela</h3>
+        <p class="therapist-bio">A master of healing the senses, Graciela uses Mayan traditional techniques as well as delivering an unforgettable deep tissue massage.</p>
+        <a href="/therapists/graciela" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+      <div class="therapist-card">
+        <img class="therapist-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f20a7aa1-cd8b-49eb-b901-e5ddc5aa1778/Copy+of+Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%2814%29.png?format=750w" alt="Eva — Spa Therapist at Amansala" loading="lazy">
+        <h3 class="therapist-name">Eva</h3>
+        <p class="therapist-bio">Master at using the medicine of reflexology, applying pressure to facilitate healing where you need it. Eva focuses on tiny points of the foot to understand the map of your body and tune into the body. This treatment balances and heals physical and emotional ailments.</p>
+        <a href="/therapists/eva" class="btn btn-outline" style="font-size: 0.75rem; padding: 12px 28px;">Learn More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOK CTA ═══ -->
+<section class="section section--dark">
+  <div class="container spa-cta">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Book Today</span>
+    <h2 style="color: var(--cream);">Ready to <em>Restore &amp; Rejuvenate?</em></h2>
+    <p>Book your spa and massage in Tulum at Amansala now as spots fill up fast for this ultimate beachfront relaxation experience.</p>
+    <a href="https://whistle-market.com/amansala/products/882391" class="btn btn-primary">Book Your Massage</a>
+    <a href="/contact-us" class="btn btn-outline" style="margin-left: var(--sp-2); border-color: hsla(42, 36%, 95%, 0.3); color: var(--cream);">Contact Us</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

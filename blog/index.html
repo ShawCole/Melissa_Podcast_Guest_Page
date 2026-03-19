@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Amansala Eco-Chic Resort, Tulum</title>
+<meta name="description" content="Explore the Amansala blog. Wellness tips, Tulum travel guides, retreat stories, and lifestyle inspiration from Amansala Eco-Chic Resort.">
+<meta property="og:title" content="Blog | Amansala Tulum">
+<meta property="og:description" content="Wellness tips, Tulum travel guides, retreat stories, and lifestyle inspiration from Amansala.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b6cf0472-49d2-4f3f-94e9-e9b3a93f81b7/chicarooms-3-beachfrontviews.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Blog ═══ */
+.blog-header {
+  padding: calc(60px + var(--sp-8)) 0 var(--sp-6);
+  text-align: center;
+  background: var(--bg-alt);
+}
+.blog-header h1 { margin-bottom: var(--sp-1); }
+
+/* Blog card grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+.blog-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+.blog-card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+.blog-card-body {
+  padding: var(--sp-3) var(--sp-3) var(--sp-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card-meta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-1);
+}
+.blog-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: var(--sp-1);
+}
+.blog-card-excerpt {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  flex: 1;
+}
+.blog-card-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: var(--sp-2);
+  transition: color var(--ease);
+}
+.blog-card:hover .blog-card-link {
+  color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HEADER ═══ -->
+<section class="blog-header">
+  <div class="container">
+    <span class="eyebrow">Amansala</span>
+    <h1>Blog</h1>
+  </div>
+</section>
+
+<!-- ═══ BLOG GRID ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="blog-grid">
+
+      <a href="/blog/is-tulum-safe-heres-an-honest-perspective" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1772638459412-N797R0E1FDWB9V2ROBMZ/tulum+is+safe.png?format=750w" alt="Is It Safe to Travel to Tulum Right Now?" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Daniela Meling &middot; Feb 26, 2026</div>
+          <div class="blog-card-title">Is It Safe to Travel to Tulum Right Now?</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/why-host-a-retreat-at-amansala" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1772638140402-7HNHY8JCDIUQE81X0C3C/Beach-Workout%2B%283%29.jpg?format=750w" alt="Why Host a Retreat at Amansala" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Daniela Meling &middot; Feb 26, 2026</div>
+          <div class="blog-card-title">Why Host a Retreat at Amansala</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/future-of-womens-wellness-peptides" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1772107530044-F4W358MGJPPYZY0T7JQH/WhatsApp%2BImage%2B2026-02-21%2Bat%2B4.07.40%2BPM.jpeg?format=750w" alt="The Future of Women's Wellness" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Feb 26, 2026</div>
+          <div class="blog-card-title">The Future of Women&rsquo;s Wellness: Peptides, Performance &amp; the Amansala Way</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/paddle-tennis-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1769434807019-RGIUQWLTMK6C1QV8HUHP/Screenshot+2026-01-26+at+6.36.21%E2%80%AFPM.png?format=750w" alt="Padel Tennis in Tulum" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Jan 22, 2026</div>
+          <div class="blog-card-title">Padel Tennis in Tulum: The New Jungle Wellness Trend</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/a-day-in-the-life-at-amansala-what-to-expect-from-a-wellness-retreat-in-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1752855614469-72C72DRMD48AXBKTE898/A-Yoga-Shala-Meditation+%281%29.jpeg?format=750w" alt="A Day in the Life at a Wellness Retreat" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Jul 18, 2025</div>
+          <div class="blog-card-title">A Day in the Life at a Wellness Retreat in Tulum, Mexico</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/spot-for-your-bachelorette-bootcamp-in-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751223479383-2NQ89UPNLW5J8JT0HT1S/group+beachbed+pose.jpeg?format=750w" alt="Bachelorette Bootcamp in Tulum" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Jun 29, 2025</div>
+          <div class="blog-card-title">Why Amansala is the Ultimate Spot for Your Bachelorette Bootcamp in Tulum</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/melissa-perlman-trailblazing-wellness-evolution" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d5e7fe74-4639-46ad-a6b6-3bbd5c705e45/2014-07-06+14.17.25.jpg?format=750w" alt="Melissa Perlman" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Mar 27, 2025</div>
+          <div class="blog-card-title">Melissa Perlman: Trailblazing Wellness Evolution</div>
+          <div class="blog-card-excerpt">A global leader in boutique hospitality...</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/corporate-retreats-amansala-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1743086736332-SADDGIL99UN64YINFR7P/Screenshot+2025-03-27+at+8.48.53%E2%80%AFa.m..png?format=750w" alt="Corporate Retreats at Amansala" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Mar 27, 2025</div>
+          <div class="blog-card-title">Why Amansala in Tulum is the Top Spot for Corporate Retreats?</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/why-celebrities-love-amansala" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1742495735654-5IL66NE548IKW9AK6NH7/Screenshot+2025-03-20+at+12.24.52%E2%80%AFp.m..png?format=750w" alt="Why Celebrities Love Amansala" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Mar 20, 2025</div>
+          <div class="blog-card-title">Why Celebrities Love Amansala</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/beach-club-sun-cocktails-and-ocean-views" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1742297816728-BLEGALD3A0CL1RR2E1Q5/Photo+12-12-24%2C+10+24+12+am+%284%29.jpg?format=750w" alt="Beach Club Experience" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Mar 18, 2025</div>
+          <div class="blog-card-title">The Best Beach Club Experience With Sun, Cocktails &amp; Ocean Views</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/the-ultimate-guide-to-pet-friendly-restaurants-and-hotels-in-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1742070143709-AB3W4CBBVHZXL8GI26QH/DSC02376.jpg?format=750w" alt="Pet-Friendly Hotels in Tulum" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Mar 15, 2025</div>
+          <div class="blog-card-title">Best Pet-Friendly Hotels and Restaurants in Tulum, Mexico</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/5-reasons-to-go-in-for-a-tarot-card-reading" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1710800700264-99PPTCIDKGL2A4NFY6G8/image-asset.jpeg?format=750w" alt="Tarot Card Reading" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; Mar 15, 2025</div>
+          <div class="blog-card-title">5 Reasons to Go in for a Tarot Card Reading</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/serenity-mayan-clay-meditation" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/17b25371-bfa5-4eee-86d6-d4aeb69580e6/Mayan+Clay+Group+Picture.jpg?format=750w" alt="Mayan Clay Meditation" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; Mar 15, 2025</div>
+          <div class="blog-card-title">Unveiling the Serenity of Mayan Clay Meditation</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/unplug-and-recharge-digital-detox-retreats-in-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f8e8fada-6256-45cc-8cb7-2f981a63facc/Beach-Front-Deck+%281%29.jpg?format=750w" alt="Digital Detox Retreats in Tulum" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; Mar 15, 2025</div>
+          <div class="blog-card-title">Unplug and Recharge: Digital Detox Retreats in Tulum at Amansala Hotel</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/spa-etiquette-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9f3dba19-a496-424c-8b48-76d063da8865/Spa+%281%29+%282%29.jpg?format=750w" alt="Spa Etiquette Tips" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; Mar 15, 2025</div>
+          <div class="blog-card-title">Essential Spas Etiquette Tips for a Relaxation Day in Tulum</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/why-amansala-is-the-perfect-romantic-getaway" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1724958823191-FO9OY015C7U6B8G3R2GP/_ZV_8103+%281%29.jpg?format=750w" alt="Romantic Retreat at Amansala" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Aug 29, 2024</div>
+          <div class="blog-card-title">Why Amansala Makes an Ideal Romantic Retreat</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/biohacking-retreat-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1720472410620-6CSBOEGI71IWKZO4A16F/2F0A2449-Editar-Editar-2+%281%29.jpg?format=750w" alt="Biohacking Retreat" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Darlene Sparling &middot; Jul 8, 2024</div>
+          <div class="blog-card-title">Turn Back the Hands of Time Biohacking</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/local-dishes-for-a-fitness-journey-in-tulum" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1699225106002-FIPMSH1NBKHOYY20BPTG/image-asset.jpeg?format=750w" alt="Nutritious Local Dishes" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; May 9, 2024</div>
+          <div class="blog-card-title">8 Nutritious Local Dishes for a Fitness Journey in Tulum</div>
+          <div class="blog-card-excerpt">Eight incredibly nutritious local dishes that will satisfy...</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/yoga-teachers-paradise" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1715459266925-NTZPVPXEMI6QC7HLFAJ1/A-Yoga-Shala-Heaven.jpg?format=750w" alt="Yoga Teacher's Paradise" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; May 8, 2024</div>
+          <div class="blog-card-title">Yoga Teacher&rsquo;s Paradise: Why Tulum and Amansala are Perfect</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+      <a href="/blog/reasons-to-visit-during-low-season" class="blog-card">
+        <img class="blog-card-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/19653f98-377f-4b0b-ae69-a33a2aaf1a22/_A7_5888.jpg?format=750w" alt="Tulum Low Season" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">Guest User &middot; Apr 26, 2024</div>
+          <div class="blog-card-title">7 Reasons Why We Should Travel Tulum In Low Season</div>
+          <div class="blog-card-link">Read More</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

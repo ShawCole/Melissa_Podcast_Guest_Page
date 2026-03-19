@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Grande: 6-Bedroom Beach House in Tulum &mdash; Amansala</title>
+<meta name="description" content="Casa Grande is a stylish 6-bedroom beachfront house at Amansala in Tulum. Perfect for family vacations, girls getaways, bachelor or bachelorette celebrations. Private house with hotel amenities.">
+<meta property="og:title" content="Casa Grande: 6-Bedroom Beach House in Tulum &mdash; Amansala">
+<meta property="og:description" content="Private house with amenities of a hotel. This stylish 6-bedroom beach house is perfect for a family vacation, girls getaway, bachelor or bachelorette celebration.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/138226ef-5827-4487-9aee-f7aef4bceca0/Beach-Front-Deck%281%29%281%29%281%29.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Casa Grande ═══ */
+
+/* Hero */
+.casa-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.casa-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.casa-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.casa-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.1) 0%,
+    hsla(30, 13%, 19%, 0.5) 100%
+  );
+}
+
+.casa-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.casa-hero-content h1 {
+  margin-bottom: var(--sp-2);
+}
+
+.casa-hero-content .casa-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-1);
+}
+
+.casa-hero-content .casa-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: hsla(42, 36%, 95%, 0.8);
+}
+
+/* Split intro */
+.casa-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+.casa-split-text {
+  padding-top: var(--sp-4);
+}
+
+.casa-split-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.casa-split-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Gallery grid (right side of split) */
+.casa-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.casa-gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.casa-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Room details */
+.casa-rooms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+}
+
+.casa-room-group h3 {
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  border-bottom: 2px solid var(--accent);
+}
+
+.casa-room-list {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+}
+
+.casa-room-list li {
+  padding-left: var(--sp-3);
+  position: relative;
+}
+
+.casa-room-list li::before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+/* Room images row */
+.casa-room-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-top: var(--sp-5);
+}
+
+.casa-room-images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.casa-room-images img:hover {
+  transform: scale(1.03);
+}
+
+/* Activities */
+.casa-activities {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.casa-activities h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.casa-activities .casa-activities-intro {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: var(--sp-5);
+}
+
+.casa-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+.casa-activity-item {
+  padding-top: var(--sp-3);
+  border-top: 2px solid var(--border);
+  transition: border-color var(--ease);
+}
+
+.casa-activity-item:hover {
+  border-top-color: var(--accent);
+}
+
+.casa-activity-item h4 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-1);
+}
+
+.casa-activity-item p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* Full-width image band */
+.casa-image-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.casa-image-band img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* CTA / Newsletter */
+.casa-newsletter {
+  position: relative;
+  overflow: hidden;
+}
+
+.casa-newsletter-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.casa-newsletter-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+.casa-newsletter-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .casa-split {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .casa-rooms {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .casa-room-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .casa-activity-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .casa-image-band {
+    grid-template-columns: 1fr;
+  }
+
+  .casa-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="casa-hero">
+  <div class="casa-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/138226ef-5827-4487-9aee-f7aef4bceca0/Beach-Front-Deck%281%29%281%29%281%29.jpg?format=1500w" alt="Casa Grande beachfront deck, Tulum" loading="eager">
+  </div>
+  <div class="casa-hero-overlay"></div>
+  <div class="casa-hero-content">
+    <p class="casa-tagline">Best of Both Worlds</p>
+    <h1>Casa Grande</h1>
+    <p class="casa-subtitle">Private House with Amenities of a Hotel</p>
+  </div>
+</section>
+
+<!-- ═══ SPLIT: DESCRIPTION + GALLERY ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="casa-split">
+      <div class="casa-split-text">
+        <span class="eyebrow">6-Bedroom Beach House</span>
+        <h2>A Stylish <em>Beachfront Retreat</em></h2>
+        <p>This stylish 6 bedroom beach house is perfect for a family vacation, girls getaway, bachelor or bachelorette celebration.</p>
+        <p>Great location to explore ruins, restaurants, cenotes.</p>
+        <a href="mailto:info@amansala.com?subject=Casa Grande Inquiry" class="btn btn-primary">Inquire Now</a>
+      </div>
+      <div class="casa-gallery">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/aa81cac9-d22e-49dd-8171-53a566ef1d7c/casa+master-living+space.jpeg?format=750w" alt="Casa Grande living space" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a74c5dfb-a3d0-4a42-bc59-1706e4820764/dining+area-open+view+%282%29.jpeg?format=750w" alt="Casa Grande dining area with open view" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/946e7423-364c-4cee-835f-6165ed74665f/kitchen-island.jpeg?format=750w" alt="Casa Grande kitchen island" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9fb36e68-02a5-4e14-9b00-76024c6a9791/living+area-full+view+%281%29.jpeg?format=750w" alt="Casa Grande living area full view" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROOM DETAILS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">The Rooms</span>
+      <h2>6 Bedrooms, <em>Two Floors</em></h2>
+    </div>
+    <div class="casa-rooms">
+      <div class="casa-room-group">
+        <h3>Upstairs</h3>
+        <ul class="casa-room-list">
+          <li>Master bedroom with king bed, bathroom and balcony</li>
+          <li>2 bedrooms with a queen beds sharing same bathroom</li>
+          <li>1 bedroom with individual size bed</li>
+        </ul>
+      </div>
+      <div class="casa-room-group">
+        <h3>Downstairs</h3>
+        <ul class="casa-room-list">
+          <li>1 bedroom with king bed &amp; individual size bed with private bathroom</li>
+          <li>1 bedroom with 2 queen beds with private bathroom</li>
+        </ul>
+      </div>
+    </div>
+    <div class="casa-room-images">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5684bf05-8824-46f7-a9a9-fb680eff15ba/master+bedroom-doorway.jpeg?format=750w" alt="Master bedroom doorway" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e8d210a4-5fdd-4fb6-bbe7-f860eb2097d2/master+bedroom-bed+%283%29.jpeg?format=750w" alt="Master bedroom bed" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6be5807c-1dc2-4abf-a5f6-614b882dbc81/double+room-ground+floor+%282%29.jpeg?format=750w" alt="Double room ground floor" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/27351d26-2c98-4712-a110-d4ea1870603b/doubleroom-bed+%281%29+%283%29.jpeg?format=750w" alt="Double room bed" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE BAND ═══ -->
+<section class="casa-image-band">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/aa781cca-41ca-4d33-a1da-fc1b9c5f3fe4/master+bedroom-bathroom.jpeg?format=1000w" alt="Master bedroom bathroom" loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3e9a7ddc-a2e0-49d6-a476-3612f5e37440/living+area-hammock+%281%29.jpeg?format=1000w" alt="Living area with hammock" loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/871cc4c3-7d3e-4bd3-89a7-ea7711296279/back+view-terrace+%281%29.jpeg?format=1000w" alt="Back view terrace" loading="lazy">
+</section>
+
+<!-- ═══ CURATED ACTIVITIES ═══ -->
+<section class="section">
+  <div class="container casa-activities">
+    <span class="eyebrow">Your Stay, Your Way</span>
+    <h2>Let Us Curate a <em>Perfect Stay</em></h2>
+    <p class="casa-activities-intro">Select from our menu of experiences</p>
+    <div class="casa-activity-grid">
+      <div class="casa-activity-item">
+        <h4>Wellness</h4>
+        <p>Massages, yoga, ice bath</p>
+      </div>
+      <div class="casa-activity-item">
+        <h4>Movement</h4>
+        <p>Latin dance class</p>
+      </div>
+      <div class="casa-activity-item">
+        <h4>Dining</h4>
+        <p>Welcome dinners or cocktails, daily beachfront breakfast</p>
+      </div>
+      <div class="casa-activity-item">
+        <h4>Adventure</h4>
+        <p>Small tours to hidden gems</p>
+      </div>
+      <div class="casa-activity-item">
+        <h4>Explore</h4>
+        <p>Ruins, restaurants, cenotes</p>
+      </div>
+      <div class="casa-activity-item">
+        <h4>Celebrate</h4>
+        <p>Family vacations, girls getaways, bachelorette parties</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADDITIONAL IMAGES ═══ -->
+<section class="casa-image-band">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f4434793-e5b2-4a01-ba1e-64201597d104/kitchen-island+deco.jpeg?format=1000w" alt="Kitchen island decor" loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7a1449a6-dbfd-4a33-aded-909a9a913904/doubleroom-bathroom+%282%29.jpeg?format=1000w" alt="Double room bathroom" loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/81165334-200b-4f1b-b0c9-2eee17f94e0a/entrance+area-front+door.jpeg?format=1000w" alt="Entrance area front door" loading="lazy">
+</section>
+
+<!-- ═══ NEWSLETTER / CTA ═══ -->
+<section class="section section--dark casa-newsletter">
+  <div class="casa-newsletter-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0f30ee7e-cad7-413d-8674-6d4da8f2034f/duplicate.jpeg?format=1500w" alt="" loading="lazy">
+  </div>
+  <div class="container newsletter casa-newsletter-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Stay Connected</span>
+    <h2 style="color: var(--cream); margin-bottom: var(--sp-2);">A Touch of <em>Amansala Magic</em></h2>
+    <p style="color: var(--text-light); max-width: 480px; margin: 0 auto var(--sp-4);">Sign up with your email address to receive news and updates.</p>
+    <form class="newsletter-form" action="#" method="POST">
+      <input type="email" class="newsletter-input" placeholder="Email Address" required aria-label="Email Address">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

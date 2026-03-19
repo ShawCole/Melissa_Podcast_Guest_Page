@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu | Amansala, Tulum</title>
+<meta name="description" content="Explore the Amansala restaurant menu. Fresh, locally-sourced cuisine, specialty cocktails, and beachfront dining in Tulum, Mexico.">
+<meta property="og:title" content="Restaurant Menu | Amansala Tulum">
+<meta property="og:description" content="Our food menu. Where transformation meets the sea. Fresh cuisine at Amansala beachfront restaurant, Tulum.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1736980943173-972BI3K72A8KVPOPC2DW/unsplash-image-VlxOprMZQsI.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Menu ═══ */
+.menu-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+.menu-hero-bg {
+  position: absolute; inset: 0;
+}
+.menu-hero-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.menu-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, hsla(30,13%,19%,0.15) 0%, hsla(30,13%,19%,0.55) 100%);
+}
+.menu-hero-content {
+  position: relative; z-index: 2;
+  text-align: center; color: var(--cream);
+  padding: var(--sp-8) var(--gutter); max-width: 700px;
+}
+.menu-hero-content h1 { margin-bottom: var(--sp-2); }
+.menu-hero-content p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 1.1rem; color: hsla(42,36%,95%,0.7);
+}
+
+/* Menu card grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+.menu-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  text-align: center;
+  padding: var(--sp-6) var(--sp-4);
+  transition: transform var(--ease), border-color var(--ease);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.menu-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--espresso);
+  margin-bottom: var(--sp-2);
+}
+.menu-card .btn {
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="menu-hero">
+  <div class="menu-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1736980943173-972BI3K72A8KVPOPC2DW/unsplash-image-VlxOprMZQsI.jpg?format=1500w" alt="Fresh cuisine at Amansala restaurant, Tulum" loading="eager">
+  </div>
+  <div class="menu-hero-overlay"></div>
+  <div class="menu-hero-content">
+    <span class="eyebrow" style="color: hsla(42,36%,95%,0.5);">Dining</span>
+    <h1>Our Food Menu</h1>
+    <p>Where transformation meets the sea.</p>
+  </div>
+</section>
+
+<!-- ═══ MENU CARDS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="menu-grid">
+
+      <a href="/specials" class="menu-card">
+        <h3>Special of the Day</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+      <a href="/breakfast" class="menu-card">
+        <h3>Breakfast</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+      <a href="/cafebeverages" class="menu-card">
+        <h3>Non-Alcoholic Drinks</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+      <a href="/maincourse" class="menu-card">
+        <h3>Food Menu</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+      <a href="/cocktails" class="menu-card">
+        <h3>Cocktails &amp; Wines</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+      <a href="/contact-us" class="menu-card">
+        <h3>Contact Us</h3>
+        <span class="btn btn-outline">View</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Host a Retreat in Tulum | Amansala Beachfront Retreats</title>
+<meta name="description" content="Host your next yoga retreat, corporate off-site, or wellness gathering at Amansala's beachfront resort in Tulum. Six stunning shalas, healthy cuisine, spa services, and adventure tours included.">
+<meta property="og:title" content="Host a Retreat in Tulum | Amansala">
+<meta property="og:description" content="Host your next yoga retreat, corporate off-site, or wellness gathering at Amansala's beachfront resort in Tulum, Mexico. We handle every detail.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751222820836-LULFNFIQ8ZR6XYSSVIIK/mayan-clay-meditation-beach-shot.group-amansala-tulum.jpeg?format=1500w">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.amansala.com/host-a-retreat">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Host a Retreat ═══ */
+
+/* Hero */
+.host-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.host-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.host-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.host-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.15) 0%,
+    hsla(30, 13%, 19%, 0.55) 100%
+  );
+}
+
+.host-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.host-hero-content h1 {
+  margin-bottom: var(--sp-3);
+}
+
+.host-hero-content p {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: hsla(42, 36%, 95%, 0.85);
+  margin-bottom: var(--sp-4);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Why Choose section — 6 value prop cards */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.why-card {
+  text-align: center;
+  padding: var(--sp-4) var(--sp-3);
+}
+
+.why-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: var(--sp-3);
+}
+
+.why-card h3 {
+  margin-bottom: var(--sp-1);
+  font-size: 1.2rem;
+}
+
+.why-card p {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* Shala cards */
+.shala-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.shala-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform var(--ease);
+}
+
+.shala-card:hover {
+  transform: translateY(-4px);
+}
+
+.shala-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.shala-card-body {
+  padding: var(--sp-3) var(--sp-3);
+  text-align: center;
+}
+
+.shala-card-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.shala-card-body .mat-count {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Process steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  counter-reset: step;
+}
+
+.process-step {
+  text-align: center;
+  padding: var(--sp-3);
+  counter-increment: step;
+}
+
+.process-step::before {
+  content: counter(step);
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.process-step h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-1);
+}
+
+.process-step p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Adventures / Ceremonies gallery */
+.addon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.addon-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.addon-block img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.addon-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.addon-gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.addon-text {
+  padding: var(--sp-3) 0;
+}
+
+.addon-text h3 {
+  margin-bottom: var(--sp-1);
+}
+
+.addon-text p {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* Dual CTA */
+.dual-cta {
+  display: flex;
+  gap: var(--sp-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Section intro text */
+.section-intro {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto var(--sp-6);
+}
+
+.section-intro h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.section-intro p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* Full-width banner image */
+.banner-img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .why-grid,
+  .shala-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .host-hero {
+    min-height: 70vh;
+  }
+  .why-grid,
+  .shala-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .addon-grid {
+    grid-template-columns: 1fr;
+  }
+  .dual-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="host-hero">
+  <div class="host-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751222820836-LULFNFIQ8ZR6XYSSVIIK/mayan-clay-meditation-beach-shot.group-amansala-tulum.jpeg?format=1500w" alt="Group retreat at Amansala beachfront, Tulum" loading="eager">
+  </div>
+  <div class="host-hero-overlay"></div>
+  <div class="host-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Group Retreats &amp; Events</span>
+    <h1>Host a Retreat <em>in Tulum</em></h1>
+    <p>Curate the perfect retreat experience at our beachfront eco-chic resort. We handle the details so you can focus on what you love.</p>
+    <a href="https://link.amansala.com/widget/form/8oJp5optdEgSrOitm84E" class="btn btn-primary" target="_blank">Host your retreat</a>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE AMANSALA ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Why choose Amansala?</span>
+      <h2>Everything you need for an <em>unforgettable retreat</em></h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/61499756-54a8-4dce-8f54-fc2a74c72410/beachclub-oceanview-drone.jpg?format=750w" alt="Amansala beachfront aerial view, Tulum" loading="lazy">
+        <h3>Amazing Location</h3>
+        <p>Tulum is rated as one of the top 5 beaches in the world and is the perfect destination to host a retreat, offering miles of white sandy beaches and turquoise blue water.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/63972e0f-7833-4eb3-a639-c9775543cbb7/Beach-Pool-Chica+%281%29.jpeg?format=750w" alt="Amansala beautiful grounds and pool" loading="lazy">
+        <h3>Beautiful Setting</h3>
+        <p>It is a village-like setting with five gorgeous yoga shalas, vast grounds, with lounge areas, a beachfront dinning deck and a variety of rooms.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/41da6a8b-de37-4eb5-bf6f-01f37d043abd/Beachfront+Yoga.jpeg?format=750w" alt="Beachfront yoga at Amansala" loading="lazy">
+        <h3>We Make It Easy</h3>
+        <p>Our staff can assist you to curate the perfect experience from start to finish. We&rsquo;re experts at executing successful retreats, allowing you to do what you love and we help with all the rest.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e21080da-63eb-4729-9226-66b44de8a7dc/_ZV_7789.jpg?format=750w" alt="Spa and soul services at Amansala" loading="lazy">
+        <h3>Spa and Soul Services</h3>
+        <p>Unforgettable pampering with our talented team of therapist. Add on our signature Mayan Clay ritual, a Temazcal sweat lodge, ice bath or cacao and sound healing.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/dc3fb4aa-6259-4c11-a917-6c4c031920d1/Muyil-River-Float-Sian-Kaan-9.jpg?format=750w" alt="Cenote adventure tour in Tulum" loading="lazy">
+        <h3>Add on Adventures</h3>
+        <p>Ad some adventure to your retreat by taking a tour of Mayan ruins, swimming in cenotes, kayaking through the mangroves or floating in cristal blue water</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3e451f89-4a9e-4c5a-b105-6a81f7db42f9/food-restaurant-dishes-salad.jpg?format=750w" alt="Fresh healthy food at Amansala" loading="lazy">
+        <h3>Delicious Healthy Food</h3>
+        <p>Fresh, delicious food that can be tailored to meet your needs. Our motto is from the earth to your plate.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPLIT: HOST WITH US ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="split">
+      <div class="split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6667af74-5285-48cf-9327-db3a75bdb8b3/pool-beachview-heavenview+%281%29.jpg?format=1000w" alt="Amansala beachfront pool view" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">Your Retreat, Your Way</span>
+        <h2>Host a Retreat <em>With Us in Tulum</em></h2>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.85; color: var(--text-muted); margin-top: var(--sp-3);">Whether you&rsquo;re a yoga teacher, wellness coach, corporate team, or mastermind leader &mdash; Amansala provides the perfect beachfront setting for your next transformative gathering. Our experienced team handles logistics, meals, activities, and spa services so you can focus entirely on your participants.</p>
+        <a href="https://link.amansala.com/widget/form/8oJp5optdEgSrOitm84E" class="btn btn-primary" style="margin-top: var(--sp-4);" target="_blank">Host your retreat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOGISTICS SPLIT ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="split split--reverse">
+      <div class="split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1ee955c7-b78f-474a-a3c9-003de9c06628/Tulum%2BBeach.jpg?format=1000w" alt="Tulum beach aerial" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">Getting Here</span>
+        <h2>Logistics <em>with Ease</em></h2>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.85; color: var(--text-muted); margin-top: var(--sp-3);">We coordinate transportation for your guests. Two main international airports in Cancun and Tulum with direct flights from most major cities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BANNER IMAGE ═══ -->
+<img class="banner-img" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/86a9bcdb-3f41-48f3-8f79-df7838d551cd/Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%2814%29.png?format=1500w" alt="Amansala eco-chic resort banner" loading="lazy">
+
+<!-- ═══ OUR SHALAS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Our Shalas</span>
+      <h2>Six stunning spaces <em>for your practice</em></h2>
+    </div>
+
+    <div class="shala-grid">
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9e682109-6e1b-4682-8bb9-525ec1f4f457/marketing-beachfront-yoga-shala.JPG?format=750w" alt="Beachfront Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Beachfront Shala</h3>
+          <span class="mat-count">25 mats</span>
+        </div>
+      </div>
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a6078269-4631-46f3-87fe-e57d5a8eeaae/A+Yoga+shala+Rooftop.jpg?format=750w" alt="Rooftop Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Rooftop Shala</h3>
+          <span class="mat-count">25 mats</span>
+        </div>
+      </div>
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a42b9147-8128-45d7-8be6-c70cf3e0e1b6/Grande+Shala+Dance+Class.jpg?format=750w" alt="Grande Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Grande Shala</h3>
+          <span class="mat-count">75 mats</span>
+        </div>
+      </div>
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d2d6fcbd-2e3e-4609-82ef-4a40c46ba349/Photo+Jun+21%2C+2+57+27+PM+%281%29.jpg?format=750w" alt="Chica Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Chica Shala</h3>
+          <span class="mat-count">40 mats</span>
+        </div>
+      </div>
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/297b9286-ced5-41cd-95de-ea6f7cd33faa/Heaven+Shala+3.jpg?format=750w" alt="Heaven Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Heaven Shala</h3>
+          <span class="mat-count">25 mats</span>
+        </div>
+      </div>
+
+      <div class="shala-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/41672065-f2f2-44be-82e7-a0d8addf93be/Sky+Yoga+Shala.JPG?format=750w" alt="Skye Shala at Amansala" loading="lazy">
+        <div class="shala-card-body">
+          <h3>Skye Shala</h3>
+          <span class="mat-count">15 mats</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4-STEP PROCESS ═══ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">How It Works</span>
+      <h2 style="color: var(--cream);">Explore Hosting a Retreat <em>With Us</em></h2>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-step">
+        <h3 style="color: var(--cream);">Request Info</h3>
+        <p style="color: var(--text-light);">Request dates and information by using the form below</p>
+      </div>
+
+      <div class="process-step">
+        <h3 style="color: var(--cream);">Review &amp; Call</h3>
+        <p style="color: var(--text-light);">Review the information and then get on a call with us to answer any questions and review dates.</p>
+      </div>
+
+      <div class="process-step">
+        <h3 style="color: var(--cream);">Confirm Dates</h3>
+        <p style="color: var(--text-light);">Pay $2,500 deposit to confirm your dates</p>
+      </div>
+
+      <div class="process-step">
+        <h3 style="color: var(--cream);">Start Promoting</h3>
+        <p style="color: var(--text-light);">Start promoting the best retreat of a lifetime.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADD-ONS: ADVENTURES & CEREMONIES ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Tulum Hosting Retreat Add On&rsquo;s</span>
+      <h2>Make it <em>extraordinary</em></h2>
+    </div>
+
+    <div class="addon-grid">
+
+      <!-- Adventures -->
+      <div class="addon-block">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/2ac2c04f-dcb5-4b4a-9408-cd9925dfc92d/Amansala%2BGrande%2BCenote%2Bfor%2Bhosting%2Ba%2Bretreat.png?format=1000w" alt="Cenote adventure tour for retreat groups" loading="lazy">
+        <div class="addon-gallery">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/04bc7ad4-c743-4cc4-af6a-c3ae6897951c/A%2Bgroup%2Bof%2Bgirls%2Bin%2BTulum%2Brains.jpg?format=750w" alt="Group at Tulum ruins" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/710f27ba-85b8-477f-890f-515f2db75c87/hosting%2Ba%2Bretreat.jpg?format=750w" alt="Hosting a retreat adventure" loading="lazy">
+        </div>
+        <div class="addon-text">
+          <h3>Adventure Tours</h3>
+          <p>From biking to the Mayan ruins, snorkeling in a freshwater swimming hole, or driving into Mayan country to tour the ruins of Coba, we can help arrange half-day activities with energetic guides during your retreat.</p>
+        </div>
+      </div>
+
+      <!-- Ceremonies -->
+      <div class="addon-block">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/89e1f78c-f992-4160-a47c-cb99c251b2b8/Mayan%2Bclay%2Bretreat%2Bat%2BAmansala.jpg?format=1000w" alt="Mayan clay ceremony at Amansala" loading="lazy">
+        <div class="addon-gallery">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e0200a88-3d48-4dc7-8249-edb14a6e303d/DSC_3531%2B%281%29.jpg?format=750w" alt="Sound healing ceremony" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f13597aa-d800-4de2-acff-3b60238188ec/Mayan%2BTemazcal%2C%2Bin%2Bhosting%2Bthe%2Bretreat.jpg?format=750w" alt="Temazcal sweat lodge ceremony" loading="lazy">
+        </div>
+        <div class="addon-text">
+          <h3>Group Ceremonies</h3>
+          <p>Our signature Mayan clay ritual, Temazcal sweat lodge, Sound healing &amp; Cacao ceremony are popular add-ons for team activities. Pre-book to save on group bookings.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="section section--darkest" style="position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0;">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f20a7aa1-cd8b-49eb-b901-e5ddc5aa1778/Copy+of+Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%2814%29.png?format=1500w" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.15;" loading="lazy">
+  </div>
+  <div class="container" style="position: relative; z-index: 2; text-align: center;">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Ready to Begin?</span>
+    <h2 style="color: var(--cream); margin-bottom: var(--sp-2);">Let&rsquo;s Create Something <em>Extraordinary</em></h2>
+    <p style="color: var(--text-light); max-width: 560px; margin: 0 auto var(--sp-5); font-family: var(--font-sans); font-size: 1rem; line-height: 1.8;">Get started by booking a call or filling out our retreat hosting form. We&rsquo;ll take care of the rest.</p>
+    <div class="dual-cta">
+      <a href="https://link.amansala.com/widget/booking/NUpC5cyuYkEisHRGhTO3" class="btn btn-primary" target="_blank">Book a Call</a>
+      <a href="https://link.amansala.com/widget/form/8oJp5optdEgSrOitm84E" class="btn btn-outline" target="_blank">Fill Out This Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

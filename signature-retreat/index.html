@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Retreat | Amansala Eco-Chic Resort, Tulum</title>
+<meta name="description" content="Discover Amansala's signature retreats in Tulum. Community, nourishment, eco-chic accommodation, and transformative programs on the Caribbean coast.">
+<meta property="og:title" content="Signature Retreat | Amansala Tulum">
+<meta property="og:description" content="Find your community, let us nourish you, and experience eco-chic luxury accommodation at Amansala in Tulum, Mexico.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3398c71b-78e1-4def-a025-c1d1b3d6ced9/Heaven+Shala+3+%281%29.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Signature Retreat ═══ */
+.retreat-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+.retreat-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.retreat-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.retreat-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, hsla(30,13%,19%,0.1) 0%, hsla(30,13%,19%,0.5) 100%);
+}
+.retreat-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+.retreat-hero-content h1 {
+  margin-bottom: var(--sp-2);
+}
+.retreat-hero-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: hsla(42,36%,95%,0.85);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Alternating content blocks */
+.retreat-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+.retreat-block--reverse {
+  direction: rtl;
+}
+.retreat-block--reverse > * {
+  direction: ltr;
+}
+.retreat-block-img img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.retreat-block-text h2 {
+  margin-bottom: var(--sp-3);
+}
+.retreat-block-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Programs grid */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-4);
+}
+.program-card {
+  background: var(--cream);
+  text-align: center;
+  padding: var(--sp-5) var(--sp-3);
+  transition: transform var(--ease);
+}
+.program-card:hover {
+  transform: translateY(-4px);
+}
+.program-card h3 {
+  margin-bottom: var(--sp-2);
+}
+
+/* Community gallery */
+.community-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.community-gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+.community-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* CTA band */
+.retreat-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.retreat-cta h2 {
+  margin-bottom: var(--sp-3);
+}
+.retreat-cta p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: var(--sp-4);
+}
+
+@media (max-width: 768px) {
+  .retreat-block,
+  .retreat-block--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--sp-4);
+  }
+  .community-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="retreat-hero">
+  <div class="retreat-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3398c71b-78e1-4def-a025-c1d1b3d6ced9/Heaven+Shala+3+%281%29.jpg?format=1500w" alt="Amansala Signature Retreat, Tulum" loading="eager">
+  </div>
+  <div class="retreat-hero-overlay"></div>
+  <div class="retreat-hero-content">
+    <span class="eyebrow" style="color: hsla(42,36%,95%,0.5);">Our Retreats</span>
+    <h1>Signature Retreat</h1>
+    <p>Where transformation meets the sea.</p>
+  </div>
+</section>
+
+<!-- ═══ FIND YOUR COMMUNITY ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="retreat-block">
+      <div class="retreat-block-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/344db7c4-e11f-48d3-8798-9137567d5929/Beach-Workout+%283%29.jpg?format=1000w" alt="Community at Amansala" loading="lazy">
+      </div>
+      <div class="retreat-block-text">
+        <span class="eyebrow">Community</span>
+        <h2>Find Your Community</h2>
+        <p>Whether you are male or female, traveling alone or with a friend, Amansala is the perfect place for an escape to rejuvenate yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LET US NOURISH YOU ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="retreat-block retreat-block--reverse">
+      <div class="retreat-block-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1fede551-bca2-4273-8f86-d97b6a30f971/Happiness+Retreats.JPG?format=1000w" alt="Nourishing food at Amansala" loading="lazy">
+      </div>
+      <div class="retreat-block-text">
+        <span class="eyebrow">Nourishment</span>
+        <h2>Let Us Nourish You</h2>
+        <p>Our philosophy is moderation, not deprivation and this is your holiday. We emphasize natural ingredients avoiding preservatives. Alcohol is available but not included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ECO-CHIC ACCOMMODATION ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="retreat-block">
+      <div class="retreat-block-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fef289c3-b610-4d71-bae5-ab991333e04c/Mayan+Clay+Fun.JPG?format=1000w" alt="Eco-chic accommodation at Amansala" loading="lazy">
+      </div>
+      <div class="retreat-block-text">
+        <span class="eyebrow">Accommodation</span>
+        <h2>Eco-Chic Luxury Accommodation</h2>
+        <p>A range of lodging from beachfront to garden rooms. We only offer shared rooms if you plan to come with a friend. All rooms include private bathroom and safety deposit box.</p>
+        <a href="/rooms" class="btn btn-primary">View Rooms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">Programs</span>
+      <h2>Our Retreat Programs</h2>
+    </div>
+    <div class="programs-grid">
+      <a href="https://www.bikinibootcamp.com/restoreandrenew" class="program-card">
+        <h3>Restore &amp; Renew</h3>
+      </a>
+      <a href="https://www.bikinibootcamp.com/bikini-bootcamp" class="program-card">
+        <h3>Bikini Bootcamp</h3>
+      </a>
+      <a href="/host-a-retreat" class="program-card">
+        <h3>Host a Retreat</h3>
+      </a>
+      <a href="/bring-your-team" class="program-card">
+        <h3>Bring Your Team</h3>
+      </a>
+      <a href="/bachelorette-tulum" class="program-card">
+        <h3>Bachelorette</h3>
+      </a>
+      <a href="/wedding-brochure" class="program-card">
+        <h3>Weddings</h3>
+      </a>
+      <a href="/tulum-group-bookings" class="program-card">
+        <h3>Events</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY GALLERY ═══ -->
+<section>
+  <div class="community-gallery">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/344db7c4-e11f-48d3-8798-9137567d5929/Beach-Workout+%283%29.jpg?format=750w" alt="Beach workout at Amansala" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1fede551-bca2-4273-8f86-d97b6a30f971/Happiness+Retreats.JPG?format=750w" alt="Happiness retreats" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fef289c3-b610-4d71-bae5-ab991333e04c/Mayan+Clay+Fun.JPG?format=750w" alt="Mayan clay ritual" loading="lazy">
+  </div>
+</section>
+
+<!-- ═══ BIKINI BOOTCAMP CTA ═══ -->
+<section class="section section--dark">
+  <div class="container retreat-cta">
+    <span class="eyebrow" style="color: hsla(42,36%,95%,0.4);">Featured Retreat</span>
+    <h2 style="color: var(--cream);">Bikini Bootcamp</h2>
+    <p>Join us in Tulum for a transformative retreat that blends beach workouts, daily yoga, nourishing meals, guided meditation, and a dose of play. It's not about perfection &mdash; it's about restoration.</p>
+    <a href="https://www.bikinibootcamp.com/bikini-bootcamp" class="btn btn-primary">Learn More</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

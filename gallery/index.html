@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Experience the Beauty of Amansala &mdash; Amansala</title>
+<meta name="description" content="Explore the beauty of Amansala Eco-Chic Resort in Tulum, Mexico. Sunrises, beachfront yoga, jungle adventures, and moments that stay with you.">
+<meta property="og:title" content="Gallery | Experience the Beauty of Amansala">
+<meta property="og:description" content="More than just a retreat, Amansala is an experience. Sunrises that energize, meals made with love, and moments that stay with you long after your tan fades.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1738439662796-T6PDV3RXG6WBJOPEJ2BW/unsplash-image-eCohyQiC_qg.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Gallery ═══ */
+
+.gallery-hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.gallery-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.1) 0%,
+    hsla(30, 13%, 19%, 0.5) 100%
+  );
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.gallery-hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: hsla(42, 36%, 95%, 0.8);
+  margin-top: var(--sp-3);
+}
+
+/* Gallery grid override for 3-col with slight gap */
+.gallery-section .gallery-grid {
+  gap: 6px;
+}
+
+.gallery-section .gallery-grid img {
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: hsla(30, 13%, 19%, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-4);
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  line-height: 1;
+  padding: var(--sp-1);
+}
+
+@media (max-width: 768px) {
+  .gallery-section .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="gallery-hero">
+  <div class="gallery-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/155b7768-ffa7-4c73-ac1a-1c5ca8e17c2b/DJI_20240816223050_0043_D+%281%29.jpg?format=1500w" alt="Amansala aerial view, Tulum" loading="eager">
+  </div>
+  <div class="gallery-hero-overlay"></div>
+  <div class="gallery-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Gallery</span>
+    <h1>Memories that last long after the sun sets.</h1>
+    <p>More than just a retreat, Amansala is an experience. Sunrises that energize, meals made with love, and moments that stay with you long after your tan fades. Let these images take you there.</p>
+  </div>
+</section>
+
+<!-- ═══ GALLERY GRID ═══ -->
+<section class="section gallery-section">
+  <div class="container">
+    <div class="gallery-grid">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1738439662796-T6PDV3RXG6WBJOPEJ2BW/unsplash-image-eCohyQiC_qg.jpg?format=750w" alt="Amansala beachfront" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/988523b2-14f0-4834-a2de-8bc693842c9e/Screenshot+2025-01-31+at+4.01.58%E2%80%AFp.m..png?format=750w" alt="Amansala resort view" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1738439070193-CY18TORQF2AJDTGRSA55/unsplash-image-KMn4VEeEPR8.jpg?format=750w" alt="Tulum beach" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6b72ea0c-0396-4f0c-8938-7ed864de2213/Screenshot+2025-01-31+at+4.02.44%E2%80%AFp.m..png?format=750w" alt="Amansala interior" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/944c6839-cacf-440c-a80e-2abb42ad5131/_ZV_1031+%281%29.jpg?format=750w" alt="Amansala yoga session" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fd83d52e-1540-4c84-b577-effc5b177720/Screenshot+2025-02-01+at+3.00.46%E2%80%AFp.m..png?format=750w" alt="Amansala wellness" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/efa0c5d7-59e7-4bb7-8c83-0da7cb1078e2/_ZV_7782.jpg?format=750w" alt="Amansala spa treatment" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cc00c42b-2174-4a92-b173-5167ad41e0f3/Screenshot+2025-01-31+at+4.21.02%E2%80%AFp.m..png?format=750w" alt="Amansala dining" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f7b7e468-3bcf-4702-9f1b-6b7f0a741ee4/Captura+de+pantalla+2024-12-15+a+las+1.01.05%E2%80%AFp.%E2%80%AFm..png?format=750w" alt="Amansala pool area" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cface8b6-6921-4176-a894-22c03f974136/_ZV_0728.jpg?format=750w" alt="Amansala beach activities" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d49a026c-f8cc-4bbd-9e50-af31103865ec/_ZV_0138.jpg?format=750w" alt="Amansala grounds" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a5fdeb56-e046-4c1e-8db7-e7a158aae393/Screen+Shot+2024-08-30+at+8.34.07+AM.png?format=750w" alt="Amansala aerial" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5e27570e-605b-4b79-a9c4-49c49aee1198/Terrace.JPG?format=750w" alt="Amansala terrace" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3398c71b-78e1-4def-a025-c1d1b3d6ced9/Heaven+Shala+3+%281%29.jpg?format=750w" alt="Heaven Shala yoga studio" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9d18d00d-fd75-41c9-8b71-48338b5b94db/Girls-Retreat-Amansala.jpg?format=750w" alt="Girls retreat at Amansala" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/52d3567d-73b7-4bff-b07e-0f9245212b96/Screenshot+2025-02-01+at+3.00.31%E2%80%AFp.m..png?format=750w" alt="Amansala experience" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/52b86b30-ff7b-432d-a53d-7068b91a52cc/_ZV_0107.jpg?format=750w" alt="Amansala beachfront cabana" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6a4849b3-8b8e-4586-b674-0433efe641e1/_ZV_0089.jpg?format=750w" alt="Amansala beach sunset" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bee83175-b831-4eac-97ae-6c5c0de14d36/_ZV_0075.jpg?format=750w" alt="Amansala community" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/63e0e495-720d-4b3f-8918-ee0e6fc9a832/2F0A7439.jpg?format=750w" alt="Amansala restaurant" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/eece53af-5145-4c3e-871a-e54e2ba9b43b/Screenshot+2025-02-01+at+2.57.36%E2%80%AFp.m..png?format=750w" alt="Amansala property" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/155b7768-ffa7-4c73-ac1a-1c5ca8e17c2b/DJI_20240816223050_0043_D+%281%29.jpg?format=750w" alt="Amansala drone view" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d3ec3eb2-eb11-4106-a126-095e81d65b1a/Screenshot+2025-02-01+at+2.57.18%E2%80%AFp.m..png?format=750w" alt="Amansala jungle" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1c0eeeb1-ff08-4e40-8947-fc0ea78933bc/_ZV_7721+%282%29.jpg?format=750w" alt="Amansala wellness activity" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a391c633-f820-4851-9a8c-8ed7c4261316/Screenshot+2025-02-01+at+2.58.04%E2%80%AFp.m..png?format=750w" alt="Amansala relaxation" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9c70d0dc-896a-40f7-b433-1c34a5a5dcd7/Screenshot+2025-02-01+at+3.00.20%E2%80%AFp.m..png?format=750w" alt="Amansala beach walk" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d41467e1-c0a0-4a71-90fe-c5a5b977d425/Screenshot+2025-02-01+at+2.58.22%E2%80%AFp.m..png?format=750w" alt="Amansala ocean view" loading="lazy" onclick="openLightbox(this)">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="Gallery image">
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openLightbox(img) {
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  lbImg.src = img.src.replace('format=750w', 'format=1500w');
+  lbImg.alt = img.alt;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

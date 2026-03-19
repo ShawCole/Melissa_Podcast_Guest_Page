@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Amansala Tulum &mdash; Amansala</title>
+<meta name="description" content="Amansala is named in Sanskrit after Tulum's peaceful, crystal-clear waters. Founded by Melissa Perlman, it is one of Tulum's most iconic eco-chic boutique hotels.">
+<meta property="og:title" content="About Amansala Tulum">
+<meta property="og:description" content="Amansala is named in Sanskrit after Tulum's peaceful, crystal-clear waters. One of Tulum's most iconic eco-chic boutique hotels since 2001.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/28e4e1b8-8f47-4783-ab0a-3abb1bdb224a/melissa+condenast.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: About ═══ */
+
+.about-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.15) 0%,
+    hsla(30, 13%, 19%, 0.5) 100%
+  );
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+}
+
+/* Sanskrit section */
+.sanskrit {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.sanskrit-words {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
+}
+
+.sanskrit p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* Founder section */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+.founder-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+}
+
+.founder-images img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.founder-images img:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 3 / 2;
+}
+
+.founder-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.founder-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Community */
+.community-text {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.community-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.community-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Properties */
+.properties-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+.property-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: var(--sp-3);
+}
+
+.property-card h3 {
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+/* Accommodations */
+.accommodations-text {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.accommodations-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.accommodations-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-cta h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.about-cta p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: var(--sp-4);
+}
+
+@media (max-width: 768px) {
+  .founder-grid,
+  .properties-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .founder-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="about-hero">
+  <div class="about-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/04439de8-8adb-46c3-90be-f0608d3798e5/WhatsApp+Image+2023-08-21+at+16.22.29.jpeg?format=1500w" alt="Amansala beachfront resort, Tulum" loading="eager">
+  </div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Our Story</span>
+    <h1>About Amansala</h1>
+  </div>
+</section>
+
+<!-- ═══ SANSKRIT ETYMOLOGY ═══ -->
+<section class="section">
+  <div class="container sanskrit">
+    <div class="sanskrit-words">AMAN : PEACE &nbsp;/&nbsp; SALA : WATERS</div>
+    <p>Amansala is named in Sanskrit after Tulum&rsquo;s peaceful, crystal-clear waters. To this day, it is still one of Tulum&rsquo;s most iconic, eco-chic boutique hotels. It is founded on the belief that a vacation is when you return home looking and feeling better than when you left.</p>
+  </div>
+</section>
+
+<!-- ═══ WABI-SABI PHILOSOPHY ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="community-text">
+      <span class="eyebrow">Design Philosophy</span>
+      <p>Amansala&rsquo;s design and atmosphere reflect the wabi-sabi philosophy using natural materials and organic shapes. The rustic, weathered look of the buildings, the unpolished wood, and the hand-crafted details all contribute to a sense of authenticity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOUNDER ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-images">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/28e4e1b8-8f47-4783-ab0a-3abb1bdb224a/melissa+condenast.jpg?format=1000w" alt="Melissa Perlman, Founder and CEO of Amansala" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/49a17e9f-8519-4bab-b04e-dffc3cd92f9e/2F0A2955.jpg?format=750w" alt="Amansala owner" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3cb15311-3fde-4110-b2bd-b7386ed4bfc9/Melissa-37+%282%29.jpg?format=750w" alt="Melissa Perlman jungle adventure at Amansala" loading="lazy">
+      </div>
+      <div class="founder-text">
+        <span class="eyebrow">Founder &amp; CEO</span>
+        <h2>Melissa Perlman</h2>
+        <p>She feels blessed to have found her life&rsquo;s calling, which combines her love of fitness, food, the beach, design, people, and self-development. Her warmth is contagious, and she often says she feels like she is having one continuous dinner party with amazing people coming week after week. She is a mother of two and resides with her family in Tulum, where she continues to be hands-on in making Amansala the special place it is.</p>
+        <div class="quote-block">
+          <p>&ldquo;After traveling all over Southeast Asia to some of the world&rsquo;s best beaches, she heard about a little piece of paradise just a few hour&rsquo;s flight from New York City and fell in love with Tulum. What started as an idea for a &lsquo;pop-up&rsquo; turned into the most iconic Tulum hotel, two kids learning how to navigate the bumpy road of being a savvy hotelier in a macho-dominated society where things are still a bit like the Wild West.&rdquo;</p>
+          <cite class="meta" style="display: block; margin-top: var(--sp-2);">&mdash; The Reserve Channel</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="community-text">
+      <span class="eyebrow">Community</span>
+      <div class="quote-block" style="text-align: left; max-width: 100%;">
+        <p>&ldquo;Amansala is more like staying at a friend&rsquo;s beach house than a hotel.&rdquo;</p>
+      </div>
+      <p>Amansala is ideal for relaxing and reconnecting with yourself or your partner. The resort fosters a community atmosphere where guests can bond over shared experiences, from communal dining to group wellness activities. The staff, known for their warmth and hospitality, are dedicated to making each guest&rsquo;s stay unforgettable, providing personalized service with a genuine smile.</p>
+      <p>Known as one of the most iconic hotels in Tulum, surrounded by white sand, palm trees, and turquoise water. The village-like neighborhood consists of two properties, Grande and Chica, with Amansala&rsquo;s signature Eco Chic Style, within a few minutes of each other and comprising various rooms and cabanas. There are also three yoga shalas and two restaurants serving delicious fresh food.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROPERTIES ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">Our Properties</span>
+    </div>
+    <div class="properties-grid">
+      <div class="property-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/04439de8-8adb-46c3-90be-f0608d3798e5/WhatsApp+Image+2023-08-21+at+16.22.29.jpeg?format=1000w" alt="Best Beachfront Hotel Amansala Grande, Tulum" loading="lazy">
+        <h3>GRANDE</h3>
+      </div>
+      <div class="property-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e4f925fc-2afc-47e1-b700-64f09f4d0e32/Copy+of+DJI_0234-Mejorado-SR.jpg?format=1000w" alt="Amansala Chica Resort" loading="lazy">
+        <h3>CHICA</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACCOMMODATIONS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="accommodations-text">
+      <span class="eyebrow">Where You&rsquo;ll Stay</span>
+      <h2>Accommodations</h2>
+      <p>Amansala offers relaxed, eco-chic accommodations like no other boutique hotel in Tulum. Rooms range from deluxe beachfront rooms to small, simple rooms and everything in between. If you are travelling as a group, we also have houses on the beach. Our signature eco-chic style is found at all our properties and is relaxed yet attentive to detail. We look forward to hosting you for a memorable, relaxing holiday with a purpose.</p>
+      <a href="/rooms" class="btn btn-primary" style="margin-top: var(--sp-4);">View Rooms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BIKINI BOOTCAMP CTA ═══ -->
+<section class="section section--dark">
+  <div class="container about-cta">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Signature Retreat</span>
+    <h2 style="color: var(--cream);">Looking to detox, destress, and rejuvenate?</h2>
+    <p>Join us for our world-renowned weight loss holidays with a purpose: Bikini Bootcamp</p>
+    <a href="/our-retreats" class="btn btn-light">Explore Retreats</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

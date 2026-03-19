@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beach Houses in Tulum, Mexico &mdash; Amansala</title>
+<meta name="description" content="Our beach houses in Tulum, Mexico are great for a group of friends or families. Casa Grande, Casa Shanti, Mojave Boutique Hotel, and Akumal Beachfront House.">
+<meta property="og:title" content="Beach Houses in Tulum, Mexico &mdash; Amansala">
+<meta property="og:description" content="Our beach houses in Tulum, Mexico are great for a group of friends or families.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a90f3945-3ff0-4c07-9393-0785f7a6b4d4/Boho%2BHouse%2Bin%2BTulum.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Houses ═══ */
+
+/* Hero — shorter than homepage */
+.houses-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.houses-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.houses-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.houses-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.15) 0%,
+    hsla(30, 13%, 19%, 0.55) 100%
+  );
+}
+
+.houses-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.houses-hero-content h1 {
+  margin-bottom: var(--sp-2);
+}
+
+.houses-hero-content p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: hsla(42, 36%, 95%, 0.85);
+}
+
+/* Property split sections */
+.property-section {
+  padding: var(--sp-8) 0;
+}
+
+.property-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+.property-split--reverse {
+  direction: rtl;
+}
+
+.property-split--reverse > * {
+  direction: ltr;
+}
+
+/* Image gallery for each property */
+.property-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.property-images .property-img-main {
+  grid-column: 1 / -1;
+}
+
+.property-images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.property-images img:hover {
+  transform: scale(1.02);
+}
+
+/* Property text content */
+.property-text {
+  padding-top: var(--sp-2);
+}
+
+.property-text h2 {
+  margin-bottom: var(--sp-3);
+  color: var(--espresso);
+}
+
+.property-text p {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.property-text p strong {
+  color: var(--text);
+}
+
+.property-text .property-note {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  border-left: 3px solid var(--accent);
+  padding: var(--sp-2) var(--sp-3);
+  margin: var(--sp-3) 0;
+  background: hsla(42, 36%, 95%, 0.5);
+}
+
+.property-text .btn {
+  margin-top: var(--sp-2);
+}
+
+/* Room config list */
+.property-rooms {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 2;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.property-rooms li::before {
+  content: '\2022';
+  color: var(--accent);
+  margin-right: 10px;
+}
+
+/* Divider between sections */
+.property-divider {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .houses-hero {
+    min-height: 50vh;
+  }
+
+  .property-split {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .property-split--reverse {
+    direction: ltr;
+  }
+
+  .property-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="houses-hero">
+  <div class="houses-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a90f3945-3ff0-4c07-9393-0785f7a6b4d4/Boho%2BHouse%2Bin%2BTulum.jpg?format=1500w" alt="Beach Houses in Tulum, Mexico" loading="eager">
+  </div>
+  <div class="houses-hero-overlay"></div>
+  <div class="houses-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Amansala Properties</span>
+    <h1>Beach Houses in Tulum</h1>
+    <p>Our beach houses in Tulum, Mexico are great for a group of friends or families.</p>
+  </div>
+</section>
+
+<!-- ═══ PROPERTY 1: CASA GRANDE ═══ -->
+<section class="property-section section">
+  <div class="container">
+    <div class="property-split">
+      <div class="property-images">
+        <img class="property-img-main" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a90f3945-3ff0-4c07-9393-0785f7a6b4d4/Boho%2BHouse%2Bin%2BTulum.jpg?format=1000w" alt="Casa Grande exterior, Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7accc5be-a222-4cf7-908b-c154decd932c/IMG_6356+%281%29.jpg?format=750w" alt="Casa Grande interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/06fa6fc2-4421-4753-becf-278fd2127d7f/IMG_6312+%282%29.jpg?format=750w" alt="Casa Grande room" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/403cd217-287f-481d-b3b7-4c5e323972d4/Room%2Bin%2BTulum.jpg?format=750w" alt="Casa Grande bedroom" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bfd25d2c-8208-4d4b-811b-b51e0f0a4b17/Tulum%2BStyle%2BHouse.jpg?format=750w" alt="Casa Grande Tulum style" loading="lazy">
+      </div>
+      <div class="property-text">
+        <span class="eyebrow">On-Site Villa</span>
+        <h2>Casa Grande</h2>
+        <p>It is a spacious Tulum-style house with polished cement floors and walls. You have the best of both worlds, your own private house yet with all the hotel's services.</p>
+
+        <p><strong>Upstairs:</strong> shared lounge area; master bedroom with king bed and small terrace; 2 small bedrooms with queen beds sharing bathroom; den with twin bed.</p>
+
+        <p><strong>Downstairs:</strong> large living room; kitchen with fridge and patio; 1 bedroom with king bed and private bathroom; 1 bedroom with two queen beds and private bathroom.</p>
+
+        <p>Access to Amansala beach club included.</p>
+
+        <div class="property-note">
+          Keep in mind that this house is on the grounds of a hotel. We host fitness and yoga retreats, so we have classes near the house with music. The classes do not start before 10 a.m.; please take note that you may hear music during the day after 10:30 a.m. and again at 4:30 p.m.
+        </div>
+
+        <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C488824%2C488826%2C488831%2C488828%2C488825%2C488833%2C488830%2C488821%2C488827%2C488832%2C488823&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Check Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="property-divider">
+
+<!-- ═══ PROPERTY 2: CASA SHANTI ═══ -->
+<section class="property-section section section--alt">
+  <div class="container">
+    <div class="property-split property-split--reverse">
+      <div class="property-images">
+        <img class="property-img-main" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0d26acc3-6989-4404-997b-1e7b1f7cc6f7/Beach+Front+House.JPG?format=1000w" alt="Casa Shanti beachfront, Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ce0e6845-73a5-4003-a139-ce31cd433b1a/Boho+Interior+Design.JPG?format=750w" alt="Casa Shanti boho interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/37588593-916e-4494-9137-bf60afe0919e/Boho+Style+house+in+Tulum.JPG?format=750w" alt="Casa Shanti boho style" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d7b370cc-2d9a-46d5-8717-5aa9733ea6d7/Case+Shanti.JPG?format=750w" alt="Casa Shanti" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3929eff0-1e5f-4373-9699-e101ed531822/Casa-Shanti-Amansala.jpg?format=750w" alt="Casa Shanti at Amansala" loading="lazy">
+      </div>
+      <div class="property-text">
+        <span class="eyebrow">6-Bedroom House</span>
+        <h2>Casa Shanti</h2>
+        <p>Casa Shanti is a beautiful, modern 6-bedroom house in the middle of the resort, perfect for families, bachelorettes, or a trip with friends. When you step inside, you are in your world.</p>
+
+        <ul class="property-rooms">
+          <li>3 rooms with king bed</li>
+          <li>3 rooms with 2 queen beds</li>
+        </ul>
+
+        <p>Each room has its own private bathroom and ample closet space, finished with smooth concrete and local accents.</p>
+
+        <p><strong>Common spaces:</strong> living room with sofa; small kitchen with fridge, burners for cooking. The kitchen is not set up as a chef's master kitchen.</p>
+
+        <div class="property-note">
+          This house is located on the hotel grounds where we host fitness and yoga retreats. The classes do not start before 10 a.m.; please take note that you may hear music during the day after 10:30 a.m. and again at 4:30 p.m. This house is not suitable for anyone looking to host parties with loud music as it is on the hotel grounds.
+        </div>
+
+        <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C488824%2C488826%2C488831%2C488828%2C488825%2C488833%2C488830%2C488821%2C488827%2C488832%2C488823&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Check Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="property-divider">
+
+<!-- ═══ PROPERTY 3: MOJAVE BOUTIQUE HOTEL ═══ -->
+<section class="property-section section">
+  <div class="container">
+    <div class="property-split">
+      <div class="property-images">
+        <img class="property-img-main" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/16c60156-c830-4317-995f-6fb4b891960f/FullSizeRender%2B5.jpg?format=1000w" alt="Mojave Boutique Hotel, Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/edf0161a-f26d-4b1a-a3a0-d0818e1d35dc/FullSizeRender%2B7.jpg?format=750w" alt="Mojave Hotel room" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bc10bef5-6e63-4674-88b9-9f79dcd94625/FullSizeRender%2B10.jpg?format=750w" alt="Mojave Hotel interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6444d209-96b5-4bd0-a494-6e4530999043/FullSizeRender%2B12.jpg?format=750w" alt="Mojave Hotel details" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5021c1f8-2517-4f3a-9d15-8c6688af2150/mojave-details.jpg?format=750w" alt="Mojave Boutique Hotel details" loading="lazy">
+      </div>
+      <div class="property-text">
+        <span class="eyebrow">Boutique Hotel</span>
+        <h2>Mojave Boutique Hotel</h2>
+        <p>Great neighborhood, the best zone in Tulum! Friday nights are a bit congested as there are parties nearby with music at Gitano, so if you want to be in a more peaceful setting, that would not be a good choice!</p>
+
+        <ul class="property-rooms">
+          <li>9 rooms with king bed, each with private bathroom</li>
+          <li>1 room with two queen beds and private bathroom</li>
+        </ul>
+
+        <p>They are all near each other and share a beautiful rooftop deck.</p>
+
+        <p><strong>Amenities:</strong> shops, cafe, general lounging area; cute cafe and bar downstairs for breakfast, coffee, drinks, late evening snacks.</p>
+
+        <p>In the happening zone of Tulum, a short walk from Gitano and Rosa Negra.</p>
+
+        <div class="property-note">
+          If you would like to visit the Amansala beach club, you can get a discount of 25 USD entry plus consumption.
+        </div>
+
+        <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C488824%2C488826%2C488831%2C488828%2C488825%2C488833%2C488830%2C488821%2C488827%2C488832%2C488823&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Check Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="property-divider">
+
+<!-- ═══ PROPERTY 4: AKUMAL BEACHFRONT HOUSE ═══ -->
+<section class="property-section section section--alt">
+  <div class="container">
+    <div class="property-split property-split--reverse">
+      <div class="property-images">
+        <img class="property-img-main" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1c8e8509-641b-4ee0-bdaa-414003935b9f/IMG_2582+%281%29.jpg?format=1000w" alt="Akumal Beachfront House" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/4ffd16aa-54c5-4557-bdd9-be2beeb5628e/IMG_2568.jpg?format=750w" alt="Akumal House interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/59f56f44-c038-4858-aa0a-968ee277676e/IMG_2587.jpg?format=750w" alt="Akumal House pool" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/78437ba3-5bf2-435a-a69e-877f88902ecc/Akumal+House+With+a+Veiw.JPG?format=750w" alt="Akumal House with a view" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/20316448-6709-4616-909d-1f5e3517c9ad/Open+plan+living+in+Akumal.JPG?format=750w" alt="Akumal open plan living" loading="lazy">
+      </div>
+      <div class="property-text">
+        <span class="eyebrow">Private Beachfront</span>
+        <h2>Akumal Beachfront House</h2>
+        <p>This private modern hideaway is a minimalistic five-bedroom beachfront house in a great location that is within reach of Tulum yet outside of the crowds and traffic.</p>
+
+        <p>Tucked away in a quiet neighborhood outside of Tulum, Akumal Sur, it gives you easy access to explore the Riviera Maya in a secluded private setting. Directly in front is a gorgeous view, but to swim, you must walk 5 minutes to the right and be on a sandy beach. The house has a private pool.</p>
+
+        <p><strong>Upstairs:</strong> Room with two twin beds; room with queen bed with beautiful view; room with queen bed.</p>
+
+        <p><strong>Downstairs:</strong> Master bedroom with stunning view terrace and king bed with private bathroom; 1 room with king bed.</p>
+
+        <p><strong>Common spaces:</strong> Fully equipped kitchen; double-height dining room; gorgeous deck and pool.</p>
+
+        <div class="property-note">
+          If you want to visit the Amansala Beach Club, there is a discount for just 25 USD entry plus consumption.
+        </div>
+
+        <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C488824%2C488826%2C488831%2C488828%2C488825%2C488833%2C488830%2C488821%2C488827%2C488832%2C488823&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Check Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

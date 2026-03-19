@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chica - Amansala Sister Property &mdash; Amansala</title>
+<meta name="description" content="Chica is Amansala's gorgeous sister property — one of the biggest beach houses in Tulum. Private terraces, bohemian chic interiors, and steps to the sea.">
+<meta property="og:title" content="Chica — Amansala Sister Property, Tulum">
+<meta property="og:description" content="A gorgeous place to vacation, one of the biggest beach houses in Tulum.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6477ceb5-c862-4b86-8ab9-3aae53724b29/DJI_0238-Mejorado-SR.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Chica ═══ */
+
+/* Hero — aerial drone shot */
+.chica-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.chica-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.chica-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.chica-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.1) 0%,
+    hsla(30, 13%, 19%, 0.5) 100%
+  );
+}
+
+.chica-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.chica-hero-content h1 {
+  margin-bottom: var(--sp-1);
+}
+
+.chica-hero-content .eyebrow {
+  color: hsla(42, 36%, 95%, 0.6);
+  margin-bottom: var(--sp-2);
+}
+
+.chica-hero-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: hsla(42, 36%, 95%, 0.85);
+  max-width: 600px;
+  margin: var(--sp-3) auto var(--sp-5);
+}
+
+/* Gallery strip — 4 images horizontal */
+.chica-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.chica-strip img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Split — interiors */
+.chica-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+.chica-split-text {
+  max-width: 520px;
+}
+
+.chica-split-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.chica-split-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.chica-split-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+}
+
+.chica-split-images img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Large image grid — 4 columns */
+.chica-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.chica-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.chica-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Span certain images across 2 cols for visual variety */
+.chica-grid .span-2 {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+/* Closing CTA section */
+.chica-cta {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.chica-cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.chica-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chica-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.3) 0%,
+    hsla(30, 13%, 19%, 0.65) 100%
+  );
+}
+
+.chica-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 700px;
+}
+
+.chica-cta-content h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.chica-cta-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: hsla(42, 36%, 95%, 0.8);
+  margin-bottom: var(--sp-5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .chica-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .chica-grid .span-2 {
+    grid-column: span 1;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .chica-hero {
+    min-height: 70vh;
+  }
+
+  .chica-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chica-split {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .chica-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chica-cta {
+    min-height: 50vh;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO — Aerial Drone Shot ═══ -->
+<section class="chica-hero">
+  <div class="chica-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6477ceb5-c862-4b86-8ab9-3aae53724b29/DJI_0238-Mejorado-SR.jpg?format=2500w" alt="Aerial drone view of Chica, Amansala's sister property on Tulum beach" loading="eager">
+  </div>
+  <div class="chica-hero-overlay"></div>
+  <div class="chica-hero-content">
+    <span class="eyebrow">Our Sister Property</span>
+    <h1>Chica</h1>
+    <p>A gorgeous place to vacation, one of the biggest beach houses in Tulum.</p>
+    <a href="/contact" class="btn btn-light">Get in Touch with Us</a>
+  </div>
+</section>
+
+<!-- ═══ GALLERY STRIP — Beach & Grounds ═══ -->
+<section class="chica-strip">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/90f86252-c22b-42e2-9b06-aef2fcecb7b1/Photo+14-01-25%2C+4+04+54+pm+%282%29.jpg?format=750w" alt="Beachside lounge area with pink and white striped umbrellas, beige sunbeds, pink towels, and decorative cushions on a wooden deck, near the ocean." loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/c3d5f9bc-b645-4254-a2bb-d91327e9af8e/Photo+10-02-25%2C+2+38+27+pm.jpg?format=750w" alt="Beach scene with wooden walkway, sun loungers, umbrellas, and a turquoise sea under a blue sky." loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/83579ea9-5da2-4aaf-bfe4-152017d324a1/Beach-Pool-Chica+%281%29.jpeg?format=750w" alt="Beach-Pool-Chica" loading="lazy">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7c886745-053c-41f4-b589-6377b3f568b4/Photo+10-02-25%2C+2+38+27+pm+%281%29.jpg?format=750w" alt="Wooden walkway leading to a sandy beach with pink-striped umbrellas, lounge chairs, and turquoise ocean." loading="lazy">
+</section>
+
+<!-- ═══ SPLIT — Interiors ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="chica-split">
+      <div class="chica-split-text">
+        <span class="eyebrow">The perfect place for a vacation</span>
+        <h2>Gorgeous <em>Interiors</em></h2>
+        <p>Rooms with their own private terrace, garden rooms where you step out with the sand beneath your toes, just steps to the sea. Our room's attention to aesthetic detail, is a bohemian chic style that Tulum is famous for.</p>
+      </div>
+      <div class="chica-split-images">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/16a0305a-e8c2-48f4-8d2a-43fd495188e6/Photo+10-02-25%2C+4+22+17+pm.jpg?format=750w" alt="Coastal bedroom with ocean view, featuring a large bed, wooden ceiling beams, and sliding glass doors opening to a stone balcony." loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b9d8fa60-84d6-4794-bbc5-f1b1033f796f/A-Yoga-Shala-Chica.jpeg?format=750w" alt="A-Yoga-Shala-Chica" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LARGE IMAGE GRID — 20 Photos ═══ -->
+<section class="section section--alt">
+  <div class="container" style="max-width: 100%; padding: 0;">
+    <div class="chica-grid">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f694c162-78ef-479a-9586-65b179b25cbe/Photo+10-02-25%2C+2+39+15+pm.jpg?format=750w" alt="Beach scene with pink striped umbrella, lounge chair, and clear blue sea." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cc45bf91-0e3b-4bb7-bfc3-50f7a6b4cc0f/Photo+10-02-25%2C+2+13+38+pm+%281%29.jpg?format=750w" alt="Person on a sunbed holding a purple smoothie topped with fruit and nuts, with a yellow smoothie on the table." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/890c5a84-cdb5-44eb-b48d-9c7b297e1c73/Photo+14-01-25%2C+3+42+42+pm.jpg?format=750w" alt="Man standing in an open stone archway by the sea, wearing a floral shirt, white pants, and looking towards the sky with a relaxed expression. In the background are modern outdoor seating with pink cushions and lush greenery." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/069c600f-e9f5-4566-886c-f502cf029a34/Screen+Shot+2023-09-13+at+4.46.31+PM.png?format=750w" alt="Bedroom with ocean view, wooden ceiling beams, sliding glass doors opening to a balcony, two chairs around a small table, potted plant, and neutral decor." loading="lazy">
+      <img class="span-2" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0481abad-b7f6-45df-98ce-9d9a0a9ec11d/Screen+Shot+2023-09-13+at+4.54.43+PM.png?format=1000w" alt="Bathroom with stone wall, round mirror, wooden shelves, pottery, towels, and a small safe." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d51d4545-6f0a-40d2-a7b9-d58445ca0547/Photo+10-02-25%2C+4+24+18+pm.jpg?format=750w" alt="Seaside terrace with a cushioned bench, blue pillows, and a straw hat, overlooking a sandy beach and blue ocean." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/851e9c00-0d75-4e10-9752-d97fdfac0a89/Screen+Shot+2023-09-13+at+3.22.35+PM.png?format=750w" alt="Beachfront pool area with wooden chairs, a dining table, decorative statues, and an ocean view in the background." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a9ac3cde-296e-4de6-b2ad-4ebecbc0f131/Photo+14-01-25%2C+4+04+54+pm+%282%29.jpg?format=750w" alt="Beach setting with pink and white striped umbrellas, lounge chairs with pink towels, and cushions on wooden decking." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fcdd1f2c-07a5-4a83-9a90-7cd65b3f634c/Screen+Shot+2023-09-13+at+6.44.10+PM.png?format=750w" alt="Minimalist bedroom with two beds, wooden benches, white walls, arched ceiling, and potted plants." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e0aafe2c-de0c-4a1a-9006-9fbe12a1f5ea/Photo+10-02-25%2C+2+39+48+pm.jpg?format=750w" alt="Poolside cabanas with stone arches, lounge chairs, and pink pillows, surrounded by greenery and palm trees under a clear blue sky." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/954d63a7-77ee-4c6d-8125-ded4ac18bf7b/Screen+Shot+2023-09-13+at+4.45.34+PM.png?format=750w" alt="Beachfront patio with wooden table and chair, overlooking the ocean." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/60a310d3-27bf-4dc7-b46d-a3500ec6b2e7/Screen+Shot+2023-09-13+at+3.22.52+PM.png?format=750w" alt="Glass shelving displaying wine bottles, glasses, mineral water, and decorative items against a seaside background." loading="lazy">
+      <img class="span-2" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bf83a5a0-540b-4e5d-81ae-093d8412568b/Screen+Shot+2023-09-13+at+4.54.10+PM.png?format=1000w" alt="Minimalist bedroom with ocean view; includes a bed, white bedding, wooden beams, a round rug, and a potted plant." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6bf9dfaa-4aa4-406b-bf7a-5558aac89403/Screen+Shot+2023-09-13+at+6.45.14+PM.png?format=750w" alt="Poolside lounge chairs with a cloudy sky reflection in the water." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0c6b34fb-3ecf-4042-ba37-9294393ae038/Screen+Shot+2023-09-13+at+6.45.51+PM.png?format=750w" alt="Wooden lounge chairs with white fringed blankets on a beach deck, overlooking the ocean and blue sky." loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9a326378-c5ef-40dd-9768-0167f30ee4d1/Screen+Shot+2023-09-13+at+4.55.32+PM.png?format=750w" alt="Chica decorative element" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING CTA ═══ -->
+<section class="chica-cta">
+  <div class="chica-cta-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d51d4545-6f0a-40d2-a7b9-d58445ca0547/Photo+10-02-25%2C+4+24+18+pm.jpg?format=1500w" alt="Seaside terrace overlooking Tulum beach" loading="lazy">
+  </div>
+  <div class="chica-cta-overlay"></div>
+  <div class="chica-cta-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.5);">Come Stay with Us</span>
+    <h2>A view you will <em>never forget</em></h2>
+    <p>Our team is here to take care of your every need.</p>
+    <a href="/contact" class="btn btn-light">Contact Us</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

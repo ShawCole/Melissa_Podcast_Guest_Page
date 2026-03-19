@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weddings at Amansala | Get Married in Tulum, Mexico</title>
+<meta name="description" content="Get married on the beach in Tulum at Amansala. Ceremony, reception, and celebration packages with beachfront venues, open bar, and full event coordination. Up to 150 guests.">
+<meta property="og:title" content="Weddings at Amansala — Get Married in Tulum">
+<meta property="og:description" content="One-stop shop for accommodation, ceremonies, and celebrations at Amansala's beachfront venues in Tulum, Mexico.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bbc35feb-ea9c-4fcc-a1f6-036a410b12b4/chica-weding+walk.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Wedding Brochure ═══ */
+
+/* Hero */
+.wedding-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.wedding-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.wedding-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.wedding-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.15) 0%,
+    hsla(30, 13%, 19%, 0.6) 100%
+  );
+}
+
+.wedding-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.wedding-hero-content .eyebrow {
+  color: hsla(42, 36%, 95%, 0.6);
+  margin-bottom: var(--sp-3);
+}
+
+.wedding-hero-content h1 {
+  margin-bottom: var(--sp-2);
+  text-shadow: 0 2px 20px hsla(30, 13%, 19%, 0.3);
+}
+
+.wedding-hero-content p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: hsla(42, 36%, 95%, 0.85);
+  margin-bottom: var(--sp-5);
+}
+
+/* Gallery carousel */
+.wedding-gallery {
+  overflow: hidden;
+  position: relative;
+}
+
+.wedding-gallery-track {
+  display: flex;
+  animation: wedding-scroll 40s linear infinite;
+}
+
+.wedding-gallery-track img {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+}
+
+@keyframes wedding-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wedding-gallery-track:hover {
+  animation-play-state: paused;
+}
+
+/* Intro blend */
+.wedding-intro {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.wedding-intro h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.wedding-intro p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* Venue features */
+.venue-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+
+.venue-feature-tag {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--espresso);
+  padding: 12px 28px;
+  border: 1px solid hsla(42, 36%, 95%, 0.15);
+  transition: all var(--ease);
+}
+
+.venue-feature-tag:hover {
+  background: var(--accent);
+  color: var(--espresso);
+}
+
+/* Package sections — ceremony & reception */
+.package-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.package-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.package-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 500px;
+}
+
+.package-details {
+  padding: var(--sp-7) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.package-details .eyebrow {
+  margin-bottom: var(--sp-2);
+}
+
+.package-details h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.package-price {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: var(--sp-4);
+  line-height: 1.2;
+}
+
+.package-price small {
+  font-size: 0.55em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+.package-list {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+}
+
+.package-list li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.package-list li::before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+.package-addon-note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-top: var(--sp-3);
+  font-style: italic;
+}
+
+/* Add-on cards */
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.addon-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform var(--ease), box-shadow var(--ease);
+  border: 1px solid var(--border);
+}
+
+.addon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px hsla(30, 13%, 19%, 0.1);
+}
+
+.addon-card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.addon-card-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.addon-card:hover .addon-card-img img {
+  transform: scale(1.04);
+}
+
+.addon-card-body {
+  padding: var(--sp-4);
+}
+
+.addon-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: var(--sp-1);
+}
+
+.addon-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.addon-card-price {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.addon-card-tax {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Rehearsal menu detail */
+.addon-menu-list {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+  padding-left: 0;
+}
+
+.addon-menu-list li::before {
+  content: '\2014\00a0';
+  color: var(--accent);
+}
+
+/* CTA banner */
+.wedding-cta-banner {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: var(--sp-8) var(--gutter);
+}
+
+.wedding-cta-banner-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.wedding-cta-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+}
+
+.wedding-cta-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-cta-banner h2 {
+  color: var(--cream);
+  margin-bottom: var(--sp-2);
+}
+
+.wedding-cta-banner p {
+  color: var(--text-light);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-5);
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wedding-cta-banner .btn {
+  margin: 0 var(--sp-1);
+}
+
+/* FAQ accordion — CSS-only */
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.faq-item summary {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  padding: var(--sp-3) 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  transition: color var(--ease);
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform var(--ease);
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  color: var(--accent);
+}
+
+.faq-answer {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  padding: 0 0 var(--sp-4);
+  max-width: 680px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .addon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-hero {
+    min-height: 70vh;
+  }
+
+  .package-split {
+    grid-template-columns: 1fr;
+  }
+
+  .package-img img {
+    min-height: 300px;
+  }
+
+  .package-details {
+    padding: var(--sp-5) var(--gutter);
+  }
+
+  .package-split--reverse .package-img {
+    order: -1;
+  }
+
+  .addon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-features {
+    gap: var(--sp-2);
+  }
+
+  .venue-feature-tag {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+  }
+
+  .wedding-gallery-track img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .wedding-cta-banner .btn {
+    display: block;
+    margin: var(--sp-2) auto;
+    max-width: 280px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="wedding-hero">
+  <div class="wedding-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bbc35feb-ea9c-4fcc-a1f6-036a410b12b4/chica-weding+walk.png" alt="Couple walking on the beach at Amansala, Tulum" loading="eager">
+  </div>
+  <div class="wedding-hero-overlay"></div>
+  <div class="wedding-hero-content">
+    <span class="eyebrow">Weddings at Amansala</span>
+    <h1>Get Married in Tulum</h1>
+    <p>Love is in the Air at Amansala</p>
+    <a href="mailto:events@amansala.com?subject=Wedding%20Inquiry" class="btn btn-primary">Inquire About Your Wedding</a>
+  </div>
+</section>
+
+<!-- ═══ GALLERY CAROUSEL ═══ -->
+<section class="wedding-gallery">
+  <div class="wedding-gallery-track">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/87ed9e2a-8ca9-4db1-bb1c-6b4c0f278b5d/WhatsApp+Image+2025-06-04+at+11.33.04+AM+%285%29.jpeg" alt="Amansala wedding celebration" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/962476b8-71e4-4e33-8355-3e90f053dfb1/PHOTO-2025-09-22-14-17-23.jpg" alt="Beachfront wedding setup" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/afefd5e7-67dd-406e-9faf-ec0b1daab1eb/chica-roof-embrace.png" alt="Couple embracing on the rooftop" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6baa6752-71b8-40c0-a18e-8268c5de7cc6/Photo+18-05-25%2C+9+51+34+pm.jpg" alt="Wedding reception at Amansala" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9f9fa4de-88ac-435b-b783-9574597679d2/WhatsApp+Image+2025-07-19+at+12.10.42+PM+%283%29.jpeg" alt="Wedding dinner table setting" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/897cc054-320e-4a97-8275-ab429a710cd0/married+couple-walk.png" alt="Married couple walking on beach" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ddb315c8-d1d9-49ec-baca-80973f07322a/WhatsApp+Image+2025-07-21+at+10.16.24+AM+%281%29.jpeg" alt="Beachfront ceremony" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d70d330a-10de-484a-8b9b-85d9075266fc/Photo+18-05-25%2C+7+59+01+pm.jpg" alt="Evening celebration" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b9da49ee-ed73-46ba-bbe0-0b58d79e088f/Photo+18-05-25%2C+9+47+16+pm.jpg" alt="Party lights at wedding" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3c5ce551-fe6b-4612-b5d9-c9cbe23ed1f1/_ENF6389.jpg" alt="Wedding photography at Amansala" loading="lazy">
+    <!-- Duplicate set for seamless loop -->
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/87ed9e2a-8ca9-4db1-bb1c-6b4c0f278b5d/WhatsApp+Image+2025-06-04+at+11.33.04+AM+%285%29.jpeg" alt="Amansala wedding celebration" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/962476b8-71e4-4e33-8355-3e90f053dfb1/PHOTO-2025-09-22-14-17-23.jpg" alt="Beachfront wedding setup" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/afefd5e7-67dd-406e-9faf-ec0b1daab1eb/chica-roof-embrace.png" alt="Couple embracing on the rooftop" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6baa6752-71b8-40c0-a18e-8268c5de7cc6/Photo+18-05-25%2C+9+51+34+pm.jpg" alt="Wedding reception at Amansala" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9f9fa4de-88ac-435b-b783-9574597679d2/WhatsApp+Image+2025-07-19+at+12.10.42+PM+%283%29.jpeg" alt="Wedding dinner table setting" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/897cc054-320e-4a97-8275-ab429a710cd0/married+couple-walk.png" alt="Married couple walking on beach" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ddb315c8-d1d9-49ec-baca-80973f07322a/WhatsApp+Image+2025-07-21+at+10.16.24+AM+%281%29.jpeg" alt="Beachfront ceremony" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d70d330a-10de-484a-8b9b-85d9075266fc/Photo+18-05-25%2C+7+59+01+pm.jpg" alt="Evening celebration" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b9da49ee-ed73-46ba-bbe0-0b58d79e088f/Photo+18-05-25%2C+9+47+16+pm.jpg" alt="Party lights at wedding" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3c5ce551-fe6b-4612-b5d9-c9cbe23ed1f1/_ENF6389.jpg" alt="Wedding photography at Amansala" loading="lazy">
+  </div>
+</section>
+
+<!-- ═══ THE SPACE — Intro ═══ -->
+<section class="section">
+  <div class="container wedding-intro">
+    <span class="eyebrow">The Space</span>
+    <h2>A Perfect Blend of <em>Boho &rsquo;n&rsquo; Chic</em></h2>
+    <p>One-stop shop for accommodation, ceremonies, and celebrations venue. Exchange your vows in front of the beautiful Caribbean Sea, then celebrate with your closest friends and family at our beachfront terrace and deck.</p>
+  </div>
+</section>
+
+<!-- ═══ VENUE FEATURES ═══ -->
+<section class="section section--darkest">
+  <div class="container" style="text-align: center;">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Your Wedding, Your Way</span>
+    <h2 style="color: var(--cream); margin-bottom: var(--sp-2);">Everything You Need in <em>One Place</em></h2>
+    <div class="venue-features">
+      <span class="venue-feature-tag">Welcome Cocktail</span>
+      <span class="venue-feature-tag">Dinner</span>
+      <span class="venue-feature-tag">Wedding Ceremony</span>
+      <span class="venue-feature-tag">Reception</span>
+      <span class="venue-feature-tag">Bridal Brunch</span>
+      <span class="venue-feature-tag">Beachfront Terrace</span>
+      <span class="venue-feature-tag">Bar</span>
+      <span class="venue-feature-tag">Beachfront Deck</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CEREMONY PACKAGE ═══ -->
+<section class="section" style="padding: 0;">
+  <div class="package-split">
+    <div class="package-img">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b06fa6b6-46cf-4f96-8af9-1022ee3aa059/ChatGPT+Image+Feb+9%2C+2026%2C+10_44_41+AM.png" alt="Beachfront ceremony setup at Amansala" loading="lazy">
+    </div>
+    <div class="package-details">
+      <span class="eyebrow">Ceremony</span>
+      <h2>Exchange Your Vows by the Sea</h2>
+      <div class="package-price">
+        $1,800 USD
+      </div>
+      <ul class="package-list">
+        <li>Alter</li>
+        <li>Palms lined the path</li>
+        <li>Speakers for music</li>
+        <li>Benches for seating so your guests can sit comfortably</li>
+      </ul>
+      <p class="package-addon-note">Add-On: Appetizers and Cocktail Hour &mdash; $55 per person ++</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RECEPTION PACKAGE ═══ -->
+<section class="section" style="padding: 0;">
+  <div class="package-split package-split--reverse">
+    <div class="package-details">
+      <span class="eyebrow">Reception Package</span>
+      <h2>Celebrate Under the Stars</h2>
+      <div class="package-price">
+        $210 per person
+        <small>13% tax &amp; 15% gratuity applies</small>
+      </div>
+      <ul class="package-list">
+        <li>Served plated, family-style, or buffet</li>
+        <li>Menu to be determined with the bride and groom</li>
+        <li>Wine service during dinner</li>
+        <li>Simple, chic decorations and table settings</li>
+        <li>Dessert Table setup (we do not offer wedding cake but do include service and setup)</li>
+        <li>3 hours of Open bar after dinner for dancing and celebrating</li>
+        <li>Music system where you can either plug in your playlist or hire a DJ</li>
+        <li>Staff, venue setup, and breakdown</li>
+      </ul>
+    </div>
+    <div class="package-img">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5d187cff-3a11-40ae-beb8-6c13fff72d11/WhatsApp+Image+2025-06-04+at+11.33.04+AM+%282%29.jpeg" alt="Wedding reception dinner at Amansala" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="section section--dark wedding-cta-banner">
+  <div class="wedding-cta-banner-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1918136b-0a3b-44e8-97ed-21e1c97101e6/Screenshot+2025-11-28+at+3.18.00%E2%80%AFp.m..png" alt="" loading="lazy">
+  </div>
+  <div class="wedding-cta-banner-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Make It Yours</span>
+    <h2>Customize Your <em>Perfect Day</em></h2>
+    <p>Add a welcome dinner, rehearsal, brunch, or unique experiences to make your celebration truly unforgettable.</p>
+  </div>
+</section>
+
+<!-- ═══ ADD-ON CARDS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">Additional Packages</span>
+      <h2>Complete the <em>Celebration</em></h2>
+    </div>
+
+    <div class="addon-grid">
+
+      <!-- Welcome Dinner -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1720723535118-GOZ3PKBMX0YCU3RW7P9Y/Food+on+wedding" alt="Taco Welcome Party" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Taco Welcome Party</h3>
+          <p class="addon-card-desc">Carne asada, fish and shrimp tacos with homemade tortillas, salsas and a variety of side dishes.</p>
+          <p class="addon-card-desc">Open bar for 2 hours (Wine, beer, margaritas &amp; non-alcoholic beverages)</p>
+          <div class="addon-card-price">$85 USD Per Person</div>
+          <div class="addon-card-tax">*Plus 13% tax and 15% service</div>
+        </div>
+      </div>
+
+      <!-- Rehearsal Dinner -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1720723588353-A7PLDNVVV6VM83CCGX6W/image-asset.jpeg" alt="Candle Lit Rehearsal Dinner" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Candle Lit Rehearsal Dinner</h3>
+          <ul class="addon-menu-list">
+            <li>Selection of fresh vegetables and toppings</li>
+            <li>Poblano chiles saut&eacute;ed with corn</li>
+            <li>Mixed green salad</li>
+            <li>Cabbage and tomato</li>
+            <li>Black bean puree</li>
+            <li>Radish</li>
+            <li>Pastor pork</li>
+            <li>Grilled fresh fish tacos</li>
+          </ul>
+          <div class="addon-card-price">Price TBC</div>
+          <div class="addon-card-tax">Contact us for pricing</div>
+        </div>
+      </div>
+
+      <!-- Beachfront Brunch -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1720723659119-M67LLE8EF6SDW9QHA5F9/image-asset.jpeg" alt="Beachfront Brunch" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Beachfront Brunch</h3>
+          <p class="addon-card-desc">Join us for a beautiful beachfront brunch with a selection of Mexican and traditional dishes.</p>
+          <p class="addon-card-desc">Add-On: Bloody Marys or Mimosas &mdash; $25 per person (2 hours)</p>
+          <div class="addon-card-price">$55 USD Per Person</div>
+          <div class="addon-card-tax">*Plus 13% tax and 15% service</div>
+        </div>
+      </div>
+
+      <!-- Mayan Clay Ceremony -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/08ccb4b4-9caa-4bec-9b0b-3693effa6191/Mayan+Clay+Expereince.JPG" alt="Mayan Clay Ceremony" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Mayan Clay Ceremony</h3>
+          <p class="addon-card-desc">The perfect opportunity to make your day just even more memorable. Leaving your guests feeling deeply connected to themselves and ready to move forward with you in love and certainty.</p>
+          <div class="addon-card-price">$65 USD Per Person</div>
+          <div class="addon-card-tax">*Plus 13% tax and 15% service</div>
+        </div>
+      </div>
+
+      <!-- Mariachi Band -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1a5139b9-df14-414c-88b2-ae31ff915cba/wedding-mariachi.JPG" alt="Mariachi Band" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Mariachi Band</h3>
+          <p class="addon-card-desc">The Mariachi Band is a perfect choice if you&rsquo;d like to add a traditional touch to your special day.</p>
+          <div class="addon-card-price">$650 USD Per Hour</div>
+          <div class="addon-card-tax">*Plus 13% tax and 15% service</div>
+        </div>
+      </div>
+
+      <!-- Event Design & Florist -->
+      <div class="addon-card">
+        <div class="addon-card-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1720723732195-0G5QXCSQNFWUMBPL2G8F/image-asset.jpeg" alt="Event Design and Florist" loading="lazy">
+        </div>
+        <div class="addon-card-body">
+          <h3 class="addon-card-title">Event Design &amp; Florist</h3>
+          <p class="addon-card-desc">We have wonderful local suppliers that will design your perfect day. Florists who source beautiful in-season flowers and bring your floral dreams to life. Calligraphy and signage specialists for seating plans, place cards, &amp; on-day signposts.</p>
+          <div class="addon-card-price">Quote-Based</div>
+          <div class="addon-card-tax">Price available on quote from suppliers</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ACCORDION ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="faq-section">
+      <span class="eyebrow" style="text-align: center; display: block;">Questions &amp; Answers</span>
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>Does Amansala have enough rooms for a large wedding?</summary>
+        <div class="faq-answer">
+          Amansala is made up of two beachfront hotels just seconds apart, with a combined capacity of up to 150 guests. We offer discounted room blocks for weddings booking four nights or more. For a more intimate experience, you can opt for a full buyout of our Chica property, which includes 25 rooms and 43 beds.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if there is bad weather?</summary>
+        <div class="faq-answer">
+          If there is bad weather, we have many options at Amansala, including two indoor spaces that can accommodate large groups and be transformed into beautiful party and dining venues.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need a wedding planner in Tulum, Mexico?</summary>
+        <div class="faq-answer">
+          We can also arrange a call with our onsite coordinator to review all the options with you. We work with trusted wedding planners who can be dedicated to your event, with packages starting from $900&ndash;$1,500 USD, depending on your needs.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can we request a certain menu?</summary>
+        <div class="faq-answer">
+          Yes, you can provide us with the wedding menu of your choice, and we will do our best to accommodate our excellent chefs.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if you want to extend the party to longer than the allocated time?</summary>
+        <div class="faq-answer">
+          The party would have to end by 11 but you could extend up to 1:00 am for a fee of 300 USD per hour.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What about gratuity?</summary>
+        <div class="faq-answer">
+          15% will be added to your event, and if you would like to leave extra the night of the event, the staff would appreciate it.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What are the payment terms?</summary>
+        <div class="faq-answer">
+          A $2,500 deposit is required to reserve your dates. For cancellations made more than 60 days in advance, $1,250 will be refunded. Cancellations within 60 days are non-refundable unless due to a natural disaster, in which case we will reschedule. We&rsquo;re happy to support unique, customized visions with a coordinator. Site visits are available with up to 50% discounted stay, depending on the time of year and availability.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="section section--dark wedding-cta-banner">
+  <div class="wedding-cta-banner-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6d85411c-2778-4c9f-b458-5f188987d421/ChatGPT+Image+Feb+8%2C+2026%2C+01_09_46+PM.png" alt="" loading="lazy">
+  </div>
+  <div class="wedding-cta-banner-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Start Planning</span>
+    <h2>Ready to Say <em>&ldquo;I Do&rdquo;</em> in Tulum?</h2>
+    <p>Let us help you create the wedding of your dreams on one of the most beautiful beaches in Mexico.</p>
+    <a href="mailto:events@amansala.com?subject=Wedding%20Inquiry" class="btn btn-primary">Inquire Now</a>
+    <a href="/wedding-gallery" class="btn btn-outline" style="border-color: hsla(42,36%,95%,0.3); color: var(--cream);">View Gallery</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Rooms in Tulum at Amansala — Amansala</title>
+<meta name="description" content="Each room embodies the essence of Tulum using smooth cement, Mayan stone, and centuries-old wooden columns. Book your stay at Amansala's eco-chic beachfront rooms.">
+<meta property="og:title" content="Rooms — Amansala Eco-Chic Resort, Tulum">
+<meta property="og:description" content="Each room embodies the essence of Tulum using smooth cement, Mayan stone, and centuries-old wooden columns. A haven where natural beauty meets style.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/26476bde-81f0-43d0-b040-f251599a66e6/Tropical+balcony+with+ocean+view.png?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Rooms ═══ */
+
+/* Room intro */
+.rooms-intro {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.rooms-intro h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.rooms-intro p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.rooms-intro .tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+/* Room section — alternating split layout */
+.room-section {
+  padding: var(--sp-7) 0;
+}
+
+.room-section:nth-child(even) {
+  background: var(--bg-alt);
+}
+
+.room-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4px;
+}
+
+.room-gallery--3 {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.room-gallery--3 img:first-child {
+  grid-row: 1 / 3;
+}
+
+.room-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.room-gallery--3 img:first-child {
+  aspect-ratio: auto;
+}
+
+.room-content {
+  padding-top: var(--sp-5);
+}
+
+.room-content h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.room-content .room-desc {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+  max-width: 700px;
+}
+
+.room-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-3);
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+  padding: var(--sp-3) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.room-amenities li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.room-amenities li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.room-note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Chica House — special wider layout */
+.chica-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.chica-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* CTA banner */
+.rooms-cta {
+  text-align: center;
+  padding: var(--sp-7) 0;
+}
+
+.rooms-cta h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.rooms-cta p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  margin-bottom: var(--sp-4);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .room-gallery,
+  .room-gallery--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .room-gallery--3 img:first-child {
+    grid-row: auto;
+  }
+
+  .room-gallery img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .chica-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .room-amenities {
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="min-height: 75vh;">
+  <div class="hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/26476bde-81f0-43d0-b040-f251599a66e6/Tropical+balcony+with+ocean+view.png?format=1500w" alt="Tropical balcony with ocean view at Amansala, Tulum" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Our Rooms</span>
+    <h1>A haven where natural beauty <em>meets style</em></h1>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section class="section">
+  <div class="container rooms-intro">
+    <p class="tagline">Made with Love by Local Mayan Craftsmen.</p>
+    <h2>Each room embodies the essence of Tulum</h2>
+    <p>Each room embodies the essence of Tulum using smooth cement, Mayan stone, and centuries-old wooden columns; multiple staircases weave together the spaces, giving the feel of a modern-day Swiss Family Robinson.</p>
+    <p style="margin-top: var(--sp-3);">Organic cotton sheets, comfortable beds, a farm-to-table kitchen, Mayan healing massages, attention to detail, and personalized customer service. Join us for a stay where you can do your own thing, or Join us for a curated retreat blending yoga, fitness, massage, and mindfulness.</p>
+  </div>
+</section>
+
+<!-- ═══ BEACHFRONT ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery room-gallery--3">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0a564837-a923-4c3f-b704-416a4b5711c1/A-beachfront+beachview.jpg?format=1000w" alt="Beachfront room view at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d90e9a75-b898-42ab-b80f-579229edf2fc/Beachfront-Room.jpg?format=750w" alt="Beachfront room interior" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fdcb9e1b-8e69-4980-9179-745677d9997e/A-Room-Bathroom.JPG?format=750w" alt="Beachfront room bathroom" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Best Category</span>
+      <h2>Beachfront Room</h2>
+      <p class="room-desc">Our best category of rooms, facing directly to the sea with a large terrace, great view</p>
+      <ul class="room-amenities">
+        <li>King Bed</li>
+        <li>Closet</li>
+        <li>Terrace</li>
+        <li>Private Bathroom</li>
+        <li>Direct Sea View</li>
+      </ul>
+      <p class="room-note">Option for 2 queen beds</p>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUPERIOR ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery room-gallery--3">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/454ff98e-360c-476d-beac-c2363e1c0359/A-Room-Superior+%281%29+%281%29+%281%29.JPG?format=1000w" alt="Superior room at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/46694045-786b-4323-b3fc-b6ea326da80f/Steps-To-Sea.jpeg?format=750w" alt="Steps to the sea" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ce649796-7a40-43cb-98a1-2e23a5bfa5ac/Bathroom-Superior.JPG?format=750w" alt="Superior room bathroom" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Steps to the Sea</span>
+      <h2>Superior Room</h2>
+      <p class="room-desc">Not right on the beach but just steps to the sea Lovely extra nice rooms with king bed, bright and airy</p>
+      <ul class="room-amenities">
+        <li>King Bed</li>
+        <li>Closet</li>
+        <li>Private Bathroom</li>
+        <li>Safety Deposit Box</li>
+      </ul>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STANDARD ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery room-gallery--3">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a55d2032-95df-4d53-b553-8fcf40289721/Tropical+serenity+in+a+sunlit+bedroom.png?format=1000w" alt="Standard room at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3fdee35c-682d-434b-8f4a-0e6e5e8e38e9/IMG_9186.jpg?format=750w" alt="Standard room detail" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/85e176aa-ab13-421e-8b9d-4c5a2948d65d/Rustic-modern+bathroom+with+natural+light.png?format=750w" alt="Standard room bathroom" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Bright &amp; Airy</span>
+      <h2>Standard Room</h2>
+      <p class="room-desc">Lovely large room with king bed, bright and airy</p>
+      <ul class="room-amenities">
+        <li>King Bed</li>
+        <li>Closet</li>
+        <li>Private Bathroom</li>
+        <li>Safety Deposit Box</li>
+      </ul>
+      <p class="room-note">Option for 2 queen beds</p>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GARDEN VIEW ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cf989cfe-dfcb-43f4-8ce3-d0a99280169c/IMG_9405.JPG?format=1000w" alt="Garden view room at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/09ef53f2-d76f-4076-a322-e0e731290a33/bathroom-double+room+%281%29+%281%29.jpeg?format=750w" alt="Garden view room bathroom" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Garden Setting</span>
+      <h2>Garden View Room</h2>
+      <p class="room-desc">Charming, bright room facing the garden towards the back of the property</p>
+      <ul class="room-amenities">
+        <li>King Bed</li>
+        <li>Closet</li>
+        <li>Private Bathroom</li>
+        <li>Garden View</li>
+        <li>Safety Deposit Box</li>
+      </ul>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUDGET ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cb72927d-87d7-42d3-9ec2-ccd8292bb117/IMG_9420.JPG?format=1000w" alt="Budget room at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/073507bd-150f-4208-b86f-46e3d3055f25/IMG_9423.JPG?format=750w" alt="Budget room detail" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Great Value</span>
+      <h2>Budget Room</h2>
+      <p class="room-desc">Simple and small, located at the back of the property. Great if you are on a budget but still want to stay at the beach.</p>
+      <ul class="room-amenities">
+        <li>Queen Bed</li>
+        <li>Closet</li>
+        <li>Private Bathroom</li>
+        <li>Safety Deposit Box</li>
+      </ul>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRIPLE QUEEN ROOM ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="room-gallery room-gallery--3">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ea54713d-0167-4fff-823c-666e4d6bd1c7/IMG_6295.jpg?format=1000w" alt="Triple queen room at Amansala" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/83909ac8-4c61-4df0-a8cd-128de28d3ad1/IMG_6281.jpg?format=750w" alt="Triple queen room beds" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/2d8a30fa-52eb-42c3-8a53-a1ed51e75972/IMG_6292.jpg?format=750w" alt="Triple queen room space" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Friends &amp; Family</span>
+      <h2>Triple Queen Room</h2>
+      <p class="room-desc">A large open room with three queen beds, perfect for friends or family traveling together. Bright and airy with plenty of space to relax. Not directly on the beach, but just steps to the sea.</p>
+      <ul class="room-amenities">
+        <li>3 Queen Beds</li>
+        <li>3 Closets</li>
+        <li>Large Private Bathroom</li>
+        <li>Open Floor Plan</li>
+        <li>Safety Deposit Box</li>
+      </ul>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHICA HOUSE ═══ -->
+<section class="room-section">
+  <div class="container">
+    <div class="chica-gallery">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d666a0c9-ad1d-4f57-9c1a-178ad44baaf9/ChatGPT+Image+Feb+17%2C+2026%2C+04_45_48+PM.png?format=750w" alt="Chica House exterior" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0d90e75c-5796-4448-8303-308fbe244052/ChatGPT+Image+Feb+17%2C+2026%2C+03_14_51+PM.png?format=750w" alt="Chica House interior" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/cef891e3-afa7-4086-9136-4f23ae954465/AB6A8024.jpg?format=750w" alt="Chica House living area" loading="lazy">
+    </div>
+    <div class="chica-gallery" style="margin-top: 4px;">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/61814236-05a5-4fe8-863b-7bd4ba8507d7/AB6A8009.jpg?format=750w" alt="Chica House details" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/35ba8d19-56f4-42e8-b20d-9867eea8a805/Serene+bedroom+with+en-suite+bathroom.png?format=750w" alt="Chica House bedroom" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3dfae45c-a0f4-4b52-ab69-773e3ff417b2/Serene+bohemian+bedroom+with+queen+beds.png?format=750w" alt="Chica House queen beds" loading="lazy">
+    </div>
+    <div class="room-content">
+      <span class="eyebrow">Private Retreat</span>
+      <h2>Chica House</h2>
+      <p class="room-desc">Tucked into a quiet corner of the Amansala resort. This spacious Tulum-style house features polished cement floors and walls, offering the privacy of your own home with the services and amenities of the hotel</p>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-primary" target="_blank">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING CTA ═══ -->
+<section class="section section--dark rooms-cta">
+  <div class="container">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">Ready to Book?</span>
+    <h2 style="color: var(--cream);">Find your perfect room <em>in Tulum</em></h2>
+    <p>Check availability and reserve your beachfront escape at Amansala.</p>
+    <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530" class="btn btn-light" target="_blank">Check Availability</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

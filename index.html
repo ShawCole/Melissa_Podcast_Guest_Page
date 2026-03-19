@@ -3,926 +3,600 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melissa Perlman — Podcast Guest | Amansala Tulum</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital,wght@0,400;1,400&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<title>Amansala Yoga & Wellness Resort in Tulum, Mexico</title>
+<meta name="description" content="Eco-chic beachfront yoga retreat and wellness resort in Tulum. Book a room, join a retreat, or host your group at one of Mexico's most iconic wellness destinations.">
+<meta property="og:title" content="Amansala — Yoga & Wellness Resort, Tulum">
+<meta property="og:description" content="What started as a 4-room pop-up has become one of the most iconic beachfront resorts in Tulum, Mexico.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b6cf0472-49d2-4f3f-94e9-e9b3a93f81b7/chicarooms-3-beachfrontviews.jpg?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/brand.css">
 <style>
-/* ═══════════════════════════════════════════
-   AMANSALA DESIGN SYSTEM — Extracted from site.css
-   Fonts: Sorts Mill Goudy + Nunito Sans
-   Palette: Warm earth (hsl 30-42 range, no pure black/white)
-   ═══════════════════════════════════════════ */
+/* ═══ PAGE-SPECIFIC: Homepage ═══ */
 
-:root {
-  --white: hsl(42, 35.71%, 94.51%);        /* #F5F0E8 cream */
-  --light-accent: hsl(33.33, 32.14%, 89.02%); /* #EBE2D5 sand */
-  --accent: hsl(30.73, 22.65%, 64.51%);    /* #B79D85 tan/camel */
-  --dark-accent: hsl(32.5, 16%, 29.41%);   /* #574A3F espresso */
-  --black: hsl(30, 12.5%, 18.82%);         /* #362F28 near-black */
-
-  --heading-font: 'Sorts Mill Goudy', Georgia, serif;
-  --body-font: 'Sorts Mill Goudy', Georgia, serif;
-  --meta-font: 'Nunito Sans', 'Helvetica Neue', sans-serif;
-
-  --base-size: 18px;
-}
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: var(--base-size);
-  overflow-x: hidden;
-}
-
-body {
-  font-family: var(--body-font);
-  font-weight: 400;
-  background: var(--white);
-  color: var(--black);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+/* Hero — full-width, natural aspect ratio */
+.home-hero {
+  position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; }
+/* Desktop: 100vw wide, crop 5% top = show 95% of height */
+.home-hero-bg {
+  position: relative;
+  width: 100%;
+  height: calc(56.25vw * 0.95);
+  overflow: hidden;
+  background: var(--near-black);
+}
 
-/* ═══════════════════════════════════════════
-   HERO — Split layout, photo + content
-   ═══════════════════════════════════════════ */
+.home-hero-video {
+  position: absolute;
+  top: calc(-56.25vw * 0.05);
+  left: 0;
+  width: 100vw;
+  height: 56.25vw; /* natural 16:9 */
+  pointer-events: none;
+  border: 0;
+}
 
-.hero {
+.home-hero-overlay {
+  display: none;
+}
+
+/* Separator banners — centered, constrained width like Squarespace */
+.home-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--sp-5) var(--gutter);
+}
+
+.home-separator img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* CTA columns — image-heavy layout */
+.home-cta-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  min-height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
 }
 
-.hero-image-wrap {
+.home-cta-col {
+  text-align: left;
+}
+
+.home-cta-col img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: var(--sp-3);
+}
+
+.home-cta-col h3 {
+  margin-bottom: var(--sp-1);
+}
+
+.home-cta-col h3 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.home-cta-col h3 a:hover {
+  color: var(--accent);
+}
+
+.home-cta-col .subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
+}
+
+.home-cta-col p {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.home-cta-col ul {
+  list-style: disc;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 2;
+  color: var(--text-muted);
+  padding-left: 1.2em;
+}
+
+/* Intro text */
+.home-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home-intro h3 {
+  margin-bottom: var(--sp-4);
+}
+
+.home-intro p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+/* Life at Amansala — photo gallery */
+.home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 4px;
+}
+
+.home-gallery-grid .tall {
+  grid-row: 1 / 3;
+}
+
+.home-gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Melissa / Origin story — grid layout */
+.home-origin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: var(--sp-1);
+  column-gap: var(--sp-2);
+}
+
+.origin-title {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: center;
+}
+
+.origin-title img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.origin-photo {
+  overflow: hidden;
+}
+
+.origin-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.origin-photo-left {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.origin-photo-right {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.home-origin-year {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text);
+  padding-top: var(--sp-1);
+}
+
+.origin-year-left {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.origin-year-right {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.home-origin-quote {
+  max-width: 900px;
+  margin: var(--sp-5) auto 0;
+}
+
+.home-origin-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.home-origin-text em {
+  color: var(--text);
+}
+
+/* Location sub-section */
+.home-origin-location {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  gap: var(--sp-4);
+  margin-top: var(--sp-5);
+  align-items: start;
+}
+
+.home-origin-location > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 91% 50%;
+}
+
+.home-location-detail {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-top: var(--sp-3);
+}
+
+.home-location-detail strong {
+  color: var(--text);
+}
+
+/* Newsletter */
+.home-newsletter {
   position: relative;
   overflow: hidden;
 }
 
-.hero-image {
+.home-newsletter-bg {
   position: absolute;
   inset: 0;
 }
 
-.hero-image img {
+.home-newsletter-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 80% 60%;
-  transform: scale(1.25);
-  transform-origin: 100% 100%;
+  opacity: 0.15;
 }
 
-.hero-image::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 180px;
-  background: linear-gradient(to top, var(--dark-accent), transparent);
-  opacity: 0.3;
-}
-
-.hero-image .location-tag {
-  position: absolute;
-  bottom: 28px;
-  left: 32px;
+.home-newsletter-content {
+  position: relative;
   z-index: 2;
-  font-family: var(--meta-font);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: hsla(42, 36%, 95%, 0.7);
 }
 
-.hero-content {
-  background: var(--dark-accent);
-  padding: 72px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-tag {
-  font-family: var(--meta-font);
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 40px;
-  display: block;
-}
-
-.hero-name {
-  font-family: var(--heading-font);
-  font-size: clamp(3.2rem, 5vw, 4.8rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--white);
-  margin-bottom: 12px;
-}
-
-.hero-name em {
-  font-style: italic;
-  color: var(--accent);
-  display: block;
-}
-
-.hero-subtitle {
-  font-family: var(--meta-font);
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: hsla(42, 36%, 95%, 0.4);
-  margin-bottom: 40px;
-}
-
-.hero-bio {
-  font-family: var(--body-font);
-  font-size: 1.15rem;
-  line-height: 1.85;
-  color: hsla(42, 36%, 95%, 0.7);
-  max-width: 460px;
-  margin-bottom: 48px;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 0;
-  border-top: 1px solid hsla(30.73, 22.65%, 64.51%, 0.25);
-  padding-top: 32px;
-}
-
-.stat {
-  padding-right: 36px;
-  margin-right: 36px;
-  border-right: 1px solid hsla(30.73, 22.65%, 64.51%, 0.15);
-}
-
-.stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
-
-.stat-number {
-  font-family: var(--heading-font);
-  font-size: 2.4rem;
-  font-weight: 400;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.stat-label {
-  font-family: var(--meta-font);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: hsla(42, 36%, 95%, 0.3);
-  margin-top: 6px;
-  white-space: nowrap;
-}
-
-/* ═══════════════════════════════════════════
-   TOPICS — Episode angles grid
-   ═══════════════════════════════════════════ */
-
-.topics {
-  padding: 100px 4vw;
-  background: var(--white);
-}
-
-.topics-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-eyebrow {
-  font-family: var(--meta-font);
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 16px;
-}
-
-.section-headline {
-  font-family: var(--heading-font);
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 400;
-  color: var(--black);
-  margin-bottom: 56px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.section-headline em {
-  font-style: italic;
-}
-
-.topics-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: 1px solid hsla(30, 12.5%, 18.82%, 0.1);
-}
-
-.topic {
-  padding: 40px 36px;
-  border-bottom: 1px solid hsla(30, 12.5%, 18.82%, 0.08);
-  border-right: 1px solid hsla(30, 12.5%, 18.82%, 0.08);
-  transition: background 0.3s ease;
-}
-
-.topic:nth-child(3n) { border-right: none; }
-.topic:nth-last-child(-n+3) { border-bottom: none; }
-
-.topic:hover {
-  background: var(--light-accent);
-}
-
-.topic-number {
-  font-family: var(--heading-font);
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--accent);
-  margin-bottom: 14px;
-  display: block;
-}
-
-.topic-title {
-  font-family: var(--heading-font);
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--black);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.topic-desc {
-  font-family: var(--meta-font);
-  font-size: 0.9rem;
-  line-height: 1.75;
-  color: hsla(30, 12.5%, 18.82%, 0.55);
-}
-
-/* ═══════════════════════════════════════════
-   STORY — Her background, two-column
-   ═══════════════════════════════════════════ */
-
-.story {
-  padding: 100px 4vw;
-  background: var(--light-accent);
-}
-
-.story-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.story-image img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center 20%;
-}
-
-.story-text .section-headline {
-  margin-bottom: 32px;
-}
-
-.story-body {
-  font-family: var(--body-font);
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: hsla(30, 12.5%, 18.82%, 0.65);
-}
-
-.story-body p + p {
-  margin-top: 18px;
-}
-
-.story-quote {
-  border-left: 3px solid var(--accent);
-  padding: 20px 28px;
-  margin: 32px 0;
-  background: hsla(42, 36%, 95%, 0.6);
-}
-
-.story-quote p {
-  font-family: var(--heading-font);
-  font-style: italic;
-  font-size: 1.2rem;
-  color: var(--black);
-  line-height: 1.6;
-}
-
-/* ═══════════════════════════════════════════
-   CREDENTIALS — Press & social proof strip
-   ═══════════════════════════════════════════ */
-
-.credentials {
-  padding: 72px 4vw;
-  background: var(--white);
-  border-top: 1px solid hsla(30, 12.5%, 18.82%, 0.08);
-  border-bottom: 1px solid hsla(30, 12.5%, 18.82%, 0.08);
-}
-
-.credentials-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.credentials-label {
-  font-family: var(--meta-font);
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 28px;
-  display: block;
-}
-
-.credentials-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.credential {
-  font-family: var(--meta-font);
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: hsla(30, 12.5%, 18.82%, 0.35);
-}
-
-/* ═══════════════════════════════════════════
-   GALLERY — Resort imagery strip
-   ═══════════════════════════════════════════ */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-/* ═══════════════════════════════════════════
-   HOST SAYS — What podcast hosts can expect
-   ═══════════════════════════════════════════ */
-
-.host-says {
-  padding: 100px 4vw;
-  background: var(--white);
-}
-
-.host-says-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.host-says .section-headline {
-  margin-bottom: 20px;
-}
-
-.host-says-body {
-  font-family: var(--body-font);
-  font-size: 1.1rem;
-  line-height: 1.85;
-  color: hsla(30, 12.5%, 18.82%, 0.6);
-  margin-bottom: 48px;
-}
-
-.host-benefits {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  text-align: left;
-}
-
-.benefit {
-  padding-top: 24px;
-  border-top: 2px solid var(--light-accent);
-  transition: border-color 0.3s ease;
-}
-
-.benefit:hover {
-  border-color: var(--accent);
-}
-
-.benefit-title {
-  font-family: var(--heading-font);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--black);
-  margin-bottom: 10px;
-}
-
-.benefit-desc {
-  font-family: var(--meta-font);
-  font-size: 0.88rem;
-  line-height: 1.75;
-  color: hsla(30, 12.5%, 18.82%, 0.5);
-}
-
-/* ═══════════════════════════════════════════
-   CTA — Book Melissa, dark section
-   ═══════════════════════════════════════════ */
-
-.cta {
-  background: var(--dark-accent);
-  padding: 100px 4vw;
-  text-align: center;
-}
-
-.cta .section-eyebrow {
-  color: hsla(30.73, 22.65%, 64.51%, 0.6);
-}
-
-.cta .section-headline {
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
-.cta-body {
-  font-family: var(--body-font);
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: hsla(42, 36%, 95%, 0.55);
-  max-width: 520px;
-  margin: 0 auto 52px;
-}
-
-.cta-contacts {
-  display: flex;
-  justify-content: center;
-  gap: 64px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.cta-contact-label {
-  font-family: var(--meta-font);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: hsla(42, 36%, 95%, 0.28);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.cta-contact-value {
-  font-family: var(--heading-font);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.cta-contact-value:hover {
-  color: var(--white);
-}
-
-.cta-button {
-  display: inline-block;
-  font-family: var(--meta-font);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--dark-accent);
-  background: var(--accent);
-  padding: 18px 48px;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: var(--white);
-  color: var(--dark-accent);
-}
-
-/* ═══════════════════════════════════════════
-   FOOTER — Minimal brand footer
-   ═══════════════════════════════════════════ */
-
-.footer {
-  background: var(--black);
-  padding: 48px 4vw;
-  text-align: center;
-}
-
-.footer-brand {
-  font-family: var(--heading-font);
-  font-size: 1.1rem;
-  color: hsla(42, 36%, 95%, 0.4);
-  margin-bottom: 8px;
-}
-
-.footer-tagline {
-  font-family: var(--heading-font);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: hsla(42, 36%, 95%, 0.25);
-  margin-bottom: 24px;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.footer-links a {
-  font-family: var(--meta-font);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: hsla(42, 36%, 95%, 0.3);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE — Mobile-first adjustments
-   ═══════════════════════════════════════════ */
-
-@media (max-width: 1024px) {
-  .topics-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Responsive */
+@media (max-width: 799px) {
+  /* Mobile: 100vw wide, crop 10% top + 30% bottom = show 60% of height */
+  .home-hero-bg {
+    height: calc(56.25vw * 0.60);
   }
-  .topic:nth-child(3n) { border-right: 1px solid hsla(30, 12.5%, 18.82%, 0.08); }
-  .topic:nth-child(2n) { border-right: none; }
-  .topic:nth-last-child(-n+3) { border-bottom: 1px solid hsla(30, 12.5%, 18.82%, 0.08); }
-  .topic:nth-last-child(-n+2) { border-bottom: none; }
 
-  .host-benefits {
+  .home-hero-video {
+    top: calc(-56.25vw * 0.10);
+  }
+
+  .home-cta-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    gap: var(--sp-5);
   }
 
-  .hero-image-wrap {
-    position: relative;
-    width: 100%;
-    flex: 1 0 50vh;
-    margin-top: -20%;
-    overflow: hidden;
+  .home-gallery-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .hero-image {
-    position: absolute;
-    inset: 0;
+  .home-gallery-grid .tall {
+    grid-row: auto;
   }
 
-  .hero-image img {
-    transform: scale(1.2);
-    transform-origin: 100% 100%;
-    object-position: 70% 100%;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    background: var(--dark-accent);
-    padding: 48px 6vw 16px;
-    align-items: flex-start;
-  }
-
-  .hero-tag {
-    font-size: clamp(0.6rem, 2vw, 0.75rem);
-    letter-spacing: clamp(0.12em, 0.5vw, 0.3em);
-    margin-bottom: clamp(20px, 6vw, 40px);
-  }
-
-  .hero-name {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .hero-name em {
-    display: inline;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(0.6rem, 2vw, 0.8rem);
-    letter-spacing: clamp(0.08em, 0.4vw, 0.18em);
-    margin-bottom: clamp(20px, 5vw, 40px);
-  }
-
-  .hero-bio {
-    font-size: clamp(0.85rem, 3vw, 1.15rem);
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  .hero-stats {
-    position: relative;
-    z-index: 4;
-    flex-direction: column;
-    gap: clamp(12px, 3vw, 20px);
-    border-top: none;
-    padding: clamp(16px, 4vw, 24px) clamp(20px, 5vw, 28px);
-    background: hsla(32.5, 16%, 20%, 0.7);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    align-self: flex-start;
-    margin-bottom: -40%;
-    transform: translateY(55%);
-  }
-
-  .stat {
-    border-right: none;
-    padding-right: 0;
-    margin-right: 0;
-  }
-
-  .stat:nth-child(1) { order: 3; }
-  .stat:nth-child(2) { order: 2; }
-  .stat:nth-child(3) { order: 1; }
-
-  .stat-number {
-    font-size: clamp(1.4rem, 5vw, 2.4rem);
-  }
-
-  .stat-label {
-    font-size: clamp(0.5rem, 1.5vw, 0.65rem);
-  }
-
-  .topics {
-    padding: 64px 6vw;
-  }
-
-  .topics-grid {
+  .home-origin-grid {
     grid-template-columns: 1fr;
   }
 
-  .topic { border-right: none !important; }
-  .topic:nth-last-child(-n+3) { border-bottom: 1px solid hsla(30, 12.5%, 18.82%, 0.08); }
-  .topic:last-child { border-bottom: none; }
-
-  .story {
-    padding: 64px 6vw;
+  .origin-title,
+  .origin-photo-left,
+  .origin-photo-right,
+  .origin-year-left,
+  .origin-year-right {
+    grid-area: auto;
   }
 
-  .story-inner {
+  .origin-title {
+    padding-bottom: var(--sp-3);
+  }
+
+  .origin-title img {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .home-origin-location {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .story-image {
-    order: -1;
-  }
-
-  .story-image img {
-    aspect-ratio: 16 / 9;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .host-says {
-    padding: 64px 6vw;
-  }
-
-  .host-benefits {
-    grid-template-columns: 1fr;
-  }
-
-  .cta {
-    padding: 64px 6vw;
-  }
-
-  .cta-contacts {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .credentials-list {
-    gap: 24px;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════ -->
-<section class="hero">
-  <div class="hero-content">
-
-    <span class="hero-tag">Podcast Guest &middot; Media Kit</span>
-    <h1 class="hero-name">Melissa <em>Perlman</em></h1>
-    <p class="hero-subtitle">Founder &middot; Amansala &middot; Since 2001</p>
-    <p class="hero-bio">She arrived in Tulum in 2001 with an instinct and built one of the world&rsquo;s first destination wellness retreats. Twenty-five years later, Amansala is still here. So is she.</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">25</div>
-        <div class="stat-label">Years in Tulum</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">2001</div>
-        <div class="stat-label">Founded</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">1st</div>
-        <div class="stat-label">Wellness Resort</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-image-wrap">
-    <div class="hero-image">
-      <img src="https://www.dropbox.com/scl/fi/f7mbb68z9mii1z7htnt3m/2F0A3223.jpg?rlkey=07mdm9p8aat7qmud9tzx8zx9q&st=cevk6gf4&raw=1" alt="Melissa Perlman at Amansala, Tulum">
-      <span class="location-tag">Amansala &middot; Tulum, Mexico</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     CREDENTIALS
-     ═══════════════════════════════════════════ -->
-<section class="credentials">
-  <div class="credentials-inner">
-    <span class="credentials-label">As Featured In</span>
-    <div class="credentials-list">
-      <span class="credential">Cond&eacute; Nast Traveler</span>
-      <span class="credential">Travel + Leisure</span>
-      <span class="credential">Vogue</span>
-      <span class="credential">The New York Times</span>
-      <span class="credential">Forbes</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     EPISODE ANGLES
-     ═══════════════════════════════════════════ -->
-<section class="topics">
-  <div class="topics-inner">
-    <span class="section-eyebrow">Episode Angles</span>
-    <h2 class="section-headline">Six Conversations <em>Worth Having</em></h2>
-    <div class="topics-grid">
-      <div class="topic">
-        <span class="topic-number">01</span>
-        <div class="topic-title">I Built This Before Tulum Was Cool</div>
-        <p class="topic-desc">How she saw Tulum before anyone else and why staying true to a vision matters more than chasing trends.</p>
-      </div>
-      <div class="topic">
-        <span class="topic-number">02</span>
-        <div class="topic-title">What Real Transformation Looks Like</div>
-        <p class="topic-desc">After 25 years and thousands of guests, what she&rsquo;s learned about how people actually change.</p>
-      </div>
-      <div class="topic">
-        <span class="topic-number">03</span>
-        <div class="topic-title">Building a Brand That Outlasts Trends</div>
-        <p class="topic-desc">How Amansala has stayed relevant for a quarter century without losing its soul.</p>
-      </div>
-      <div class="topic">
-        <span class="topic-number">04</span>
-        <div class="topic-title">Founder, Mother, Still Here</div>
-        <p class="topic-desc">Building in a foreign country, raising a daughter born in Tulum, and what legacy actually means.</p>
-      </div>
-      <div class="topic">
-        <span class="topic-number">05</span>
-        <div class="topic-title">Authentic Hospitality vs. Performance</div>
-        <p class="topic-desc">Why guests feel the difference the moment they arrive. What genuine care looks like at scale.</p>
-      </div>
-      <div class="topic">
-        <span class="topic-number">06</span>
-        <div class="topic-title">The Wellness Industry Has a Problem</div>
-        <p class="topic-desc">A frank conversation about what wellness tourism has become and what doing it right actually looks like.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     GALLERY STRIP
-     ═══════════════════════════════════════════ -->
-<section class="gallery">
-  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b6cf0472-49d2-4f3f-94e9-e9b3a93f81b7/chicarooms-3-beachfrontviews.jpg?format=750w" alt="Amansala beachfront view">
-  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3398c71b-78e1-4def-a025-c1d1b3d6ced9/Heaven+Shala+3+%281%29.jpg?format=750w" alt="Yoga shala at Amansala">
-  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9d18d00d-fd75-41c9-8b71-48338b5b94db/Girls-Retreat-Amansala.jpg?format=750w" alt="Women's retreat at Amansala">
-  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0a564837-a923-4c3f-b704-416a4b5711c1/A-beachfront+beachview.jpg?format=750w" alt="Amansala beach">
-</section>
-
-<!-- ═══════════════════════════════════════════
-     HER STORY
-     ═══════════════════════════════════════════ -->
-<section class="story">
-  <div class="story-inner">
-    <div class="story-image">
-      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a6b8b415-0e2b-4494-9c89-c0dfa4c4c232/Melissa-Building+%281%29.jpg?format=1000w" alt="Melissa Perlman building Amansala">
-    </div>
-    <div class="story-text">
-      <span class="section-eyebrow">Her Story</span>
-      <h2 class="section-headline">She Followed <em>Her Instinct</em></h2>
-      <div class="story-body">
-        <p>What started as a simple idea just after 9/11 while sitting in a studio apartment in NYC became one of the most recognized wellness destinations in the world.</p>
-        <div class="story-quote">
-          <p>&ldquo;You could say we were ahead of the curve. Maybe you&rsquo;d call it instinct. I just knew this was the place.&rdquo;</p>
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img class="nav-logo-light" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=1500w" alt="Amansala">
+      <img class="nav-logo-dark" src="https://images.squarespace-cdn.com/content/63f3db8dfbb7eb30c2b0fb72/0bbbaa14-9b19-4b3f-98e0-bdfd16fc4b78/IMG_7298.png?content-type=image%2Fpng" alt="Amansala">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Villas</a>
+        <div class="nav-dropdown-menu">
+          <a href="/7-gotas">7 Gotas</a>
+          <a href="/casa-grande">Casa Grande</a>
         </div>
-        <p>Long before wellness was an industry. Long before Tulum was on anyone&rsquo;s radar. She built Amansala and created Bikini Bootcamp from scratch. In a predominantly male-dominated industry, Melissa created a niche that incorporates style and comfort with purpose and community.</p>
-        <p>Twenty-five years later, the town has changed beyond recognition. But Amansala is still here. Still rooted. Still real.</p>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay With Us</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/signature-retreat">Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Our Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/restoreandrenew" target="_blank">Restore and Renew</a>
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp" target="_blank">Bikini Bootcamp</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Group Bookings</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/ourschedule">Spend The Day</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant Menu</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About Us</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">CEO Founder Melissa</a>
+          <a href="/personal-relations">Press and Media</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/about">About</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ SECTION 1: HERO — Video Background ═══ -->
+<section class="home-hero">
+  <div class="home-hero-bg">
+    <iframe class="home-hero-video" src="https://www.youtube.com/embed/Du0spL2Ewf0?autoplay=1&mute=1&loop=1&playlist=Du0spL2Ewf0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  <div class="home-hero-overlay"></div>
+</section>
+
+<!-- ═══ SECTION 2: CTA Columns — Image + Text ═══ -->
+<section class="section">
+  <div class="container">
+
+    <!-- Separator banner -->
+    <div class="home-separator" style="padding-top: 0;">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e7bddaaa-5f05-4ba4-ab6c-6618e4a6c043/Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%281%29.png?format=1000w" alt="Amansala separator">
+    </div>
+
+    <div class="home-cta-grid">
+
+      <!-- Book a Room -->
+      <div class="home-cta-col">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b6cf0472-49d2-4f3f-94e9-e9b3a93f81b7/chicarooms-3-beachfrontviews.jpg?format=1000w" alt="Amansala beachfront rooms" loading="lazy">
+        <h3><a href="/rooms">Book a Room</a></h3>
+        <div class="subtitle">Stay on your own terms</div>
+        <p>Come for the beach, the nourishing food, and the magic of Amansala &mdash; without a structured program. Simply arrive and move at your own rhythm.</p>
+        <ul>
+          <li>Beachfront rooms &amp; casitas</li>
+          <li>Access to pool &amp; beach</li>
+          <li>Restaurant &amp; spa available &agrave; la carte</li>
+          <li>Perfect for couples or solo escapes</li>
+        </ul>
       </div>
+
+      <!-- Join a Retreat -->
+      <div class="home-cta-col">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751222820836-LULFNFIQ8ZR6XYSSVIIK/mayan-clay-meditation-beach-shot.group-amansala-tulum.jpeg?format=1000w" alt="Mayan clay meditation on the beach" loading="lazy">
+        <h3><a href="https://www.bikinibootcamp.com" target="_blank">Join a Retreat</a></h3>
+        <div class="subtitle">Bikini Bootcamp or Restore &amp; Renew</div>
+        <p>The full Amansala experience &mdash; structured, guided, completely taken care of. Arrive on your own, leave with people you&rsquo;ll know forever.</p>
+        <ul>
+          <li>6-night all-inclusive program</li>
+          <li>Daily yoga, movement &amp; classes</li>
+          <li>All meals, spa treatments &amp; excursions</li>
+          <li>A Tune Up for the Mind Body Spirit</li>
+        </ul>
+      </div>
+
+      <!-- Host a Group -->
+      <div class="home-cta-col">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751222891772-JHFRMXL0FOJU4L82VDIF/meditation-BFstudio.jpg?format=1000w" alt="Meditation in beachfront studio" loading="lazy">
+        <h3><a href="/host-a-retreat">Host a Group</a></h3>
+        <div class="subtitle">Retreats, celebrations &amp; off-sites</div>
+        <p>Bring your people to one of the most extraordinary settings in the world. We design the whole experience around you.</p>
+        <ul>
+          <li>Book a Room Block</li>
+          <li>Custom programming available</li>
+          <li>Full hotel service included</li>
+          <li>We handle every detail</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     WHY BOOK MELISSA
-     ═══════════════════════════════════════════ -->
-<section class="host-says">
-  <div class="host-says-inner">
-    <span class="section-eyebrow">For Podcast Hosts</span>
-    <h2 class="section-headline">Your Audience Deserves <em>a Real Story</em></h2>
-    <p class="host-says-body">Melissa doesn&rsquo;t pitch products or read from scripts. She speaks from 25 years of lived experience building something that matters, in a country that isn&rsquo;t hers, with nothing but instinct and grit.</p>
-    <div class="host-benefits">
-      <div class="benefit">
-        <div class="benefit-title">Genuine storytelling</div>
-        <p class="benefit-desc">No rehearsed answers. Real stories from two decades of building, failing, rebuilding, and staying when everyone else left.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit-title">Authority without ego</div>
-        <p class="benefit-desc">A woman who&rsquo;s hosted celebrities, survived pandemics, raised a daughter in Tulum, and still works in her own hotel every day.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit-title">Conversations that convert</div>
-        <p class="benefit-desc">Melissa&rsquo;s story resonates with women 30-55 who are searching for meaning, transformation, and permission to put themselves first.</p>
-      </div>
+<!-- ═══ SECTION 3: Intro Text ═══ -->
+<section class="section">
+  <div class="container home-intro">
+    <h3><strong>The perfect blend of authenticity and comfort</strong></h3>
+    <p>What started as a 4-room pop-up has become one of the most iconic beachfront resorts in Tulum, Mexico.</p>
+    <p>Renowned for its wabi-sabi design using organic materials, we provide guests with an authentic, rejuvenating experience at our Tulum eco-resort.</p>
+    <p>Whether you join one of our in-house yoga or wellness retreats or book a room, you will find community and a place you want to revisit again and again.</p>
+    <p>It is recognized for its eco-chic accommodations, yoga retreat, spa, massage and fitness classes.</p>
+    <p>It is a perfect blend of authenticity and comfort.</p>
+    <p>Amansala is an all-inclusive resort in Tulum, Mexico, and the city&rsquo;s first resort.</p>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: "Life at Amansala" Photo Gallery ═══ -->
+<section class="section">
+  <div class="container">
+
+    <!-- Separator -->
+    <div class="home-separator" style="padding-top: 0;">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/51f508f8-2f4d-4ea8-96d7-e567139b69b4/Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%282%29.png?format=750w" alt="Life at Amansala — The Place Itself">
+    </div>
+
+    <div class="home-gallery-grid">
+      <!-- Row: tall left image spanning 2 rows, 2 smaller on right -->
+      <img class="tall" src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9f8482fd-3fb1-4ebd-8cc1-71628bcb9b41/Amansala+-15+%281%29.jpg?format=1000w" alt="Amansala beach sunset" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0a564837-a923-4c3f-b704-416a4b5711c1/A-beachfront+beachview.jpg?format=750w" alt="Amansala beachfront view" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e4030984-53b7-44ac-9751-3b9b908cb861/ChatGPT+Image+Feb+13%2C+2026%2C+02_51_32+PM.png?format=750w" alt="Amansala aerial view" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7545756c-51fa-412d-b65f-8b91bd75638a/IMG_0316.JPG?format=750w" alt="Amansala thatched palapa" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/587601e9-ee86-42cf-8a4a-85673d15705f/551f81c6-b4e4-4135-9332-a41f7dbfd55c+2.JPG?format=750w" alt="Amansala garden aerial" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     CTA — BOOK MELISSA
-     ═══════════════════════════════════════════ -->
-<section class="cta">
-  <span class="section-eyebrow">Book Melissa</span>
-  <h2 class="section-headline">Ready for a Real <em>Conversation?</em></h2>
-  <p class="cta-body">Melissa brings genuine stories, sharp insight, and a point of view entirely her own. She&rsquo;s ready when you are.</p>
-  <div class="cta-contacts">
-    <div>
-      <span class="cta-contact-label">Email</span>
-      <a href="mailto:melissa@amansala.com" class="cta-contact-value">melissa@amansala.com</a>
+<!-- ═══ SECTION 5: Melissa / Origin Story ═══ -->
+<section class="section section--alt">
+  <div class="container">
+
+    <!-- Top: Separator + Two Photos + Year Labels -->
+    <div class="home-origin-grid">
+      <div class="origin-title">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/c605bde2-239d-48c8-a8fd-459c860ca83d/Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%281%29.png?format=750w" alt="The Founder — Melissa Perlman" loading="lazy">
+      </div>
+      <div class="origin-photo origin-photo-left">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a6b8b415-0e2b-4494-9c89-c0dfa4c4c232/Melissa-Building+%281%29.jpg?format=1000w" alt="Melissa building Amansala, 2001" loading="lazy">
+      </div>
+      <div class="origin-photo origin-photo-right">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/53f37962-bbdb-4f79-8161-4b046ffe1549/Serene+boho+retreat+in+natural+light.png?format=1000w" alt="Melissa at Amansala, 2026" loading="lazy">
+      </div>
+      <div class="home-origin-year origin-year-left">2001</div>
+      <div class="home-origin-year origin-year-right">2026</div>
     </div>
-    <div>
-      <span class="cta-contact-label">Website</span>
-      <a href="https://www.amansala.com" class="cta-contact-value" target="_blank">amansala.com</a>
+
+    <!-- Founder quote -->
+    <div class="home-origin-quote">
+      <p class="home-origin-text">&ldquo;She arrived with a few duffel bags of what she calls <em>pretty things</em> &mdash; to set up a few caravanas on the beach in the sleepy town of Tulum.</p>
+      <p class="home-origin-text">Melissa Perlman followed her instinct and a deep passion for creating a holiday with a purpose &mdash; one that sends you home looking and feeling better than when you arrived.</p>
+      <p class="home-origin-text">More than 20 years later, that vision still guides everything we do.&rdquo;</p>
     </div>
-    <div>
-      <span class="cta-contact-label">Bikini Bootcamp</span>
-      <a href="https://www.bikinibootcamp.com" class="cta-contact-value" target="_blank">bikinibootcamp.com</a>
+
+    <!-- Location: Map + Info -->
+    <div class="home-origin-location">
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6487ccc2-5842-447a-bf5d-10d8006ecd23/ChatGPT+Image+Mar+4%2C+2026%2C+04_14_04+PM.png?format=1500w" alt="Illustrated map of Tulum showing Amansala location" loading="lazy">
+      </div>
+      <div>
+        <div class="home-separator" style="padding: 0 0 var(--sp-3) 0;">
+          <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/663df2c7-ade2-4b8d-b3ee-e879f312931b/Copy+of+Copy+of+Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%281%29.png?format=750w" alt="Our Location in Tulum">
+        </div>
+        <p class="home-origin-text">Amansala is located on Tulum&rsquo;s beach road (Boca Paila) at KM 5.5, along a beautiful stretch of Caribbean coastline between the Tulum Ruins and the Sian Ka&rsquo;an Biosphere Reserve.</p>
+        <div class="home-location-detail">
+          <p><strong>Travel Time</strong></p>
+          <p>&#9992; <strong>Tulum International Airport (TQO)</strong> &mdash; approx. <strong>50 minutes</strong></p>
+          <p>&#9992; <strong>Canc&uacute;n International Airport (CUN)</strong> &mdash; approx. <strong>1 hour 45 minutes</strong></p>
+        </div>
+      </div>
     </div>
-    <div>
-      <span class="cta-contact-label">Instagram</span>
-      <a href="https://www.instagram.com/amansalatulum/" class="cta-contact-value" target="_blank">@amansalatulum</a>
-    </div>
+
   </div>
-  <a href="mailto:melissa@amansala.com?subject=Podcast%20Guest%20Inquiry%20%E2%80%94%20Melissa%20Perlman" class="cta-button">Get in Touch</a>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════ -->
+<!-- ═══ SECTION 6: Wide Separator ═══ -->
+<div class="home-separator">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fadc81fc-5921-41f3-b45e-2183e834bd6c/An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%283%29.png?format=1500w" alt="Amansala separator" style="max-width: 900px; width: 80vw;">
+</div>
+
+<!-- ═══ SECTION 7: Newsletter ═══ -->
+<section class="section">
+  <div class="container" style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--sp-5); align-items: center;">
+
+    <!-- Left: separator image -->
+    <div class="home-separator" style="padding: 0;">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/8910a266-fea0-4598-ad65-91f749fb7c25/Copy+of+Copy+of+An+eco-chic+getaway+where+guests+reconnect+with+purpose%2C+nature%2C+and+themselves.+%28800+x+400+px%29+%28800+x+300+px%29+%282%29.png?format=750w" alt="Amansala separator" style="max-width: 100%; width: 100%;">
+    </div>
+
+    <!-- Right: signup form -->
+    <div>
+      <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: var(--sp-3);">Sign up for retreat news, special offers, and a touch of Amansala magic.</p>
+      <form class="newsletter-form" action="#" method="POST">
+        <input type="email" class="newsletter-input" placeholder="Email Address" required aria-label="Email Address">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+      <p style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--sp-1);">We respect your privacy.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
 <footer class="footer">
-  <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
-  <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
-  <div class="footer-links">
-    <a href="https://www.amansala.com" target="_blank">Website</a>
-    <a href="https://www.instagram.com/amansalatulum/" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/amansalaresort" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/channel/UCQTC2JMNMUSZI-DY6dsIKEQ" target="_blank">YouTube</a>
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
   </div>
 </footer>
 
+<script>
+(function() {
+  var nav = document.querySelector('.nav');
+  var hero = document.querySelector('.home-hero');
+  function onScroll() {
+    var threshold = hero ? hero.offsetHeight - nav.offsetHeight : 200;
+    nav.classList.toggle('nav--scrolled', window.scrollY > threshold);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 </body>
 </html>

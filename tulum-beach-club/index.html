@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulum Beach Club Day Pass at Amansala Resort &mdash; Amansala</title>
+<meta name="description" content="Spend the day at Amansala Beach Club in Tulum. Day pass $55 includes beachfront lounger, pool access, and beach towels. Farm-to-table dining and signature cocktails by the sea.">
+<meta property="og:title" content="Beach Club Day Pass &mdash; Amansala Resort, Tulum">
+<meta property="og:description" content="Day pass from $55. Beachfront loungers, pool, farm-to-table dining and signature cocktails at Amansala Beach Club, Tulum.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/03a2ecf5-de5e-4034-8896-7a093ba5d98b/amansala+beach+club?format=1500w">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Beach Club ═══ */
+.bc-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.bc-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.bc-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bc-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, hsla(30,13%,19%,0.1) 0%, hsla(30,13%,19%,0.5) 100%);
+}
+
+.bc-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 850px;
+}
+
+.bc-hero-content p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-top: var(--sp-3);
+  color: hsla(42,36%,95%,0.85);
+}
+
+.bc-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+.bc-split-img img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.bc-split-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.bc-split-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+
+/* Benefits cards */
+.bc-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+.bc-benefit {
+  padding: var(--sp-5) var(--sp-3);
+  background: var(--cream);
+  border-top: 2px solid var(--border);
+  transition: border-color var(--ease);
+}
+
+.bc-benefit:hover {
+  border-top-color: var(--accent);
+}
+
+.bc-benefit h4 {
+  margin-bottom: var(--sp-1);
+}
+
+.bc-benefit p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* Day pass */
+.bc-daypass {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bc-daypass h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.bc-daypass .price {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: var(--sp-1);
+}
+
+.bc-daypass p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* Gallery */
+.bc-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.bc-gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform var(--ease);
+}
+
+.bc-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Dining */
+.bc-dining {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+.bc-dining-text h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.bc-dining-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.bc-dining-list {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+}
+
+.bc-dining-list li {
+  padding-left: var(--sp-2);
+  border-left: 2px solid var(--accent);
+  margin-bottom: var(--sp-1);
+}
+
+.bc-dining-list li strong {
+  color: var(--text);
+}
+
+/* Booking CTA */
+.bc-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bc-cta h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.bc-cta p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+@media (max-width: 1024px) {
+  .bc-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bc-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bc-split,
+  .bc-dining {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+  .bc-benefits {
+    grid-template-columns: 1fr;
+  }
+  .bc-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="bc-hero">
+  <div class="bc-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/03a2ecf5-de5e-4034-8896-7a093ba5d98b/amansala+beach+club?format=1500w" alt="Amansala beach club" loading="eager">
+  </div>
+  <div class="bc-hero-overlay"></div>
+  <div class="bc-hero-content">
+    <h1>Relax and Recharge at Amansala Beach Club in Tulum, Mexico</h1>
+    <p>Welcome to Amansala Beach Club, the perfect beachfront destination in Tulum for relaxation, fresh cuisine, handcrafted cocktails, and breathtaking ocean views. Whether you're looking for a day pass to soak up the sun, a delicious beachfront meal, or a laid-back yet luxurious atmosphere, Amansala is the place to be.</p>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE — 4 BENEFIT CARDS ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow">Why Choose</span>
+      <h2>Why Choose Amansala Beach Club?</h2>
+    </div>
+    <div class="bc-benefits">
+      <div class="bc-benefit">
+        <h4>Beachfront Location</h4>
+        <p>Stunning beachfront location with crystal-clear waters</p>
+      </div>
+      <div class="bc-benefit">
+        <h4>Farm-to-Table Cuisine</h4>
+        <p>Delicious farm-to-table cuisine with fresh, locally sourced ingredients</p>
+      </div>
+      <div class="bc-benefit">
+        <h4>Signature Cocktails</h4>
+        <p>Signature cocktails &amp; fresh juices served by the sea</p>
+      </div>
+      <div class="bc-benefit">
+        <h4>Eco-Chic Atmosphere</h4>
+        <p>Comfortable daybeds &amp; loungers for ultimate relaxation in a laid-back, eco-chic atmosphere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY PASS SPLIT ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="bc-split">
+      <div class="bc-split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/60d9247c-f9ce-4958-82e0-6ed61a538a2a/Amansala+resort?format=1000w" alt="Amansala resort" loading="lazy">
+      </div>
+      <div class="bc-split-text">
+        <span class="eyebrow">Day Pass</span>
+        <h2>Beach Club Day Pass in Tulum</h2>
+        <p>Looking for the best day pass experience in Tulum? Spend the day at Amansala Beach Club with a beachfront lounger, delicious food, and refreshing drinks. Whether you're visiting solo, with friends, or as part of a group, our beach club offers the perfect blend of relaxation and luxury.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT'S INCLUDED ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-5);">
+      <span class="eyebrow">Inclusions</span>
+      <h2>What&rsquo;s Included in Our Beach Club Experience?</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-title">Private Beach</div>
+        <p class="feature-text">Access to our pristine private beach</p>
+      </div>
+      <div class="feature">
+        <div class="feature-title">Sunbeds &amp; Umbrellas</div>
+        <p class="feature-text">Comfortable sunbeds &amp; umbrellas</p>
+      </div>
+      <div class="feature">
+        <div class="feature-title">Beachside Service</div>
+        <p class="feature-text">Beachside food &amp; drink service. Swim, sunbathe, and unwind in paradise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section>
+  <div class="bc-gallery">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/157ba2a1-3460-4fd1-b51a-60533bf02ff1/_ZV_0075.jpg?format=750w" alt="Wooden deck with beach view, draped ropes, and potted plants" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1cd0dd49-339c-4d4c-86bb-07d9cd1ed8b6/WhatsApp+Image+2024-08-19+at+1.52.43+PM.jpeg?format=750w" alt="Aerial view of beach resort with structures" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5b135b07-df41-4f00-b0f8-2cb7df512238/_ZV_0083.jpg?format=750w" alt="Outdoor beach restaurant with wooden furniture" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1cc165af-0cd3-4aed-84e5-5a9aa4141a99/WhatsApp+Image+2024-08-19+at+1.52.21+PM.jpeg?format=750w" alt="Couple by pool under palm trees" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b063d451-84b8-4e68-a41c-8a8c42e00bf2/_ZV_7689+%281%29.jpg?format=750w" alt="Two women in swimwear on balcony" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/adc0dd22-d9ce-421c-8480-8d90038e4aed/_ZV_0013.jpg?format=750w" alt="Beachfront restaurant with wooden tables" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/52b86b30-ff7b-432d-a53d-7068b91a52cc/_ZV_0107.jpg?format=750w" alt="Beachfront restaurant with pergolas" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/67418607-d9de-4d3b-ba83-25550d89a14a/_ZV_7721+%281%29.jpg?format=750w" alt="Women in bathroom with mirrors" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/93278d95-dd2f-415b-9bf7-7501f7913a6f/2F0A2781-HDR-Editar.jpg?format=750w" alt="Woman relaxing by pool" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/8431945f-762d-4f77-adcd-a39e7a5cab47/_ZV_0116.jpg?format=750w" alt="Beachfront restaurant open-air design" loading="lazy">
+  </div>
+</section>
+
+<!-- ═══ DINING ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="bc-dining">
+      <div class="bc-dining-text">
+        <span class="eyebrow">Dining</span>
+        <h2>Beachfront Dining in Tulum</h2>
+        <p>Indulge in fresh, healthy, and flavorful dishes crafted with local, organic ingredients. Our beachfront restaurant offers a variety of options, from fresh seafood and vibrant salads to tropical cocktails and detox juices.</p>
+        <ul class="bc-dining-list">
+          <li><strong>Healthy Salads &amp; Bowls</strong> &mdash; Fresh, locally sourced ingredients</li>
+          <li><strong>Seafood Specialties</strong> &mdash; Caught daily from the Caribbean Sea</li>
+          <li><strong>Signature Cocktails</strong> &mdash; Crafted with tropical fruits &amp; premium spirits</li>
+          <li><strong>Vegan &amp; Gluten-Free Options</strong> &mdash; Nourishing and delicious</li>
+        </ul>
+      </div>
+      <div class="bc-split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5b135b07-df41-4f00-b0f8-2cb7df512238/_ZV_0083.jpg?format=1000w" alt="Outdoor beach restaurant" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY PASS PRICING + CTA ═══ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="bc-daypass">
+      <span class="eyebrow" style="color: hsla(42,36%,95%,0.4);">Find Your Beach Tribe</span>
+      <h2 style="color: var(--cream);">Find your Beach Tribe at Amansala</h2>
+      <div class="price">US$55</div>
+      <p style="color: var(--text-light);">Beach Pass for non-hotel guests. Includes use of the space, pool, and beach towels. Seasonal Rates, chat us for updates.</p>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C573269%2C572849%2C572779%2C553925%2C573283%2C572848%2C553922%2C553923%2C553924&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Book your day in Paradise</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING CTA ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="bc-cta">
+      <h2>Book Your Experience at Amansala Beach Club</h2>
+      <p>Whether you're planning a day at the beach, a private event, or a sunset dinner, Amansala Beach Club offers the ultimate Tulum experience.</p>
+      <p>Reserve your beach club day pass now! Come relax, recharge, and soak in the beauty of Tulum's coastline.</p>
+      <a href="https://sky-us1.clock-software.com/spa/pms-wbe/#/hotel/12530?rate_ids=360407%2C362969%2C360416%2C360374%2C360414%2C362967%2C364902%2C360422%2C362968%2C380314%2C363594%2C363593%2C363595%2C363596%2C573269%2C572849%2C572779%2C553925%2C573283%2C572848%2C553922%2C553923%2C553924&submit=true" class="btn btn-primary" target="_blank" rel="noopener">Reserve Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

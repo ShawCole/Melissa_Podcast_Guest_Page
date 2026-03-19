@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Bookings &amp; Events | Amansala, Tulum</title>
+<meta name="description" content="Host your next event at Amansala in Tulum. Weddings, corporate retreats, bachelorette parties, family reunions, and group celebrations on the beachfront.">
+<meta property="og:title" content="Group Bookings &amp; Events | Amansala Tulum">
+<meta property="og:description" content="Make your event truly special at Amansala, Tulum. Stunning beachfront venues for weddings, corporate retreats, and celebrations.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b22dfee1-b4cc-49bd-a8aa-abfa074539fe/Wedding+%26+Events+in+Tulum.JPG">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Group Bookings ═══ */
+.group-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+.group-hero-bg {
+  position: absolute; inset: 0;
+}
+.group-hero-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.group-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, hsla(30,13%,19%,0.1) 0%, hsla(30,13%,19%,0.5) 100%);
+}
+.group-hero-content {
+  position: relative; z-index: 2;
+  text-align: center; color: var(--cream);
+  padding: var(--sp-8) var(--gutter); max-width: 850px;
+}
+.group-hero-content h1 { margin-bottom: var(--sp-3); }
+.group-hero-content p {
+  font-size: 1.1rem; line-height: 1.8; color: hsla(42,36%,95%,0.85);
+}
+
+/* Pitch section */
+.group-pitch {
+  text-align: center; max-width: 780px; margin: 0 auto;
+}
+.group-pitch h2 { margin-bottom: var(--sp-3); }
+.group-pitch p {
+  font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin-bottom: var(--sp-3);
+}
+
+/* Benefits grid */
+.group-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4); margin-top: var(--sp-5);
+}
+.group-benefit {
+  padding: var(--sp-4);
+  border-top: 2px solid var(--border);
+  transition: border-color var(--ease);
+}
+.group-benefit:hover {
+  border-top-color: var(--accent);
+}
+.group-benefit-title {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 1.15rem; margin-bottom: var(--sp-1);
+}
+.group-benefit-text {
+  font-family: var(--font-sans); font-size: 0.9rem;
+  line-height: 1.75; color: var(--text-muted);
+}
+
+/* Split sections */
+.group-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7); align-items: center;
+}
+.group-split--reverse { direction: rtl; }
+.group-split--reverse > * { direction: ltr; }
+.group-split-img img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+}
+.group-split-text h2 { margin-bottom: var(--sp-3); }
+.group-split-text p {
+  font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin-bottom: var(--sp-3);
+}
+.group-split-text ul {
+  list-style: none; font-family: var(--font-sans);
+  font-size: 0.95rem; line-height: 2.2; color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+.group-split-text ul li::before {
+  content: '\2022'; color: var(--accent); margin-right: 10px;
+}
+
+/* CTA */
+.group-cta {
+  text-align: center; max-width: 700px; margin: 0 auto;
+}
+.group-cta h2 { margin-bottom: var(--sp-3); }
+.group-cta p {
+  font-size: 1.05rem; line-height: 1.85; margin-bottom: var(--sp-4);
+}
+
+@media (max-width: 768px) {
+  .group-split, .group-split--reverse {
+    grid-template-columns: 1fr; direction: ltr; gap: var(--sp-4);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="group-hero">
+  <div class="group-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b22dfee1-b4cc-49bd-a8aa-abfa074539fe/Wedding+%26+Events+in+Tulum.JPG?format=1500w" alt="Wedding and events at Amansala, Tulum" loading="eager">
+  </div>
+  <div class="group-hero-overlay"></div>
+  <div class="group-hero-content">
+    <span class="eyebrow" style="color: hsla(42,36%,95%,0.5);">Group Events</span>
+    <h1>Make Your Event Truly Special at Amansala, Tulum</h1>
+    <p>Looking for the perfect beachfront venue in Tulum for your next event? Amansala hosts seamless, stunning, and unforgettable group gatherings in a breathtaking oceanfront setting.</p>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE AMANSALA ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="group-pitch">
+      <span class="eyebrow">Why Amansala</span>
+      <h2>The Perfect Beachfront Venue</h2>
+      <p>From weddings, corporate retreats, and bachelorette parties to birthdays, engagements, anniversaries, and baby showers &mdash; Amansala is where your celebration comes to life.</p>
+    </div>
+    <div class="group-benefits">
+      <div class="group-benefit">
+        <div class="group-benefit-title">Beachfront Location</div>
+        <div class="group-benefit-text">A spectacular beachfront location with panoramic ocean views.</div>
+      </div>
+      <div class="group-benefit">
+        <div class="group-benefit-title">Open-Air Venues</div>
+        <div class="group-benefit-text">Open-air venues perfect for ceremonies, private dinners, and celebrations.</div>
+      </div>
+      <div class="group-benefit">
+        <div class="group-benefit-title">Custom Event Planning</div>
+        <div class="group-benefit-text">Customized event planning for a stress-free, seamless experience.</div>
+      </div>
+      <div class="group-benefit">
+        <div class="group-benefit-title">Fresh Cuisine</div>
+        <div class="group-benefit-text">Delicious, fresh cuisine tailored to your group&rsquo;s needs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAMILY REUNIONS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="group-split">
+      <div class="group-split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1679164866155-L2LP7SX5N8LZNQQZ306U/unsplash-image-CLD1i8hp008.jpg?format=1000w" alt="Family reunion at Amansala" loading="lazy">
+      </div>
+      <div class="group-split-text">
+        <span class="eyebrow">Families</span>
+        <h2>Host an Unforgettable Family Reunion in Tulum</h2>
+        <ul>
+          <li>Stunning beachfront location for unforgettable moments</li>
+          <li>Spacious accommodations perfect for groups of all sizes</li>
+          <li>Custom group packages with dining, activities &amp; wellness experiences</li>
+          <li>Easy access to Tulum, just a short trip from major airports</li>
+        </ul>
+        <a href="/contact-us" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CORPORATE RETREATS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="group-split group-split--reverse">
+      <div class="group-split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d01fc985-911c-48a0-a478-fe12f6e1277c/wedding-party-dinner.JPG?format=1000w" alt="Corporate event dinner at Amansala" loading="lazy">
+      </div>
+      <div class="group-split-text">
+        <span class="eyebrow">Corporate</span>
+        <h2>The Ultimate Beachfront Destination for Corporate Retreats &amp; Group Events</h2>
+        <p>Looking for the perfect venue for your next corporate retreat, team-building event, or group gathering? Amansala Beachfront Resort in Tulum offers a seamless, stunning, and unforgettable experience for groups of all sizes.</p>
+        <ul>
+          <li>Breathtaking beachfront location ideal for inspiration &amp; relaxation</li>
+          <li>Versatile open-air venues for meetings, private dinners &amp; celebrations</li>
+          <li>Customized group packages with activities, wellness, and gourmet dining</li>
+          <li>Perfect for corporate retreats, incentive trips and leadership getaways</li>
+          <li>Easily accessible &mdash; just a short trip from major airports</li>
+        </ul>
+        <a href="/bring-your-team" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING CTA ═══ -->
+<section class="section section--dark">
+  <div class="container group-cta">
+    <span class="eyebrow" style="color: hsla(42,36%,95%,0.4);">Get Started</span>
+    <h2 style="color: var(--cream);">Book Your Corporate Event or Group Retreat Today</h2>
+    <p style="color: var(--text-light);">Let us help you plan a seamless, stunning, and unforgettable event at Amansala in Tulum.</p>
+    <a href="/contact-us" class="btn btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

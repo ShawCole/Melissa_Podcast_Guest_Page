@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan the Perfect Tulum Bachelorette Party at Amansala &mdash; Amansala</title>
+<meta name="description" content="Amansala Beachfront Resort & Beach Club offers the perfect blend of luxury, wellness, and fun for your bachelorette getaway in Tulum. Package add-on from $185 per person.">
+<meta property="og:title" content="Plan the Perfect Tulum Bachelorette Party at Amansala">
+<meta property="og:description" content="The ultimate Tulum bachelorette party experience. Oceanfront lounging, daily yoga, handcrafted cocktails, spa treatments, and adventure-filled days. Package from $185/pp.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3f7b0e98-1703-44b3-b692-34640a3e1db1/bachelorette+2+.png?format=1500w">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.amansala.com/bachelorette-tulum">
+<link rel="stylesheet" href="../css/brand.css">
+<style>
+/* ═══ PAGE-SPECIFIC: Bachelorette Tulum ═══ */
+
+/* Hero */
+.bach-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.bach-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.bach-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.bach-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(30, 13%, 19%, 0.15) 0%,
+    hsla(30, 13%, 19%, 0.6) 100%
+  );
+}
+
+.bach-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-8) var(--gutter);
+  max-width: 800px;
+}
+
+.bach-hero-content h1 {
+  margin-bottom: var(--sp-3);
+}
+
+.bach-hero-content p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: hsla(42, 36%, 95%, 0.85);
+  margin-bottom: var(--sp-4);
+}
+
+/* Intro split */
+.bach-intro-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.bach-intro-text strong {
+  color: var(--text);
+}
+
+.bach-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-3) 0;
+}
+
+.bach-list li {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+  padding-left: var(--sp-3);
+  position: relative;
+}
+
+.bach-list li::before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Amenities two-column */
+.bach-amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.bach-amenity {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bach-amenity-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: var(--sp-1);
+}
+
+.bach-amenity-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Package card */
+.bach-package {
+  background: var(--cream);
+  padding: var(--sp-6) var(--sp-5);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.bach-package h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.bach-package-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.bach-package-text strong {
+  color: var(--text);
+}
+
+.bach-price {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--accent);
+  margin: var(--sp-3) 0 var(--sp-1);
+  line-height: 1.1;
+}
+
+.bach-price-sub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.bach-package-note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-top: var(--sp-3);
+  font-style: italic;
+}
+
+/* Activities showcase */
+.bach-activity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  align-items: center;
+  padding: var(--sp-6) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bach-activity:last-child {
+  border-bottom: none;
+}
+
+.bach-activity--reverse {
+  direction: rtl;
+}
+
+.bach-activity--reverse > * {
+  direction: ltr;
+}
+
+.bach-activity-images {
+  display: grid;
+  gap: 4px;
+}
+
+.bach-activity-images--single {
+  grid-template-columns: 1fr;
+}
+
+.bach-activity-images--double {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bach-activity-images--triple {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bach-activity-images--triple img:first-child {
+  grid-column: 1 / -1;
+}
+
+.bach-activity-images--five {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bach-activity-images--five img:first-child {
+  grid-column: 1 / -1;
+}
+
+.bach-activity-images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.bach-activity-text h3 {
+  margin-bottom: var(--sp-2);
+}
+
+.bach-activity-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.bach-activity-text p strong {
+  color: var(--text);
+}
+
+.bach-activity-link {
+  display: inline-block;
+  margin-top: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color var(--ease);
+}
+
+.bach-activity-link:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+/* Testimonial slider */
+.bach-testimonials {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bach-testimonial {
+  padding: var(--sp-5) 0;
+  border-bottom: 1px solid hsla(42, 36%, 95%, 0.1);
+}
+
+.bach-testimonial:last-child {
+  border-bottom: none;
+}
+
+.bach-testimonial-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--cream);
+  margin-bottom: var(--sp-3);
+}
+
+.bach-testimonial-author {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Villas CTA */
+.bach-villas-cta {
+  text-align: center;
+}
+
+.bach-villas-cta h2 {
+  margin-bottom: var(--sp-4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bach-hero {
+    min-height: 70vh;
+  }
+
+  .bach-amenities {
+    grid-template-columns: 1fr;
+  }
+
+  .bach-activity {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .bach-activity--reverse {
+    direction: ltr;
+  }
+
+  .bach-package {
+    padding: var(--sp-5) var(--sp-3);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/422c0999-0915-4bc9-9e21-cc42c1010ac8/IMG_2999.PNG?format=300w" alt="Amansala"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="/rooms">Stay</a>
+        <div class="nav-dropdown-menu">
+          <a href="/rooms">Rooms</a>
+          <a href="/houses">Houses</a>
+          <a href="/chica">Chica</a>
+          <a href="/7-gotas">7 Gotas Villa</a>
+          <a href="/casa-grande">Casa Grande Villa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/signature-retreat">Retreats</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bikinibootcamp.com/bikini-bootcamp">Bikini Bootcamp</a>
+          <a href="https://www.bikinibootcamp.com/restoreandrenew">Restore &amp; Renew</a>
+          <a href="/signature-retreat">All Retreats</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/host-a-retreat">Groups</a>
+        <div class="nav-dropdown-menu">
+          <a href="/host-a-retreat">Host a Retreat</a>
+          <a href="/bring-your-team">Bring Your Team</a>
+          <a href="/bachelorette-tulum">Bachelorette</a>
+          <a href="/wedding-brochure">Weddings</a>
+          <a href="/tulum-group-bookings">Events</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/spa">Experience</a>
+        <div class="nav-dropdown-menu">
+          <a href="/ourschedule">Wellness Schedule</a>
+          <a href="/menu">Restaurant</a>
+          <a href="/tulum-beach-club">Beach Club</a>
+          <a href="/spirit-journeys">Rituals</a>
+          <a href="/adventures">Tours</a>
+          <a href="/spa">Spa</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown-menu">
+          <a href="/melissa">Melissa Perlman</a>
+          <a href="/about">Our Story</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/amansala-reviews-tulum">Testimonials</a>
+          <a href="/personal-relations">Press</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="bach-hero">
+  <div class="bach-hero-bg">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/3f7b0e98-1703-44b3-b692-34640a3e1db1/bachelorette+2+.png?format=1500w" alt="Bachelorette party at Amansala Tulum" loading="eager">
+  </div>
+  <div class="bach-hero-overlay"></div>
+  <div class="bach-hero-content">
+    <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.6);">Celebrate in Paradise</span>
+    <h1>The Ultimate Tulum Bachelorette Party Experience at Amansala</h1>
+    <p>Luxury, wellness, and unforgettable memories on the Caribbean coast</p>
+    <a href="#package" class="btn btn-primary">View Package &mdash; $185/pp</a>
+  </div>
+</section>
+
+<!-- ═══ INTRO / VALUE PROP (Split) ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Bachelorette Tulum</span>
+        <h2>More than <em>just a party</em></h2>
+        <p class="bach-intro-text">Amansala Beachfront Resort &amp; Beach Club offers the perfect blend of luxury, wellness, and fun, because your bachelorette getaway should be more than just a party.</p>
+        <p class="bach-intro-text">Imagine your celebration with:</p>
+        <ul class="bach-list">
+          <li>Oceanfront lounging at our stunning beach club</li>
+          <li>Daily yoga by the sea to balance and recharge</li>
+          <li>Handcrafted cocktails + fresh, local cuisine</li>
+          <li>Sunset beach rituals and private dinners under the stars</li>
+          <li>Spa treatments and Mayan-inspired wellness rituals</li>
+          <li>Adventure-filled days exploring the beauty of Tulum</li>
+        </ul>
+        <p class="bach-intro-text">At Amansala, we&rsquo;ve got everything you need to create a bachelorette experience you and your tribe will never forget.</p>
+      </div>
+      <div class="split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/c9e4bbf9-408e-4192-bb21-59da2c631dfe/chica-beachclub-oceanview.jpeg?format=1000w" alt="Oceanfront beach club at Amansala Tulum" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY AMANSALA (Two-Column Amenities) ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto var(--sp-6);">
+      <span class="eyebrow">The Best of Both Worlds</span>
+      <h2>Why stay at Amansala for your <em>Bachelorette?</em></h2>
+      <p class="bach-intro-text">Enjoy the privacy of a villa with the full services and amenities of a boutique resort:</p>
+    </div>
+    <div class="bach-amenities">
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Onsite Spa</div>
+        <div class="bach-amenity-desc">Indulge in massages, facials, and Mayan-inspired rituals</div>
+      </div>
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Two Beach Clubs</div>
+        <div class="bach-amenity-desc">Lounge by the sea with private beds and tropical cocktails</div>
+      </div>
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Beachfront Restaurant</div>
+        <div class="bach-amenity-desc">Fresh, healthy, and delicious cuisine</div>
+      </div>
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Daily Fitness &amp; Yoga Classes</div>
+        <div class="bach-amenity-desc">Energize and connect by the ocean</div>
+      </div>
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Curated Excursions</div>
+        <div class="bach-amenity-desc">Cenotes, ruins, yachts, and more</div>
+      </div>
+      <div class="bach-amenity">
+        <div class="bach-amenity-title">Authentic Local Ceremonies</div>
+        <div class="bach-amenity-desc">Experience Mayan clay, cacao, and sound healing</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: var(--sp-5);">
+      <p class="bach-intro-text"><strong>The Perfect Bachelorette Destination</strong> &mdash; A true one-stop shop for wellness, celebration, and unforgettable memories.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PACKAGE DETAILS ═══ -->
+<section class="section" id="package">
+  <div class="container">
+    <div class="split split--reverse">
+      <div class="split-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5e684010-a269-4e71-bd21-31067b64588b/Photo+Jun+21%2C+2+57+28+PM+%281%29.jpg?format=1000w" alt="Bachelorette group at Amansala villa" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">What We Recommend</span>
+        <h2>Book a Villa and <em>add a package</em></h2>
+        <ul class="bach-list">
+          <li><strong>3&ndash;5 Night Stay</strong> in one of our private villas or a curated room block</li>
+          <li><strong>Welcome Cocktails</strong> upon arrival to toast the bride-to-be</li>
+          <li><strong>Morning Yoga &amp; Wellness Sessions</strong> to energize and connect</li>
+          <li><strong>Mayan Clay Ritual</strong> on the beach for a soulful glow</li>
+          <li><strong>Spa Treatment per person</strong> designed for relaxation and renewal</li>
+        </ul>
+        <div class="bach-price">$185 <span style="font-size: 0.5em;">USD</span></div>
+        <div class="bach-price-sub">per person</div>
+        <ul class="bach-list">
+          <li><strong>Optional Excursions</strong> such as cenote swimming, a private yacht party, or a guided tour of the Mayan ruins</li>
+        </ul>
+        <p class="bach-package-note">We&rsquo;ll help you design the ultimate Tulum Bachelorette itinerary to match your group&rsquo;s vibe&mdash;whether that means wellness, adventure, or pure celebration.</p>
+        <div style="margin-top: var(--sp-4);">
+          <a href="/tulum-group-bookings" class="btn btn-primary">Inquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACTIVITIES SHOWCASE ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto var(--sp-5);">
+      <span class="eyebrow">Things to Do</span>
+      <h2>Best Things to Do for a <em>Bachelorette in Tulum</em></h2>
+      <p class="bach-intro-text">Wondering how to plan the perfect Tulum bachelorette weekend? Here are some must-do activities:</p>
+    </div>
+
+    <!-- Activity 1: Beach Club & Sunset Cocktails -->
+    <div class="bach-activity">
+      <div class="bach-activity-images bach-activity-images--single">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/2ce4c28d-2116-42b0-8363-2ecaa52b0953/A-Yoga-Shala-Beachfront+%281%29+%281%29.jpg?format=1000w" alt="Beach club and sunset cocktails at Amansala" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>Beach Club &amp; Sunset Cocktails</h3>
+        <p>Relax at <strong>Tulum&rsquo;s best beach club</strong> with <strong>handcrafted cocktails and VIP beach beds</strong>. Enjoy a <strong>sunset dinner with ocean views</strong> and toast to new beginnings!</p>
+      </div>
+    </div>
+
+    <!-- Activity 2: Cenote Adventure & Ruins Tour -->
+    <div class="bach-activity bach-activity--reverse">
+      <div class="bach-activity-images bach-activity-images--double">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1d1b1967-8039-4725-9a1f-ca22bf5ee275/Screen+Shot+2024-04-02+at+12.36.30.png?format=750w" alt="Cenote swimming adventure near Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/024ec4d6-03bd-4a41-be82-e31e7d3cfb59/DSC05785+%281%29.jpg?format=750w" alt="Tulum ruins tour" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>Cenote Adventure &amp; Ruins Tour</h3>
+        <p>Take your bachelorette trip beyond the beach with a cenote swimming adventure, or a guided tour of the Tulum ruins.</p>
+      </div>
+    </div>
+
+    <!-- Activity 3: Wellness & Relaxation -->
+    <div class="bach-activity">
+      <div class="bach-activity-images bach-activity-images--single">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/753e1f8b-3b33-4ba0-98de-5aa3f730d07b/Spa+%281%29+%281%29.jpg?format=1000w" alt="Wellness and relaxation at Amansala spa" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>Wellness &amp; Relaxation</h3>
+        <p>Unlike typical bachelorette trips, Amansala offers the perfect balance of fun and wellness.</p>
+        <p style="margin-top: var(--sp-1);">Start your day with yoga, meditation, or a beachfront sound healing session.</p>
+      </div>
+    </div>
+
+    <!-- Activity 4: Spa Day & Mayan Healing Rituals -->
+    <div class="bach-activity bach-activity--reverse">
+      <div class="bach-activity-images bach-activity-images--double">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/2decee25-4a12-43dd-a272-374d14126ce9/bachelorette.jpeg?format=750w" alt="Bachelorette spa day at Amansala" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/24b4d5e0-5e70-4ff4-bbe5-28ee2275161d/Mayan+Clay.JPG?format=750w" alt="Mayan clay healing ritual" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>Spa Day &amp; Mayan Healing Rituals</h3>
+        <p>Unwind with a signature massage, Mayan clay treatment, or Temazcal ceremony.</p>
+        <p style="margin-top: var(--sp-1);">A detoxifying experience that leaves you glowing inside and out.</p>
+        <a href="/spa" class="bach-activity-link">Our Spa</a>
+      </div>
+    </div>
+
+    <!-- Activity 5: Private Yacht Party -->
+    <div class="bach-activity">
+      <div class="bach-activity-images bach-activity-images--five">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1712266276166-9MO95ZZA9OBPA2TP5AJX/image-asset.jpeg?format=750w" alt="Private yacht charter in Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/59786127-515f-42ec-a48d-4bc35c98c516/Screen+Shot+2024-04-12+at+12.30.02.png?format=750w" alt="Yacht party Caribbean views" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1712100067471-1PAORKQ75SLRLGKJPI4I/Screen%2BShot%2B2024-04-02%2Bat%2B12.29.47.jpg?format=750w" alt="Private yacht sailing" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1712266330964-5GDNWVGSZFRHS7KLPLAB/image-asset.jpeg?format=750w" alt="Yacht excursion Tulum" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/19653f98-377f-4b0b-ae69-a33a2aaf1a22/_A7_5888.jpg?format=750w" alt="Bachelorette yacht party" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>Private Yacht Party</h3>
+        <p>Set sail on a <strong>private yacht charter</strong> with your bride tribe! Dance, drink, and soak in the <strong>Caribbean vibes</strong>.</p>
+        <a href="/adventures" class="bach-activity-link">Our Tours</a>
+      </div>
+    </div>
+
+    <!-- Activity 6: Gitano Nightlife -->
+    <div class="bach-activity bach-activity--reverse">
+      <div class="bach-activity-images bach-activity-images--single">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7dfa78ae-9f42-4a1d-9f1c-4a39579d238f/Screen+Shot+2024-04-12+at+10.35.13.png?format=1000w" alt="Gitano Tulum nightlife and dancing" loading="lazy">
+      </div>
+      <div class="bach-activity-text">
+        <h3>A night of dancing at Gitano Tulum</h3>
+        <p>Cap off your bachelorette celebration with a night out at one of Tulum&rsquo;s most iconic nightlife venues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPA IMAGE (Divider) ═══ -->
+<section>
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1751222814054-GTZCJKVZAYGGE2KTSIRP/spa-massage-models.jpg?format=1500w" alt="Spa treatments at Amansala resort" loading="lazy" style="width: 100%; height: 400px; object-fit: cover;">
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section section--darkest">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: var(--sp-5);">
+      <span class="eyebrow" style="color: hsla(42, 36%, 95%, 0.4);">What Our Guests Say</span>
+      <h2 style="color: var(--cream);">Testimonials</h2>
+    </div>
+    <div class="bach-testimonials">
+
+      <div class="bach-testimonial">
+        <p class="bach-testimonial-text">&ldquo;Booking our bachelorette party at Amansala was an absolute dream come true! Casa Shanti, nestled in the heart of Tulum&rsquo;s serene beauty, provided the perfect backdrop for our celebration. The cozy yet luxurious accommodations allowed us to bond and create memories that will last a lifetime.<br><br>But the highlight of our stay was undeniably the spa day experience. We all booked 2 services between facials, massage, Mayan Healing, and Tarot; then we did Mayan Clay and Ice bath as a group. It was such a great way to start the long weekend, leaving us feeling utterly refreshed and ready to take on the festivities ahead.<br><br>Amansala exceeded our expectations, providing the ideal blend of luxury, serenity, and fun for our bachelorette party. We couldn&rsquo;t have asked for a more perfect getaway to celebrate this special occasion with our closest friends. Thank you, Amansala, for an unforgettable experience!&rdquo;</p>
+        <div class="bach-testimonial-author">N Hamel, Canada</div>
+      </div>
+
+      <div class="bach-testimonial">
+        <p class="bach-testimonial-text">&ldquo;Our bachelorette weekend at Amansala was nothing short of magical! We loved that you could book two full houses next to one another. We booked Casa Grande and Casa Shanti for our group of 20 fabulous ladies.<br><br>The accommodations are luxurious yet cozy. The staff at Amansala were attentive and accommodating, ensuring that our every need was met with a smile.<br><br>The magical yoga class that Darlene led in the morning was one of the highlights of our stay. I loved that she themed the class around love; she had us all in tears.<br><br>One of the most memorable evenings was the dinner under the stars at Amansala. The setting was breathtaking, with twinkling lights and a delicious meal. It was the perfect way to celebrate our time together and toast to the bride-to-be.<br><br>And, of course, no bachelorette weekend would be complete without a night out dancing! We had a blast at Gitano Jungle, dancing the night away and creating memories that will last a lifetime.<br><br>Overall, our experience at Amansala was nothing short of spectacular. From the beautiful accommodations to the incredible activities and dining experiences, every detail was thoughtfully curated to ensure our bachelorette weekend was unforgettable. Thank you, Amansala, for a great experience that exceeded all expectations!&rdquo;</p>
+        <div class="bach-testimonial-author">J White, Connecticut</div>
+      </div>
+
+      <div class="bach-testimonial">
+        <p class="bach-testimonial-text">&ldquo;Our experience with Amansala&rsquo;s Bachelorette Bootcamp was nothing short of incredible! As a group of 12 women celebrating our friend&rsquo;s upcoming wedding, we wanted to get in the best shape possible for the big day, and Amansala delivered beyond our expectations.<br><br>The setting was breathtaking, with serene views of the beach and a tranquil atmosphere that set the perfect tone for our wellness journey.<br><br>Our days were filled with a variety of workouts, including beachside yoga, HIIT sessions, strength training, cardio workouts, and amazing healthy food.<br><br>We definitely recommend Amansala&rsquo;s Bachelorette Bootcamp to anyone looking to combine fitness, wellness, and fun in a stunning beachfront setting. It was the perfect way to celebrate our friend&rsquo;s upcoming wedding.&rdquo;</p>
+        <div class="bach-testimonial-author">S Phillips, North Carolina</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VILLAS CTA ═══ -->
+<section class="section">
+  <div class="container bach-villas-cta">
+    <span class="eyebrow">Your Home Base</span>
+    <h2>Check out our <em>Villas.</em></h2>
+    <a href="/casas-onsite" class="btn btn-primary">Beach Houses</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Amansala Eco-Chic Resort &amp; Retreat Center</div>
+    <div class="footer-tagline">&ldquo;Where transformation meets the sea.&rdquo;</div>
+    <div class="footer-links">
+      <a href="/cancellation-policy">Cancellation Policy</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/amansalaresort" target="_blank" aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/amansalatulum/" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
