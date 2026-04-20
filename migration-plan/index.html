@@ -61,19 +61,81 @@ body {
   padding: 28px 32px;
   border-radius: 6px;
   margin-bottom: 48px;
-  text-align: center;
 }
 
 .key-point h2 {
   font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 400;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
+  text-align: center;
 }
 
 .key-point p {
   font-size: 0.95rem;
   margin: 0;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Problem / Solution section */
+.situation {
+  margin-bottom: 48px;
+}
+
+.situation h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--espresso);
+  margin: 0 0 16px;
+}
+
+.situation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.situation-card {
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.situation-card.problem {
+  background: var(--sand);
+  border: 1px solid var(--border);
+}
+
+.situation-card.solution {
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+.situation-card h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 12px;
+}
+
+.situation-card.problem h4 {
+  color: var(--tan);
+}
+
+.situation-card.solution h4 {
+  color: var(--tan);
+}
+
+.situation-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.situation-card.solution ul {
   color: var(--text-light);
 }
 
@@ -145,6 +207,29 @@ body {
   font-size: 0.85rem;
   font-family: 'SF Mono', 'Fira Code', monospace;
   word-break: break-all;
+}
+
+/* Concern addressed */
+.concern {
+  background: var(--sand);
+  padding: 24px 28px;
+  border-radius: 6px;
+  margin: 32px 0;
+}
+
+.concern-q {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--espresso);
+  margin: 0 0 8px;
+}
+
+.concern-a {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.65;
 }
 
 /* Why it works section */
@@ -252,6 +337,7 @@ body {
   .plan-header h1 { font-size: 1.8rem; }
   .why-grid { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }
+  .situation-grid { grid-template-columns: 1fr; }
   .page-wrapper { padding: 32px 16px 60px; }
 }
 </style>
@@ -261,56 +347,91 @@ body {
 
   <header class="plan-header">
     <p class="prepared-for">Prepared for Amansala Eco-Chic Resort</p>
-    <h1>Website Migration Plan</h1>
-    <p class="subtitle">Squarespace &rarr; Netlify &mdash; preserving your SEO rankings every step of the way</p>
+    <h1>Moving Your New Site to amansala.com</h1>
+    <p class="subtitle">One domain. All your pages. Your SEO rankings protected.</p>
   </header>
 
+  <!-- Where we are now -->
+  <section class="situation">
+    <h3>Where We Are Now</h3>
+    <div class="situation-grid">
+      <div class="situation-card problem">
+        <h4>The Problem</h4>
+        <ul>
+          <li>Your current site and blogs live on Squarespace &mdash; slow and tedious to update</li>
+          <li>New pages you've built with Claude are scattered across separate Netlify subdomains</li>
+          <li>Every new landing page means another random URL instead of living on amansala.com</li>
+          <li>You've invested years of work and money building SEO authority on amansala.com</li>
+        </ul>
+      </div>
+      <div class="situation-card solution">
+        <h4>What We're Doing</h4>
+        <ul>
+          <li>Move everything &mdash; new pages, landing pages, and blog &mdash; under amansala.com</li>
+          <li>No more subdomains. One site, one domain, all your content in one place</li>
+          <li>Keep every SEO ranking you've earned. Google won't notice the switch.</li>
+          <li>Build and launch new pages in minutes instead of fighting Squarespace</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <div class="key-point">
-    <h2>Can the Rankings Transfer to Netlify?</h2>
-    <p>Yes, 100%. Google does not care about hosting platforms. It cares about your domain, your URL paths, your content, and your page speed. If we serve the same content at the same URLs on a new host, Google won't even notice the switch.</p>
+    <h2>Will We Lose Our Google Rankings?</h2>
+    <p>No. Google does not care what platform hosts your site. It cares about your domain name, your URLs, and your content. As long as amansala.com still serves the same content at the same URLs, your rankings stay exactly where they are. In fact, the new site will load faster &mdash; which Google rewards.</p>
   </div>
 
   <!-- Phase 1 -->
   <section class="phase">
     <span class="phase-label low-risk">Phase 1 &mdash; Low Risk</span>
-    <h3>New Site on Netlify, Blog Stays on Squarespace</h3>
-    <p class="phase-desc">We launch the new homepage, retreats, and booking pages on Netlify while your blog content continues to be served transparently from Squarespace. Visitors and Google see everything under amansala.com &mdash; no disruption.</p>
+    <h3>Point amansala.com to Your New Site</h3>
+    <p class="phase-desc">We point your domain to Netlify, where all the new pages you've already built go live instantly under amansala.com. Your blog stays online seamlessly through a behind-the-scenes proxy &mdash; visitors see no difference.</p>
     <ol>
-      <li><strong>Point amansala.com DNS to Netlify</strong> for the new homepage, retreats, and booking pages</li>
-      <li><strong>Use Netlify proxy rewrites</strong> to serve <code>/blog/*</code> from Squarespace transparently &mdash; users and Google only see <code>amansala.com/blog/...</code></li>
-      <li><strong>SEO protected:</strong> ~90% of blog-driven rankings are preserved immediately because those URLs haven't changed at all</li>
+      <li><strong>All new pages go live on amansala.com</strong> &mdash; homepage, retreats, landing pages, everything you've already built with Claude. No more scattered subdomains.</li>
+      <li><strong>Blog stays online automatically</strong> &mdash; Netlify quietly fetches your Squarespace blog content behind the scenes. Visitors still see <code>amansala.com/blog/...</code> as usual.</li>
+      <li><strong>Future pages are instant</strong> &mdash; any new page you build goes live on amansala.com immediately. No new subdomain needed, ever.</li>
     </ol>
     <div class="callout">
-      <strong>How the proxy works:</strong> Netlify fetches blog pages from Squarespace behind the scenes using a rewrite rule<br>
-      <code>/blog/*&nbsp;&nbsp;https://old-amansala.squarespace.com/blog/:splat&nbsp;&nbsp;200</code><br>
-      Visitors never see the Squarespace origin &mdash; it's invisible.
+      <strong>What happens behind the scenes:</strong> We update one DNS setting to point amansala.com at Netlify. A proxy rule keeps your blog visible while it still lives on Squarespace:<br>
+      <code>/blog/*&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Squarespace (invisible to visitors and Google)</code>
     </div>
   </section>
+
+  <!-- Concern: subdomains -->
+  <div class="concern">
+    <p class="concern-q">&ldquo;Do we need a new subdomain every time we build a landing page?&rdquo;</p>
+    <p class="concern-a">No. Once amansala.com points to Netlify, every page lives under one roof. Want to add a Mother's Day landing page? It goes live at <code>amansala.com/mothers-day</code>. A new retreat page? <code>amansala.com/signature-retreat</code>. One site, one domain, unlimited pages.</p>
+  </div>
 
   <!-- Phase 2 -->
   <section class="phase">
     <span class="phase-label">Phase 2 &mdash; Blog Migration</span>
-    <h3>Migrate Blog Content to Static HTML</h3>
-    <p class="phase-desc">Once the main site is stable, we bring all blog content onto Netlify as fast-loading static pages with the exact same URLs and SEO metadata.</p>
+    <h3>Bring the Blog Off Squarespace</h3>
+    <p class="phase-desc">Once the main site is stable, we move all blog content onto Netlify too &mdash; so you never have to touch Squarespace again.</p>
     <ol>
-      <li><strong>Export blog posts</strong> from Squarespace (Settings &rarr; Import/Export &rarr; XML)</li>
-      <li><strong>Convert to static HTML</strong> with the exact same URL slugs &mdash; <code>/blog/best-time-to-visit-tulum</code> stays <code>/blog/best-time-to-visit-tulum</code></li>
-      <li><strong>Preserve all meta tags,</strong> headings, image alt text, and structured data</li>
-      <li><strong>Generate sitemap.xml</strong> and robots.txt</li>
-      <li><strong>Deploy to Netlify,</strong> remove proxy rewrite rules</li>
-      <li><strong>Resubmit sitemap</strong> to Google Search Console</li>
+      <li><strong>Export all blog posts</strong> from Squarespace</li>
+      <li><strong>Convert to fast, static pages</strong> with the exact same URLs &mdash; <code>/blog/best-time-to-visit-tulum</code> stays <code>/blog/best-time-to-visit-tulum</code></li>
+      <li><strong>Preserve all SEO metadata</strong> &mdash; titles, descriptions, image alt text, headings</li>
+      <li><strong>Generate a fresh sitemap</strong> and submit to Google Search Console</li>
+      <li><strong>Remove the Squarespace proxy</strong> &mdash; everything is now 100% on Netlify</li>
     </ol>
   </section>
+
+  <!-- Concern: SEO -->
+  <div class="concern">
+    <p class="concern-q">&ldquo;We've put a lot of work and money into our current domain's SEO. How do we know it's safe?&rdquo;</p>
+    <p class="concern-a">Your SEO authority is tied to your domain (amansala.com), not to Squarespace. We're keeping the same domain, the same URLs, the same content, and the same metadata. Google's crawler fetches HTML from a URL &mdash; it doesn't check who's hosting it. This is the same process major brands use when they re-platform, and we monitor everything for 30 days after to confirm.</p>
+  </div>
 
   <!-- Phase 3 -->
   <section class="phase">
     <span class="phase-label">Phase 3 &mdash; Monitor</span>
     <h3>Watch &amp; Verify for 30 Days</h3>
-    <p class="phase-desc">We monitor Google Search Console and analytics to make sure everything transferred cleanly.</p>
+    <p class="phase-desc">We keep a close eye on Google Search Console and your analytics to confirm everything transferred cleanly.</p>
     <ol>
-      <li><strong>Watch Google Search Console</strong> for crawl errors and indexing drops</li>
-      <li><strong>Verify no 404s</strong> on previously-ranked URLs</li>
-      <li><strong>Monitor organic traffic</strong> in analytics &mdash; should remain stable or improve</li>
+      <li><strong>Watch for crawl errors</strong> and indexing issues in Google Search Console</li>
+      <li><strong>Verify no broken links</strong> on any previously-ranked pages</li>
+      <li><strong>Monitor organic traffic</strong> &mdash; should remain stable or improve due to faster load times</li>
     </ol>
   </section>
 
@@ -322,28 +443,28 @@ body {
         <div class="why-icon">&bull;</div>
         <div>
           <h4>Same Domain</h4>
-          <p>amansala.com stays amansala.com. All backlink authority stays with you.</p>
+          <p>amansala.com stays amansala.com. All the authority you've built stays with you.</p>
         </div>
       </div>
       <div class="why-item">
         <div class="why-icon">&bull;</div>
         <div>
           <h4>Same URLs</h4>
-          <p>Every page keeps its exact path. Google's index doesn't need to relearn anything.</p>
+          <p>Every page keeps its exact path. Google's index doesn't skip a beat.</p>
         </div>
       </div>
       <div class="why-item">
         <div class="why-icon">&bull;</div>
         <div>
-          <h4>Same Content</h4>
-          <p>Identical text, images, and metadata. Google sees no change in quality signals.</p>
+          <h4>Faster Site</h4>
+          <p>Netlify's CDN loads pages faster than Squarespace &mdash; Google rewards speed.</p>
         </div>
       </div>
       <div class="why-item">
         <div class="why-icon">&bull;</div>
         <div>
-          <h4>Faster Speed</h4>
-          <p>Static sites on Netlify CDN load faster than Squarespace &mdash; a positive ranking signal.</p>
+          <h4>Build Freely</h4>
+          <p>Add new pages anytime without touching Squarespace or creating new subdomains.</p>
         </div>
       </div>
     </div>
@@ -355,17 +476,17 @@ body {
     <div class="timeline-item">
       <div class="duration">1 Day</div>
       <div class="label">Phase 1</div>
-      <div class="desc">DNS switch + proxy setup. New site goes live.</div>
+      <div class="desc">DNS switch. New site goes live on amansala.com.</div>
     </div>
     <div class="timeline-item">
       <div class="duration">1&ndash;2 Weeks</div>
       <div class="label">Phase 2</div>
-      <div class="desc">Blog export, conversion, and deployment.</div>
+      <div class="desc">Blog migrated off Squarespace.</div>
     </div>
     <div class="timeline-item">
       <div class="duration">30 Days</div>
       <div class="label">Phase 3</div>
-      <div class="desc">Monitoring and verification in Search Console.</div>
+      <div class="desc">Monitoring in Google Search Console.</div>
     </div>
   </div>
 
