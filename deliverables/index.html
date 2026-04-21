@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amansala — Deliverables Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="https://amansala.com/favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --navy-900: #070E1A;
+      --navy-800: #0B1D3A;
+      --navy-700: #0F2B52;
+      --navy-600: #164F95;
+      --navy-500: #1E6BC4;
+      --teal-700: #1a5c52;
+      --teal-600: #2d6a4f;
+      --teal-500: #40916c;
+      --teal-400: #52b788;
+      --teal-300: #74c69d;
+      --sand-500: #d4a373;
+      --sand-400: #ddb892;
+      --sand-300: #e6ccb2;
+      --amber-500: #F59E0B;
+      --amber-100: #FEF3C7;
+      --red-500: #EF4444;
+      --blue-500: #3B82F6;
+      --purple-500: #8B5CF6;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-900);
+      color: var(--gray-300);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+
+    /* --- Header --- */
+    .header {
+      padding: 2.5rem 0 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .header h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .header h1 span {
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-300));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      background: rgba(64,145,108,0.1);
+      border: 1px solid rgba(64,145,108,0.2);
+      border-radius: 100px;
+      color: var(--teal-400);
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      letter-spacing: 0.04em;
+    }
+
+    .live-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--teal-400);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+    .header-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-family: var(--font-mono);
+      flex-wrap: wrap;
+    }
+
+    .header-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .header-meta svg { width: 13px; height: 13px; color: var(--gray-500); }
+
+    /* --- Asset Grid --- */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .asset-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .asset-card:hover {
+      border-color: rgba(64,145,108,0.25);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .asset-card__header {
+      padding: 1.25rem 1.25rem 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .asset-card__icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .asset-card__icon svg { width: 20px; height: 20px; color: white; }
+
+    .asset-card__icon.teal { background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); }
+    .asset-card__icon.blue { background: linear-gradient(135deg, var(--blue-500), #2563EB); }
+    .asset-card__icon.purple { background: linear-gradient(135deg, var(--purple-500), #7C3AED); }
+    .asset-card__icon.amber { background: linear-gradient(135deg, var(--amber-500), #D97706); }
+    .asset-card__icon.sand { background: linear-gradient(135deg, var(--sand-500), var(--sand-400)); }
+    .asset-card__icon.red { background: linear-gradient(135deg, var(--red-500), #DC2626); }
+    .asset-card__icon.navy { background: linear-gradient(135deg, var(--navy-600), var(--navy-500)); }
+
+    .asset-card__title-wrap { flex: 1; min-width: 0; }
+
+    .asset-card__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 0.15rem;
+    }
+
+    .asset-card__subtitle {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-family: var(--font-mono);
+    }
+
+    .asset-card__body {
+      padding: 0 1.25rem;
+      flex: 1;
+    }
+
+    .asset-card__desc {
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.55;
+    }
+
+    .asset-card__footer {
+      padding: 0.75rem 1.25rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag.done { background: rgba(64,145,108,0.15); color: var(--teal-400); }
+    .tag.pending { background: rgba(245,158,11,0.15); color: var(--amber-500); }
+    .tag.live { background: rgba(59,130,246,0.15); color: #60A5FA; }
+    .tag.campaign { background: rgba(212,163,115,0.15); color: var(--sand-400); }
+
+    .asset-card__link {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--teal-400);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .asset-card__link svg {
+      width: 12px; height: 12px;
+      transition: transform 0.2s;
+    }
+
+    .asset-card:hover .asset-card__link svg { transform: translateX(3px); }
+
+    /* --- Section Dividers --- */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .section-divider h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* --- Quick Stats --- */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-pill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      text-align: center;
+    }
+
+    .stat-pill__value {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+
+    .stat-pill__value.teal { color: var(--teal-400); }
+
+    .stat-pill__label {
+      font-size: 0.68rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font-display);
+      font-weight: 600;
+      margin-top: 0.1rem;
+    }
+
+    /* --- Footer --- */
+    .footer {
+      text-align: center;
+      padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+
+    .footer a { color: var(--gray-500); text-decoration: none; }
+    .footer a:hover { color: var(--teal-400); }
+
+    @media (max-width: 640px) {
+      .asset-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <h1>Amansala <span>Deliverables</span></h1>
+        <div class="live-badge"><span class="dot"></span> Active Project</div>
+      </div>
+      <div class="header-meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Amansala Eco-Chic Resort + Retreat</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tulum, Mexico</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg> Updated: Apr 21, 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Stats -->
+    <div class="stats-row" style="margin-top:1.5rem;">
+      <div class="stat-pill">
+        <div class="stat-pill__value teal">22+</div>
+        <div class="stat-pill__label">Pages Built</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill__value">3</div>
+        <div class="stat-pill__label">Live Deploys</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill__value teal">Active</div>
+        <div class="stat-pill__label">Campaign Status</div>
+      </div>
+    </div>
+
+    <!-- DEPLOYED ASSETS -->
+    <div class="section-divider"><h2>Deployed Assets</h2></div>
+
+    <div class="asset-grid">
+
+      <!-- Website Rebuild -->
+      <a href="https://amansala-migration.netlify.app" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Website Migration Plan</div>
+            <div class="asset-card__subtitle">Full site rebuild strategy</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Complete migration plan from current Amansala website. Covers 22+ pages including resort rooms, spa, retreats, wedding & group bookings, podcast, and blog sections.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag live">Live</span>
+          <span class="tag done">Complete</span>
+          <span class="asset-card__link">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Mother's Day Campaign Hub -->
+      <a href="https://amansala-mothers-day-status.netlify.app/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon sand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Mother's Day Campaign</div>
+            <div class="asset-card__subtitle">DSP campaign plan</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Full DSP campaign plan for Mother's Day 2026 promotion. Targeting strategy, creative assets, audience segments, and campaign timeline for Amansala retreats.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag campaign">Campaign</span>
+          <span class="tag live">Live</span>
+          <span class="asset-card__link">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- All Netlify Sites -->
+      <a href="https://amansala-deliverables.netlify.app/netlify-sites/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">All Netlify Sites</div>
+            <div class="asset-card__subtitle">28 sites &bull; full index</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Complete index of every Netlify site on the Amansala account — production sites, Bikini Bootcamp iterations, campaign pages, and placeholders with screenshots.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag live">28 Sites</span>
+          <span class="tag done">Indexed</span>
+          <span class="asset-card__link">Browse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Full Website Rebuild (this repo) -->
+      <a href="https://github.com/ShawCole/Melissa_Podcast_Guest_Page" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Amansala Site Rebuild</div>
+            <div class="asset-card__subtitle">22 pages &bull; full resort site</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Complete site rebuild with all resort pages: rooms (Casa Grande, Chica), signature retreat, spa, adventures, podcast guest pages, wedding brochure, group bookings, and more.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="tag live">Repo</span>
+          <span class="asset-card__link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- SITE PAGES -->
+    <div class="section-divider"><h2>Site Pages (Rebuild)</h2></div>
+
+    <div class="asset-grid">
+
+      <!-- Signature Retreat -->
+      <a href="https://amansala-migration.netlify.app/signature-retreat/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Signature Retreat</div>
+            <div class="asset-card__subtitle">Flagship program page</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Amansala's flagship Bikini Bootcamp retreat — yoga, fitness, spa treatments, and healthy cuisine in Tulum.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Rooms -->
+      <a href="https://amansala-migration.netlify.app/rooms/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Rooms & Accommodations</div>
+            <div class="asset-card__subtitle">Casa Grande, Chica, Houses</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Full room listings with Casa Grande suites, Chica bungalows, and private houses. Photo galleries and booking info.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Spa -->
+      <a href="https://amansala-migration.netlify.app/spa/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c-4.97 0-9-2.24-9-5v-1c0-.34.04-.67.12-1C4.33 11.54 7.87 9 12 9s7.67 2.54 8.88 6c.08.33.12.66.12 1v1c0 2.76-4.03 5-9 5z"/><path d="M12 9V2"/><path d="M8 5l4 4 4-4"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Spa & Wellness</div>
+            <div class="asset-card__subtitle">Treatments & packages</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Full spa menu with Mayan-inspired treatments, massage therapy, beauty services, and wellness packages.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Wedding Brochure -->
+      <a href="https://amansala-migration.netlify.app/wedding-brochure/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon sand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Wedding Brochure</div>
+            <div class="asset-card__subtitle">Destination weddings</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Destination wedding packages in Tulum. Beachfront ceremonies, reception options, and coordination services.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Podcast -->
+      <a href="https://amansala-migration.netlify.app/podcast/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="23"/><line x1="8" x2="16" y1="23" y2="23"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Podcast & Guest Pages</div>
+            <div class="asset-card__subtitle">Melissa's podcast section</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Podcast landing page with individual guest pages. Features episode embeds, guest bios, and show notes.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Group Bookings -->
+      <a href="https://amansala-migration.netlify.app/tulum-group-bookings/" target="_blank" class="asset-card">
+        <div class="asset-card__header">
+          <div class="asset-card__icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="asset-card__title-wrap">
+            <div class="asset-card__title">Group Bookings</div>
+            <div class="asset-card__subtitle">Corporate & private groups</div>
+          </div>
+        </div>
+        <div class="asset-card__body">
+          <p class="asset-card__desc">Group retreat packages for corporate teams, bachelorette parties, and private groups. Custom itineraries and pricing.</p>
+        </div>
+        <div class="asset-card__footer">
+          <span class="tag done">Built</span>
+          <span class="asset-card__link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer class="footer">
+      <p>Amansala Deliverables Hub &bull; Updated April 21, 2026 &bull; Managed by <a href="https://arkdata.co" target="_blank">ArkData</a></p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
