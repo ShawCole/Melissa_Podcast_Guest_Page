@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amansala — All Netlify Sites</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="https://amansala.com/favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --navy-900: #070E1A;
+      --teal-500: #40916c;
+      --teal-400: #52b788;
+      --teal-300: #74c69d;
+      --teal-600: #2d6a4f;
+      --sand-500: #d4a373;
+      --sand-400: #ddb892;
+      --amber-500: #F59E0B;
+      --blue-500: #3B82F6;
+      --purple-500: #8B5CF6;
+      --red-500: #EF4444;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-900);
+      color: var(--gray-300);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+
+    .header {
+      padding: 2.5rem 0 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .header-row {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.75rem;
+    }
+
+    .header h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .header h1 span {
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-300));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--gray-400); font-size: 0.82rem; text-decoration: none;
+      font-family: var(--font-display); font-weight: 600;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--teal-400); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .header-meta {
+      display: flex; gap: 1.5rem; margin-top: 0.75rem;
+      font-size: 0.8rem; color: var(--gray-500);
+      font-family: var(--font-mono); flex-wrap: wrap;
+    }
+
+    .section-divider {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .section-divider h2 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 0.85rem; color: var(--gray-400);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .section-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .site-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem; margin-bottom: 1.5rem;
+    }
+
+    .site-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+
+    .site-card:hover {
+      border-color: rgba(64,145,108,0.25);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .site-card__screenshot {
+      width: 100%; height: 160px;
+      object-fit: cover; object-position: top;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: var(--gray-800);
+    }
+
+    .site-card__no-screenshot {
+      width: 100%; height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: var(--gray-800);
+      color: var(--gray-600); font-size: 0.8rem;
+      font-family: var(--font-mono);
+    }
+
+    .site-card__body { padding: 1rem 1.25rem; flex: 1; }
+
+    .site-card__title {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 0.95rem;
+      color: var(--white); margin-bottom: 0.25rem;
+    }
+
+    .site-card__url {
+      font-size: 0.72rem; color: var(--teal-400);
+      font-family: var(--font-mono);
+      word-break: break-all; margin-bottom: 0.5rem;
+    }
+
+    .site-card__meta {
+      font-size: 0.72rem; color: var(--gray-500);
+      font-family: var(--font-mono);
+    }
+
+    .site-card__footer {
+      padding: 0.6rem 1.25rem 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block; padding: 0.15rem 0.5rem;
+      border-radius: 4px; font-size: 0.65rem;
+      font-weight: 600; font-family: var(--font-display);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+
+    .tag.custom-domain { background: rgba(64,145,108,0.15); color: var(--teal-400); }
+    .tag.production { background: rgba(59,130,246,0.15); color: #60A5FA; }
+    .tag.iteration { background: rgba(245,158,11,0.15); color: var(--amber-500); }
+    .tag.empty { background: rgba(239,68,68,0.15); color: #f87171; }
+    .tag.placeholder { background: rgba(148,163,184,0.15); color: var(--gray-400); }
+
+    .site-card__link {
+      margin-left: auto; font-size: 0.75rem;
+      color: var(--teal-400); font-weight: 600;
+      display: flex; align-items: center; gap: 0.25rem;
+    }
+
+    .site-card__link svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .site-card:hover .site-card__link svg { transform: translateX(3px); }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+
+    .stat-pill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 0.85rem 1rem;
+      text-align: center;
+    }
+
+    .stat-pill__value {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 1.3rem; color: var(--white);
+    }
+    .stat-pill__value.teal { color: var(--teal-400); }
+
+    .stat-pill__label {
+      font-size: 0.68rem; color: var(--gray-500);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      font-family: var(--font-display); font-weight: 600;
+      margin-top: 0.1rem;
+    }
+
+    .footer {
+      text-align: center; padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 2rem; font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+    .footer a { color: var(--gray-500); text-decoration: none; }
+    .footer a:hover { color: var(--teal-400); }
+
+    @media (max-width: 640px) {
+      .site-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="https://amansala-deliverables.netlify.app" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to Deliverables
+      </a>
+      <div class="header-row" style="margin-top: 0.75rem;">
+        <h1>Amansala <span>Netlify Sites</span></h1>
+      </div>
+      <div class="header-meta">
+        <span>28 sites on Netlify account</span>
+        <span>Updated: Apr 21, 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="stats-row">
+      <div class="stat-pill">
+        <div class="stat-pill__value teal">28</div>
+        <div class="stat-pill__label">Total Sites</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill__value">3</div>
+        <div class="stat-pill__label">Custom Domains</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill__value">14</div>
+        <div class="stat-pill__label">Bikini Bootcamp Iterations</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill__value teal">3</div>
+        <div class="stat-pill__label">Production Pages</div>
+      </div>
+    </div>
+
+    <!-- PRODUCTION / CUSTOM DOMAIN SITES -->
+    <div class="section-divider"><h2>Production Sites (Custom Domains)</h2></div>
+
+    <div class="site-grid">
+
+      <a href="https://mothersday.amansala.com" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69dd3aecaffd1500980ca270/screenshot_2026-04-13-18-50-29-0000.webp" alt="Mother's Day screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Mother's Day at Amansala</div>
+          <div class="site-card__url">mothersday.amansala.com</div>
+          <div class="site-card__meta">Tulum Retreat 2026 campaign</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag custom-domain">Custom Domain</span>
+          <span class="tag production">Production</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://info.bikinibootcamp.com" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69ced7c218880e911633ab70/screenshot_2026-04-02-20-55-31-0000.webp" alt="Bikini Bootcamp screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Bikini Bootcamp</div>
+          <div class="site-card__url">info.bikinibootcamp.com</div>
+          <div class="site-card__meta">A Vacation With a Purpose</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag custom-domain">Custom Domain</span>
+          <span class="tag production">Production</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://amansala-migration.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69e6675a1b7fdb1460089cbe/screenshot_2026-04-20-17-50-21-0000.webp" alt="Migration plan screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Website Migration Plan</div>
+          <div class="site-card__url">amansala-migration.netlify.app</div>
+          <div class="site-card__meta">Squarespace to Netlify migration guide</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag production">Internal</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- UNIQUE PAGES -->
+    <div class="section-divider"><h2>Standalone Pages</h2></div>
+
+    <div class="site-grid">
+
+      <a href="https://elegant-faloodeh-fe5d37.netlify.app" target="_blank" class="site-card">
+        <div class="site-card__no-screenshot">No screenshot</div>
+        <div class="site-card__body">
+          <div class="site-card__title">Chi Ka at Amansala</div>
+          <div class="site-card__url">elegant-faloodeh-fe5d37.netlify.app</div>
+          <div class="site-card__meta">Beachfront Escape in Tulum</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag production">Live</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://timely-churros-134e2b.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69e6836c0618173fd20ff49e/screenshot_2026-04-20-19-50-06-0000.webp" alt="Host a Retreat screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Host a Retreat</div>
+          <div class="site-card__url">timely-churros-134e2b.netlify.app</div>
+          <div class="site-card__meta">Amansala Tulum retreat hosting</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag production">Live</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://peaceful-dieffenbachia-a8338d.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69b0901e680a49682a3fcb27/screenshot_2026-03-10-21-42-37-0000.webp" alt="Summer in Tulum screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Summer in Tulum</div>
+          <div class="site-card__url">peaceful-dieffenbachia-a8338d.netlify.app</div>
+          <div class="site-card__meta">Summer campaign landing page</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag production">Live</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://ornate-granita-46b747.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69b0545e66039e6c058e8486/screenshot_2026-03-10-17-26-55-0000.webp" alt="Summer in Tulum v2 screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Summer in Tulum (v2)</div>
+          <div class="site-card__url">ornate-granita-46b747.netlify.app</div>
+          <div class="site-card__meta">Earlier iteration of summer campaign</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Iteration</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://mothersdayamansala.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69b1ed8be8200b0008566f1f/screenshot_2026-03-11-22-32-49-0000.webp" alt="Mother's Day v1 screenshot">
+        <div class="site-card__body">
+          <div class="site-card__title">Mother's Day (Original)</div>
+          <div class="site-card__url">mothersdayamansala.netlify.app</div>
+          <div class="site-card__meta">Original Mother's Day page (GitHub-linked)</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Iteration</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- BIKINI BOOTCAMP ITERATIONS -->
+    <div class="section-divider"><h2>Bikini Bootcamp Iterations (14 deploys)</h2></div>
+
+    <div class="site-grid">
+
+      <a href="https://soft-croquembouche-4284a3.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69e650e82cf6b713566333a8/screenshot_2026-04-20-16-14-35-0000.webp" alt="Bikini Bootcamp latest">
+        <div class="site-card__body">
+          <div class="site-card__title">Bikini Bootcamp (Latest)</div>
+          <div class="site-card__url">soft-croquembouche-4284a3.netlify.app</div>
+          <div class="site-card__meta">Updated Apr 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag production">Latest</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://taupe-fenglisu-e4d7ca.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69e1720ac8a371321585eeed/screenshot_2026-04-16-23-34-59-0000.webp" alt="Bikini Bootcamp v2">
+        <div class="site-card__body">
+          <div class="site-card__title">Bikini Bootcamp (Apr 16)</div>
+          <div class="site-card__url">taupe-fenglisu-e4d7ca.netlify.app</div>
+          <div class="site-card__meta">Updated Apr 16</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Iteration</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://charming-crisp-8d93b8.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69ce01adbc01475fdf2df5d6/screenshot_2026-04-02-05-42-06-0000.webp" alt="Bikini Bootcamp v3">
+        <div class="site-card__body">
+          <div class="site-card__title">Bikini Bootcamp (Apr 2)</div>
+          <div class="site-card__url">charming-crisp-8d93b8.netlify.app</div>
+          <div class="site-card__meta">Updated Apr 2</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Iteration</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://jade-frangipane-a371b2.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69cc70e5a2ccde5bfd234024/screenshot_2026-04-01-01-12-10-0000.webp" alt="Bikini Bootcamp v4">
+        <div class="site-card__body">
+          <div class="site-card__title">Bikini Bootcamp (Apr 1)</div>
+          <div class="site-card__url">jade-frangipane-a371b2.netlify.app</div>
+          <div class="site-card__meta">Updated Apr 1</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Iteration</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://reliable-youtiao-03e1d5.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bdf6ab4fd14458c4bc0169/screenshot_2026-03-21-01-38-53-0000.webp" alt="BB Review Mar 21">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 21)</div>
+          <div class="site-card__url">reliable-youtiao-03e1d5.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 21</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://lucky-capybara-1ddddf.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bdc806f960f6ee4e16598b/screenshot_2026-03-20-22-19-52-0000.webp" alt="BB Review Mar 20 v1">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 late)</div>
+          <div class="site-card__url">lucky-capybara-1ddddf.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://dainty-brioche-9dba37.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bd6274f8b6244f08b37e0b/screenshot_2026-03-20-15-06-30-0000.webp" alt="BB Review Mar 20 v2">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 mid)</div>
+          <div class="site-card__url">dainty-brioche-9dba37.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://melodious-rolypoly-fe747d.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bce1316bc19cbd9eec0baf/screenshot_2026-03-20-05-54-59-0000.webp" alt="BB Review Mar 20 early">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 early)</div>
+          <div class="site-card__url">melodious-rolypoly-fe747d.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://chipper-creponne-02fd03.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bcdf65b37016ba94466daf/screenshot_2026-03-20-05-47-20-0000.webp" alt="BB Review v5">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 v5)</div>
+          <div class="site-card__url">chipper-creponne-02fd03.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://bucolic-kitsune-fd1b6f.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bcd6a58840c6a89dfff375/screenshot_2026-03-20-05-09-59-0000.webp" alt="BB Review v4">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 v4)</div>
+          <div class="site-card__url">bucolic-kitsune-fd1b6f.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://capable-pudding-311afe.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bcce71740e8b9a87c77f64/screenshot_2026-03-20-04-34-59-0000.webp" alt="BB Review v3">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 20 v3)</div>
+          <div class="site-card__url">capable-pudding-311afe.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 20</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://bucolic-otter-6e1a44.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bb4fe31e0b85789f81dfc9/screenshot_2026-03-19-01-22-44-0000.webp" alt="BB Review Mar 19">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 19)</div>
+          <div class="site-card__url">bucolic-otter-6e1a44.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 19</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://cool-croquembouche-12733d.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bb0a634f9a1a99cc98660d/screenshot_2026-03-18-20-26-13-0000.webp" alt="BB Review Mar 18 v2">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 18 late)</div>
+          <div class="site-card__url">cool-croquembouche-12733d.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 18</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://unique-mooncake-7476bf.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69baeda3515c565abbcc47a7/screenshot_2026-03-18-18-23-33-0000.webp" alt="BB Review Mar 18">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 18 mid)</div>
+          <div class="site-card__url">unique-mooncake-7476bf.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 18</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://cozy-treacle-83cc0e.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bae7321e0b85434a81df05/screenshot_2026-03-18-17-56-04-0000.webp" alt="BB Review Mar 18 early">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 18 early)</div>
+          <div class="site-card__url">cozy-treacle-83cc0e.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 18</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://curious-crumble-28df7c.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bacfe8c2dca4768d085982/screenshot_2026-03-18-16-16-42-0000.webp" alt="BB Review first">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 18 v2)</div>
+          <div class="site-card__url">curious-crumble-28df7c.netlify.app</div>
+          <div class="site-card__meta">Updated Mar 18</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://starlit-vacherin-089102.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69bac515a507a8a5cd3913fa/screenshot_2026-03-18-15-30-32-0000.webp" alt="BB Review earliest">
+        <div class="site-card__body">
+          <div class="site-card__title">BB Redesign Review (Mar 18 v1)</div>
+          <div class="site-card__url">starlit-vacherin-089102.netlify.app</div>
+          <div class="site-card__meta">Earliest iteration</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag iteration">Review</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- OTHER -->
+    <div class="section-divider"><h2>Other / Placeholders</h2></div>
+
+    <div class="site-grid">
+
+      <a href="https://amansala.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69b0a4947c6d19b3c2e122e3/screenshot_2026-03-10-23-09-35-0000.webp" alt="Amansala main">
+        <div class="site-card__body">
+          <div class="site-card__title">Amansala (Main Placeholder)</div>
+          <div class="site-card__url">amansala.netlify.app</div>
+          <div class="site-card__meta">Lovable App template — placeholder</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag placeholder">Placeholder</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://admirable-rabanadas-3ccfe9.netlify.app" target="_blank" class="site-card">
+        <img class="site-card__screenshot" src="https://d33wubrfki0l68.cloudfront.net/69ac63f3848505000864da2f/screenshot_2026-03-07-17-44-30-0000.webp" alt="Lovable App">
+        <div class="site-card__body">
+          <div class="site-card__title">Lovable App (Template)</div>
+          <div class="site-card__url">admirable-rabanadas-3ccfe9.netlify.app</div>
+          <div class="site-card__meta">Generic template — placeholder</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag placeholder">Placeholder</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://charming-pudding-da7ed1.netlify.app" target="_blank" class="site-card">
+        <div class="site-card__no-screenshot">404 — Empty</div>
+        <div class="site-card__body">
+          <div class="site-card__title">Empty Site</div>
+          <div class="site-card__url">charming-pudding-da7ed1.netlify.app</div>
+          <div class="site-card__meta">Returns 404 — no content deployed</div>
+        </div>
+        <div class="site-card__footer">
+          <span class="tag empty">Empty</span>
+          <span class="site-card__link">Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer class="footer">
+      <p>Amansala Netlify Sites Index &bull; 28 sites &bull; Managed by <a href="https://arkdata.co" target="_blank">ArkData</a></p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
