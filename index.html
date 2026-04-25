@@ -302,14 +302,13 @@
 
 /* Responsive */
 @media (max-width: 799px) {
-  /* Mobile portrait: use 3:2 container aspect instead of forcing 65vh, so
-     object-fit:cover only crops ~13% of the video width (vs 60% at 65vh).
-     Subject + jungle + text overlay all stay visible. Capped at 65vh so it
-     never dominates the screen on tall phones. */
+  /* Mobile portrait: 4:3 container — sweet spot between 65vh (over-zoomed)
+     and 3:2 (postcard-thin). Shows ~70% of video width, hero feels
+     substantial without dominating. Capped at 60vh on tall phones. */
   .home-hero-bg {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
     height: auto;
-    max-height: 65vh;
+    max-height: 60vh;
   }
 
   .home-cta-grid {
