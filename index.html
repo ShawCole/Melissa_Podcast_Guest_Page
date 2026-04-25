@@ -430,12 +430,9 @@
          loading="eager"
          decoding="async"
          fetchpriority="high">
-    <!-- Attribute order matters on iOS Safari: muted + playsinline must
-         appear BEFORE autoplay or the parser may evaluate autoplay before
-         the muted state is recognized → silent block. Inline src (no
-         <source> child) avoids a known iOS bug where source tags can
-         require a user gesture in autoplay context. webkit-playsinline
-         is a boolean attribute (no value) for old iOS. -->
+    <!-- Mobile gets a 1.2MB 480p version that loads fast enough for iOS
+         Safari to honor autoplay even on cellular. Desktop gets the 5MB
+         720p. <source media> picks one based on viewport. -->
     <video class="home-hero-video"
            id="home-hero-video"
            muted
@@ -444,12 +441,12 @@
            autoplay
            loop
            preload="auto"
-           src="assets/video/hero.mp4"
            poster="assets/video/hero-poster.jpg"
-           disableremoteplayback
-           disablepictureinpicture
            tabindex="-1"
-           aria-hidden="true"></video>
+           aria-hidden="true">
+      <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 799px)">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
     <script>
       // Synchronously kick the play attempt the moment the element exists.
       // Defer'd scripts at the end of body sometimes run AFTER iOS Safari
