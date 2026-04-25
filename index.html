@@ -430,26 +430,39 @@
          loading="eager"
          decoding="async"
          fetchpriority="high">
-    <!-- Native video: autoplay/muted/playsinline/loop is the only combination
-         iOS Safari + Chrome Android + every browser honors reliably.
-         webkit-playsinline kept for old iOS Safari (≤9). muted attribute
-         is set explicitly + .muted = true is also forced in JS — both are
-         required for autoplay in some Safari builds. -->
+    <!-- Attribute order matters on iOS Safari: muted + playsinline must
+         appear BEFORE autoplay or the parser may evaluate autoplay before
+         the muted state is recognized → silent block. Inline src (no
+         <source> child) avoids a known iOS bug where source tags can
+         require a user gesture in autoplay context. webkit-playsinline
+         is a boolean attribute (no value) for old iOS. -->
     <video class="home-hero-video"
            id="home-hero-video"
-           poster="assets/video/hero-poster.jpg"
-           autoplay
            muted
-           loop
            playsinline
-           webkit-playsinline="true"
+           webkit-playsinline
+           autoplay
+           loop
            preload="auto"
+           src="assets/video/hero.mp4"
+           poster="assets/video/hero-poster.jpg"
            disableremoteplayback
            disablepictureinpicture
            tabindex="-1"
-           aria-hidden="true">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
+           aria-hidden="true"></video>
+    <script>
+      // Synchronously kick the play attempt the moment the element exists.
+      // Defer'd scripts at the end of body sometimes run AFTER iOS Safari
+      // has already evaluated and skipped autoplay.
+      (function(){
+        var v = document.getElementById('home-hero-video');
+        if (!v) return;
+        v.muted = true;
+        v.defaultMuted = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function(){});
+      })();
+    </script>
     <div class="home-hero-blocker" aria-hidden="true"></div>
   </div>
   <div class="home-hero-overlay"></div>
@@ -655,8 +668,6 @@
   var v = document.getElementById('home-hero-video');
   if (!v) return;
 
-  // Force the muted state in JS too — some Safari builds need both
-  // the attribute AND the property set before they honor autoplay
   v.muted = true;
   v.defaultMuted = true;
 
@@ -666,27 +677,39 @@
     if (p && typeof p.then === 'function') p.catch(function(){});
   }
 
-  // Try as soon as we have any data
+  // Fire on every load milestone
   v.addEventListener('loadedmetadata', tryPlay);
   v.addEventListener('canplay', tryPlay);
   v.addEventListener('loadeddata', tryPlay);
+  v.addEventListener('canplaythrough', tryPlay);
 
-  // Try when the page becomes visible (tab focus, return from background)
+  // Tab/page focus + bfcache restore
   document.addEventListener('visibilitychange', function() {
     if (!document.hidden) tryPlay();
   });
-  // Bfcache restore (back/forward navigation)
   window.addEventListener('pageshow', tryPlay);
-  // First user gesture — guaranteed to lift any autoplay block
+  window.addEventListener('load', tryPlay);
+
+  // Hero in view → retry. Catches the first-paint case on iOS where the
+  // attribute autoplay was silently blocked and we need a "ready" signal.
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) tryPlay(); });
+    }, { threshold: [0, 0.25, 0.5] });
+    io.observe(v);
+  }
+
+  // First gesture — guaranteed to lift Safari autoplay block
   ['touchstart', 'touchend', 'click', 'pointerdown', 'scroll'].forEach(function(ev) {
     document.addEventListener(ev, tryPlay, { passive: true });
   });
-  // Belt: short retry loop for the first few seconds in case all events miss
+
+  // Short retry loop for the first few seconds
   var tries = 0;
   var iv = setInterval(function() {
     tryPlay();
-    if (++tries >= 6 || !v.paused) clearInterval(iv);
-  }, 500);
+    if (++tries >= 8 || !v.paused) clearInterval(iv);
+  }, 400);
 })();
 </script>
 </body>
