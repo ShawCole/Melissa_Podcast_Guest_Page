@@ -41,11 +41,27 @@ jobs:
           curl -fsSL https://deno.land/install.sh | sh -s -- -y
           echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
 
+      - name: Write cookies file (if secret is set)
+        env:
+          YT_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -n "$YT_COOKIES" ]; then
+            printf '%s' "$YT_COOKIES" > /tmp/yt-cookies.txt
+            echo "Cookies file written ($(wc -l < /tmp/yt-cookies.txt) lines)"
+            echo "HAS_COOKIES=1" >> "$GITHUB_ENV"
+          else
+            echo "No YOUTUBE_COOKIES secret set — will attempt without cookies (likely fails on Azure runner IPs)"
+            echo "HAS_COOKIES=0" >> "$GITHUB_ENV"
+          fi
+
       - name: Download source
         run: |
           mkdir -p assets/video
-          # Try player clients in order until one works. The tv/web_safari
-          # combo plus deno-backed JS extraction is the current bot-bypass.
+          COOKIES_ARG=""
+          if [ "$HAS_COOKIES" = "1" ]; then
+            COOKIES_ARG="--cookies /tmp/yt-cookies.txt"
+          fi
+          # Try player clients in order until one works.
           for CLIENTS in \
               "default,tv_simply,web_safari" \
               "tv,web_creator" \
@@ -53,6 +69,7 @@ jobs:
               "web,mweb"; do
             echo "=== Trying clients: $CLIENTS ==="
             if yt-dlp \
+                $COOKIES_ARG \
                 --extractor-args "youtube:player_client=${CLIENTS}" \
                 --js-runtimes "deno:$HOME/.deno/bin/deno" \
                 --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" \
@@ -65,7 +82,7 @@ jobs:
             fi
             rm -f /tmp/source.* || true
           done
-          ls -lh /tmp/source.* 2>/dev/null || { echo "All player clients failed"; exit 1; }
+          ls -lh /tmp/source.* 2>/dev/null || { echo "All player clients failed — set YOUTUBE_COOKIES secret"; exit 1; }
 
       - name: Compress for web hero (silent loop, ~720p)
         run: |
