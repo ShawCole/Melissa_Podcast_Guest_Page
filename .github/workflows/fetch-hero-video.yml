@@ -1,0 +1,87 @@
+name: Fetch + compress hero video
+
+on:
+  workflow_dispatch:
+    inputs:
+      youtube_id:
+        description: YouTube video ID
+        required: true
+        default: Du0spL2Ewf0
+      target_size_mb:
+        description: Target MP4 size in MB (integer)
+        required: false
+        default: "8"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      YT_ID: ${{ github.event.inputs.youtube_id }}
+      TARGET_MB: ${{ github.event.inputs.target_size_mb }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inputs
+        run: |
+          if ! [[ "$YT_ID" =~ ^[A-Za-z0-9_-]{11}$ ]]; then
+            echo "Invalid YouTube ID: $YT_ID" >&2; exit 1
+          fi
+          if ! [[ "$TARGET_MB" =~ ^[0-9]+$ ]]; then
+            echo "Invalid target size: $TARGET_MB" >&2; exit 1
+          fi
+
+      - name: Install tooling
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python3 -m pip install --quiet --upgrade yt-dlp
+
+      - name: Download source
+        run: |
+          mkdir -p assets/video
+          yt-dlp -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
+                 --merge-output-format mp4 \
+                 -o "/tmp/source.%(ext)s" \
+                 "https://www.youtube.com/watch?v=${YT_ID}"
+          ls -lh /tmp/source.*
+
+      - name: Compress for web hero (silent loop, ~720p)
+        run: |
+          INPUT=$(ls /tmp/source.* | head -1)
+          DURATION=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$INPUT")
+          TARGET_KBPS=$(awk -v mb="$TARGET_MB" -v d="$DURATION" 'BEGIN { printf "%d", (mb*8192)/d }')
+          MAXRATE=$((TARGET_KBPS * 2))
+          BUFSIZE=$((TARGET_KBPS * 4))
+          echo "Duration: ${DURATION}s  Target bitrate: ${TARGET_KBPS}kbps"
+
+          ffmpeg -y -i "$INPUT" \
+            -an -vf "scale=1280:-2,fps=30" \
+            -c:v libx264 -preset slow -profile:v high -level 4.0 \
+            -b:v ${TARGET_KBPS}k -maxrate ${MAXRATE}k -bufsize ${BUFSIZE}k \
+            -movflags +faststart -pix_fmt yuv420p \
+            -pass 1 -f mp4 /dev/null
+
+          ffmpeg -y -i "$INPUT" \
+            -an -vf "scale=1280:-2,fps=30" \
+            -c:v libx264 -preset slow -profile:v high -level 4.0 \
+            -b:v ${TARGET_KBPS}k -maxrate ${MAXRATE}k -bufsize ${BUFSIZE}k \
+            -movflags +faststart -pix_fmt yuv420p \
+            -pass 2 assets/video/hero.mp4
+
+          ls -lh assets/video/hero.mp4
+
+      - name: Generate poster frame (first second)
+        run: |
+          ffmpeg -y -ss 1 -i assets/video/hero.mp4 -frames:v 1 -q:v 3 assets/video/hero-poster.jpg
+          ls -lh assets/video/hero-poster.jpg
+
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/video/hero.mp4 assets/video/hero-poster.jpg
+          git diff --cached --stat
+          git commit -m "assets: hero video + poster (auto-generated from YouTube ${YT_ID})"
+          git push origin HEAD:main
