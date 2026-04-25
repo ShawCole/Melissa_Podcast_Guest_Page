@@ -216,9 +216,10 @@ h1 em, h2 em, h3 em {
 }
 
 .nav-logo img {
-  height: 68px;
+  height: 92px;
   width: auto;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
+  transition: height var(--ease);
 }
 
 .nav--scrolled .nav-logo img {
@@ -646,11 +647,14 @@ h1 em, h2 em, h3 em {
   }
 
   .nav-logo img {
-    height: 52px;
+    height: 72px;
   }
 
   .nav-links { display: none; }
-  .nav-toggle { display: block; }
+  .nav-toggle {
+    display: block;
+    margin-left: auto;
+  }
 
   .nav.open .nav-links {
     display: flex;

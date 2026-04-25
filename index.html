@@ -41,7 +41,8 @@
 
 /* Native <video> sized to cover the container with object-fit. Native video
    honors autoplay+muted+playsinline reliably on iOS Safari, Chrome Android,
-   and everywhere else. */
+   and everywhere else. Always opacity:1 — the poster attribute on the video
+   covers the brief pre-data window, and the bg <img> covers any total fail. */
 .home-hero-video {
   position: absolute;
   inset: 0;
@@ -51,11 +52,6 @@
   pointer-events: none;
   border: 0;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
-}
-.home-hero-video.is-playing {
-  opacity: 1;
 }
 
 /* Transparent click-blocker that sits above the video so taps never reach it
@@ -435,20 +431,25 @@
          decoding="async"
          fetchpriority="high">
     <!-- Native video: autoplay/muted/playsinline/loop is the only combination
-         iOS Safari + Chrome Android + every browser honors reliably. -->
+         iOS Safari + Chrome Android + every browser honors reliably.
+         webkit-playsinline kept for old iOS Safari (≤9). muted attribute
+         is set explicitly + .muted = true is also forced in JS — both are
+         required for autoplay in some Safari builds. -->
     <video class="home-hero-video"
            id="home-hero-video"
-           src="assets/video/hero.mp4"
            poster="assets/video/hero-poster.jpg"
            autoplay
            muted
            loop
            playsinline
+           webkit-playsinline="true"
            preload="auto"
            disableremoteplayback
            disablepictureinpicture
            tabindex="-1"
-           aria-hidden="true"></video>
+           aria-hidden="true">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
     <div class="home-hero-blocker" aria-hidden="true"></div>
   </div>
   <div class="home-hero-overlay"></div>
@@ -649,19 +650,43 @@
   onScroll();
 })();
 
-/* ═══ Hero video — native <video>, fade in on first frame ═══ */
+/* ═══ Hero video — aggressive autoplay retry across iOS quirks ═══ */
 (function() {
   var v = document.getElementById('home-hero-video');
   if (!v) return;
-  function reveal() { v.classList.add('is-playing'); }
-  // Show as soon as we have actual pixels, not just a metadata load
-  v.addEventListener('playing', reveal, { once: true });
-  v.addEventListener('loadeddata', function() { if (v.readyState >= 2) reveal(); }, { once: true });
-  // First-gesture fallback in case some browser blocks autoplay even for muted+playsinline
-  function tryPlayOnGesture() { v.play().catch(function(){}); }
-  ['touchstart', 'click', 'pointerdown'].forEach(function(ev) {
-    document.addEventListener(ev, tryPlayOnGesture, { once: true, passive: true });
+
+  // Force the muted state in JS too — some Safari builds need both
+  // the attribute AND the property set before they honor autoplay
+  v.muted = true;
+  v.defaultMuted = true;
+
+  function tryPlay() {
+    if (!v.paused) return;
+    var p = v.play();
+    if (p && typeof p.then === 'function') p.catch(function(){});
+  }
+
+  // Try as soon as we have any data
+  v.addEventListener('loadedmetadata', tryPlay);
+  v.addEventListener('canplay', tryPlay);
+  v.addEventListener('loadeddata', tryPlay);
+
+  // Try when the page becomes visible (tab focus, return from background)
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) tryPlay();
   });
+  // Bfcache restore (back/forward navigation)
+  window.addEventListener('pageshow', tryPlay);
+  // First user gesture — guaranteed to lift any autoplay block
+  ['touchstart', 'touchend', 'click', 'pointerdown', 'scroll'].forEach(function(ev) {
+    document.addEventListener(ev, tryPlay, { passive: true });
+  });
+  // Belt: short retry loop for the first few seconds in case all events miss
+  var tries = 0;
+  var iv = setInterval(function() {
+    tryPlay();
+    if (++tries >= 6 || !v.paused) clearInterval(iv);
+  }, 500);
 })();
 </script>
 </body>
