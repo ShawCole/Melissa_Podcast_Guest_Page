@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-/* Desktop: 100vw wide, crop 5% top = show 95% of height */
+/* Desktop: 100vw wide, slightly cropped to feel cinematic */
 .home-hero-bg {
   position: relative;
   width: 100%;
@@ -29,14 +29,27 @@
   background: var(--near-black);
 }
 
+/* Iframe sized to cover container while preserving 16:9.
+   On desktop the container is wider than 16:9, so width drives sizing. */
 .home-hero-video {
   position: absolute;
-  top: calc(-56.25vw * 0.05);
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100vw;
-  height: 56.25vw; /* natural 16:9 */
+  height: 56.25vw; /* natural 16:9 from width */
   pointer-events: none;
   border: 0;
+}
+
+/* Transparent click-blocker that sits above the iframe so taps never reach
+   the YouTube player. Belt-and-suspenders with iframe pointer-events: none. */
+.home-hero-blocker {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+  cursor: default;
 }
 
 .home-hero-overlay {
@@ -273,15 +286,44 @@
 
 /* Responsive */
 @media (max-width: 799px) {
-  /* Mobile: 100vw wide, crop 10% top + 30% bottom = show 60% of height */
+  /* Mobile portrait: give the hero real vertical presence (was 33vw — too squat).
+     Container becomes taller than 16:9, so the iframe is sized by HEIGHT and
+     allowed to overflow horizontally — true "cover" behavior. */
   .home-hero-bg {
-    height: calc(56.25vw * 0.60);
+    height: 65vh;
+    min-height: 360px;
+    max-height: 640px;
   }
 
   .home-hero-video {
-    top: calc(-56.25vw * 0.10);
+    /* Height drives sizing on portrait mobile; width = height * 16/9 */
+    width: calc(65vh * 16 / 9);
+    height: 65vh;
+    min-width: calc(360px * 16 / 9);
+    min-height: 360px;
+    max-width: calc(640px * 16 / 9);
+    max-height: 640px;
   }
+}
 
+/* Landscape phone / short viewports: fall back to width-driven sizing
+   so we don't end up with a too-tall video that overflows wildly. */
+@media (max-width: 799px) and (min-aspect-ratio: 16/9) {
+  .home-hero-bg {
+    height: 100vh;
+    max-height: none;
+  }
+  .home-hero-video {
+    width: 100vw;
+    height: 56.25vw;
+    min-width: 100vw;
+    min-height: auto;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+@media (max-width: 799px) {
   .home-cta-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-5);
@@ -398,7 +440,14 @@
 <!-- ═══ SECTION 1: HERO — Video Background ═══ -->
 <section class="home-hero">
   <div class="home-hero-bg">
-    <iframe class="home-hero-video" src="https://www.youtube.com/embed/Du0spL2Ewf0?autoplay=1&mute=1&loop=1&playlist=Du0spL2Ewf0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <iframe class="home-hero-video"
+            src="https://www.youtube-nocookie.com/embed/Du0spL2Ewf0?autoplay=1&mute=1&loop=1&playlist=Du0spL2Ewf0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&color=white"
+            title="Amansala video background"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            tabindex="-1"
+            aria-hidden="true"></iframe>
+    <div class="home-hero-blocker" aria-hidden="true"></div>
   </div>
   <div class="home-hero-overlay"></div>
 </section>
