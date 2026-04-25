@@ -35,17 +35,37 @@ jobs:
       - name: Install tooling
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg curl
           python3 -m pip install --quiet --upgrade yt-dlp
+          # Deno: JS runtime yt-dlp needs for current YouTube extraction
+          curl -fsSL https://deno.land/install.sh | sh -s -- -y
+          echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
 
       - name: Download source
         run: |
           mkdir -p assets/video
-          yt-dlp -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
-                 --merge-output-format mp4 \
-                 -o "/tmp/source.%(ext)s" \
-                 "https://www.youtube.com/watch?v=${YT_ID}"
-          ls -lh /tmp/source.*
+          # Try player clients in order until one works. The tv/web_safari
+          # combo plus deno-backed JS extraction is the current bot-bypass.
+          for CLIENTS in \
+              "default,tv_simply,web_safari" \
+              "tv,web_creator" \
+              "android_vr,android_testsuite" \
+              "web,mweb"; do
+            echo "=== Trying clients: $CLIENTS ==="
+            if yt-dlp \
+                --extractor-args "youtube:player_client=${CLIENTS}" \
+                --js-runtimes "deno:$HOME/.deno/bin/deno" \
+                --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" \
+                -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
+                --merge-output-format mp4 \
+                -o "/tmp/source.%(ext)s" \
+                "https://www.youtube.com/watch?v=${YT_ID}"; then
+              echo "Download succeeded with clients: $CLIENTS"
+              break
+            fi
+            rm -f /tmp/source.* || true
+          done
+          ls -lh /tmp/source.* 2>/dev/null || { echo "All player clients failed"; exit 1; }
 
       - name: Compress for web hero (silent loop, ~720p)
         run: |
