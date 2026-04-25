@@ -302,12 +302,14 @@
 
 /* Responsive */
 @media (max-width: 799px) {
-  /* Mobile portrait: real hero height. Native video object-fit:cover
-     handles all the aspect-ratio math — no manual width/height needed. */
+  /* Mobile portrait: use 3:2 container aspect instead of forcing 65vh, so
+     object-fit:cover only crops ~13% of the video width (vs 60% at 65vh).
+     Subject + jungle + text overlay all stay visible. Capped at 65vh so it
+     never dominates the screen on tall phones. */
   .home-hero-bg {
-    height: 65vh;
-    min-height: 360px;
-    max-height: 640px;
+    aspect-ratio: 3 / 2;
+    height: auto;
+    max-height: 65vh;
   }
 
   .home-cta-grid {
