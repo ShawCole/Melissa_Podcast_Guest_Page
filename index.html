@@ -29,8 +29,7 @@
   background: var(--near-black);
 }
 
-/* Poster image behind the video — graceful fallback if YouTube fails
-   to autoplay on mobile (still under-the-hood unreliable for iframes). */
+/* Poster image behind the video — visible until video paints first frame */
 .home-hero-poster {
   position: absolute;
   inset: 0;
@@ -40,18 +39,15 @@
   z-index: 0;
 }
 
-/* Iframe sized to cover container while preserving 16:9.
-   On desktop the container is wider than 16:9, so width drives sizing.
-   Hidden by default; fades in only when YT actually reaches PLAYING — so
-   if autoplay is blocked on mobile, the poster behind stays visible
-   instead of a black iframe covering it. */
+/* Native <video> sized to cover the container with object-fit. Native video
+   honors autoplay+muted+playsinline reliably on iOS Safari, Chrome Android,
+   and everywhere else. */
 .home-hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 56.25vw; /* natural 16:9 from width */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
   border: 0;
   z-index: 1;
@@ -62,8 +58,8 @@
   opacity: 1;
 }
 
-/* Transparent click-blocker that sits above the iframe so taps never reach
-   the YouTube player. Belt-and-suspenders with iframe pointer-events: none. */
+/* Transparent click-blocker that sits above the video so taps never reach it
+   (no pause-on-tap, no controls). */
 .home-hero-blocker {
   position: absolute;
   inset: 0;
@@ -306,44 +302,14 @@
 
 /* Responsive */
 @media (max-width: 799px) {
-  /* Mobile portrait: give the hero real vertical presence (was 33vw — too squat).
-     Container becomes taller than 16:9, so the iframe is sized by HEIGHT and
-     allowed to overflow horizontally — true "cover" behavior. */
+  /* Mobile portrait: real hero height. Native video object-fit:cover
+     handles all the aspect-ratio math — no manual width/height needed. */
   .home-hero-bg {
     height: 65vh;
     min-height: 360px;
     max-height: 640px;
   }
 
-  .home-hero-video {
-    /* Height drives sizing on portrait mobile; width = height * 16/9 */
-    width: calc(65vh * 16 / 9);
-    height: 65vh;
-    min-width: calc(360px * 16 / 9);
-    min-height: 360px;
-    max-width: calc(640px * 16 / 9);
-    max-height: 640px;
-  }
-}
-
-/* Landscape phone / short viewports: fall back to width-driven sizing
-   so we don't end up with a too-tall video that overflows wildly. */
-@media (max-width: 799px) and (min-aspect-ratio: 16/9) {
-  .home-hero-bg {
-    height: 100vh;
-    max-height: none;
-  }
-  .home-hero-video {
-    width: 100vw;
-    height: 56.25vw;
-    min-width: 100vw;
-    min-height: auto;
-    max-width: none;
-    max-height: none;
-  }
-}
-
-@media (max-width: 799px) {
   .home-cta-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-5);
@@ -460,17 +426,28 @@
 <!-- ═══ SECTION 1: HERO — Video Background ═══ -->
 <section class="home-hero">
   <div class="home-hero-bg">
-    <!-- Poster: shows immediately, stays visible behind the iframe -->
+    <!-- Poster: paints first, hidden once video starts playing -->
     <img class="home-hero-poster"
-         src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b6cf0472-49d2-4f3f-94e9-e9b3a93f81b7/chicarooms-3-beachfrontviews.jpg?format=2500w"
-         alt="Amansala beachfront"
+         src="assets/video/hero-poster.jpg"
+         alt=""
          loading="eager"
          decoding="async"
          fetchpriority="high">
-    <!-- YouTube IFrame API replaces this div with an iframe and gives us a
-         player handle so we can call playVideo() — the only reliable mobile
-         autoplay trick for cross-origin YouTube embeds. -->
-    <div id="home-hero-yt" class="home-hero-video" tabindex="-1" aria-hidden="true"></div>
+    <!-- Native video: autoplay/muted/playsinline/loop is the only combination
+         iOS Safari + Chrome Android + every browser honors reliably. -->
+    <video class="home-hero-video"
+           id="home-hero-video"
+           src="assets/video/hero.mp4"
+           poster="assets/video/hero-poster.jpg"
+           autoplay
+           muted
+           loop
+           playsinline
+           preload="auto"
+           disableremoteplayback
+           disablepictureinpicture
+           tabindex="-1"
+           aria-hidden="true"></video>
     <div class="home-hero-blocker" aria-hidden="true"></div>
   </div>
   <div class="home-hero-overlay"></div>
@@ -671,57 +648,17 @@
   onScroll();
 })();
 
-/* ═══ Hero video — YouTube IFrame API for reliable mobile autoplay ═══ */
+/* ═══ Hero video — native <video>, fade in on first frame ═══ */
 (function() {
-  if (!document.getElementById('home-hero-yt')) return;
-
-  // Load the IFrame API
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  tag.async = true;
-  document.head.appendChild(tag);
-
-  var player;
-
-  window.onYouTubeIframeAPIReady = function() {
-    player = new YT.Player('home-hero-yt', {
-      videoId: 'Du0spL2Ewf0',
-      host: 'https://www.youtube-nocookie.com',
-      playerVars: {
-        autoplay: 1, mute: 1, controls: 0, loop: 1, playlist: 'Du0spL2Ewf0',
-        playsinline: 1, modestbranding: 1, rel: 0, showinfo: 0,
-        iv_load_policy: 3, disablekb: 1, fs: 0, cc_load_policy: 0
-      },
-      events: {
-        onReady: function(e) {
-          try { e.target.mute(); e.target.playVideo(); } catch (_) {}
-        },
-        onStateChange: function(e) {
-          var ifr = document.getElementById('home-hero-yt');
-          // Fade iframe in only when video actually starts playing.
-          // If autoplay is blocked (mobile) the poster stays visible.
-          if (e.data === YT.PlayerState.PLAYING && ifr) {
-            ifr.classList.add('is-playing');
-          }
-          // loop=1 is flaky on mobile; replay manually on end
-          if (e.data === YT.PlayerState.ENDED) {
-            try { e.target.playVideo(); } catch (_) {}
-          }
-        }
-      }
-    });
-  };
-
-  // Mobile browsers commonly block iframe autoplay until ANY user gesture.
-  // First touch/scroll/click anywhere triggers the play we couldn't trigger on load.
-  var triggered = false;
-  function tryPlayOnGesture() {
-    if (triggered) return;
-    if (player && typeof player.playVideo === 'function') {
-      try { player.mute(); player.playVideo(); triggered = true; } catch (_) {}
-    }
-  }
-  ['touchstart', 'click', 'scroll', 'pointerdown'].forEach(function(ev) {
+  var v = document.getElementById('home-hero-video');
+  if (!v) return;
+  function reveal() { v.classList.add('is-playing'); }
+  // Show as soon as we have actual pixels, not just a metadata load
+  v.addEventListener('playing', reveal, { once: true });
+  v.addEventListener('loadeddata', function() { if (v.readyState >= 2) reveal(); }, { once: true });
+  // First-gesture fallback in case some browser blocks autoplay even for muted+playsinline
+  function tryPlayOnGesture() { v.play().catch(function(){}); }
+  ['touchstart', 'click', 'pointerdown'].forEach(function(ev) {
     document.addEventListener(ev, tryPlayOnGesture, { once: true, passive: true });
   });
 })();
